@@ -76,7 +76,7 @@ export default buildConfig({
   secret: process.env.PAYLOAD_SECRET || 'peopleforhonor-payload-secret-key-2026',
   db: postgresAdapter({
     pool: {
-      connectionString: process.env.DATABASE_URI,
+      connectionString: String(process.env.DATABASE_URI || ''),
     },
     push: true,
   }),
