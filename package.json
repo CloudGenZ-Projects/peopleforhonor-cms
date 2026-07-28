@@ -11,7 +11,8 @@
     "db:studio": "drizzle-kit studio --host 0.0.0.0 --port 4983",
     "db:push": "npx tsx src/sync-db.ts",
     "db:seed-home": "npx tsx src/seed-home.ts",
-    "db:seed-about": "npx tsx src/seed-about.ts"
+    "db:seed-about": "npx tsx src/seed-about.ts",
+    "db:seed-programs": "npx tsx src/seed-programs.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.86.0",
