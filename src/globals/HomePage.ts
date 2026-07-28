@@ -255,9 +255,9 @@ export const HomePage: GlobalConfig = {
             },
             {
               name: 'featured_video_id',
-              label: 'YouTube Video ID',
+              label: 'YouTube Video Link or ID',
               type: 'text',
-              defaultValue: 'MlBTjyV_ado',
+              defaultValue: 'https://www.youtube.com/watch?v=MlBTjyV_ado',
             },
             {
               name: 'impact_heading',
