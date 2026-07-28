@@ -8,7 +8,8 @@
     "build": "payload generate:importmap && next build",
     "start": "next start -p 4000",
     "lint": "next lint",
-    "db:studio": "drizzle-kit studio --host 0.0.0.0 --port 4983"
+    "db:studio": "drizzle-kit studio --host 0.0.0.0 --port 4983",
+    "db:push": "drizzle-kit push"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.86.0",
