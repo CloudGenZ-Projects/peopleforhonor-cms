@@ -7,7 +7,8 @@
     "dev": "payload generate:importmap && next dev -p 4000",
     "build": "payload generate:importmap && next build",
     "start": "next start -p 4000",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.86.0",
@@ -31,6 +32,7 @@
     "@types/node": "^25.9.5",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
+    "drizzle-kit": "^0.30.5",
     "typescript": "^5.7.2"
   }
 }
