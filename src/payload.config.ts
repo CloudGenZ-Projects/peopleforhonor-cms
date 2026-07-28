@@ -5,6 +5,7 @@ import { s3Storage } from '@payloadcms/storage-s3'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { HomePage } from './globals/HomePage'
+import { AboutPage } from './globals/AboutPage'
 import { Media } from './collections/Media'
 
 const filename = fileURLToPath(import.meta.url)
@@ -90,7 +91,7 @@ export default buildConfig({
     },
     Media,
   ],
-  globals: [HomePage],
+  globals: [HomePage, AboutPage],
   editor: lexicalEditor({}),
   secret: process.env.PAYLOAD_SECRET || 'peopleforhonor-payload-secret-key-2026',
   db: postgresAdapter({
