@@ -8,7 +8,7 @@
     "build": "payload generate:importmap && next build",
     "start": "next start -p 4000",
     "lint": "next lint",
-    "db:studio": "node --env-file=.env node_modules/drizzle-kit/bin.cjs studio"
+    "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.86.0",
