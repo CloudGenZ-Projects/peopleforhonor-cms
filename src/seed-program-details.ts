@@ -49,7 +49,7 @@ const programItems = [
     slug: 'braiding-training',
     badge: 'Culture & Community Program',
     hero_subtitle:
-      'Learn professional braiding skills in a supportive, hands-on environment. Free 6-week program with tools provided and certification upon completion.',
+      'Learn sectioning, braiding foundations, cornrows, knotless and box braids, protective styling, scalp care, client care, and basic business skills. Completion certificate plus optional mentorship for internships or apprenticeships.',
     duration: '6 Weeks',
     capacity: '5 Participants',
     cost: '100% Free',
@@ -65,18 +65,6 @@ const programItems = [
       { text: 'Sanitation and client care' },
       { text: 'Basic business skills' },
     ],
-    takeaway_title: 'Takeaway',
-    takeaway_text: 'Completion certificate + optional mentorship for internships/apprenticeships',
-    curriculum_title: 'Week-by-Week Curriculum',
-    weeks: [
-      { week: 1, title: 'Foundations', content: 'Sectioning, hair types, sanitation & tool care' },
-      { week: 2, title: 'Cornrows', content: 'Underhand & overhand techniques, neat parting' },
-      { week: 3, title: 'Knotless Braids', content: 'Tension control, feed-in method, seamless finish' },
-      { week: 4, title: 'Box Braids', content: 'Extension attachment, length consistency & dip finishing' },
-      { week: 5, title: 'Styling & Care', content: 'Edge control, scalp maintenance & client consultation' },
-      { week: 6, title: 'Business & Final Showcase', content: 'Pricing, portfolio building & final assessment' },
-    ],
-    commitment_note: 'Attend 10 of 12 sessions to receive your completion certificate.',
     cta_heading: 'Ready to Start Your Braiding Journey?',
     cta_description:
       'Join our next cohort and build confident braiding skills in a supportive, judgment-free environment. All tools provided—just bring your commitment to learn.',
@@ -89,7 +77,7 @@ const programItems = [
     slug: 'community-cooking-cultural-food',
     badge: 'Culture & Community Program',
     hero_subtitle:
-      'Explore cultural recipes, kitchen safety, and catering basics while building community through food.',
+      'Learn kitchen safety, knife skills, budget meal prep, cultural recipes, food presentation, and basic food business skills in a shared kitchen space. Food Handler Certificate guidance plus culinary business mentorship.',
     duration: '6 Weeks',
     capacity: '5 Participants',
     cost: '100% Free',
@@ -105,18 +93,6 @@ const programItems = [
       { text: 'Food presentation and potluck basics' },
       { text: 'Introduction to pricing, catering, and small food business skills' },
     ],
-    takeaway_title: 'Takeaway',
-    takeaway_text: 'Food Handler Certificate guidance + culinary business mentorship',
-    curriculum_title: 'Curriculum Highlights',
-    weeks: [
-      { week: 1, title: 'Kitchen Safety & Knife Skills', content: 'Sanitation, cuts, and prep efficiency' },
-      { week: 2, title: 'Cultural Spices & Flavors', content: 'Traditional recipes and seasoning mastery' },
-      { week: 3, title: 'Budget Meal Prep', content: 'Nutritious cooking on a budget' },
-      { week: 4, title: 'Catering & Plating', content: 'Presentation and portion control' },
-      { week: 5, title: 'Food Business Basics', content: 'Costing, permits, and food safety' },
-      { week: 6, title: 'Community Feast', content: 'Final group cooking & celebration' },
-    ],
-    commitment_note: 'Attend 5 of 6 sessions to receive certificate.',
     cta_heading: 'Ready to Cook and Share Your Culture?',
     cta_description:
       'Join our community kitchen to learn new recipes, share your own, and explore how food can open doors to catering and small business opportunities.',
@@ -129,7 +105,7 @@ const programItems = [
     slug: 'sewing-beginners',
     badge: 'Culture & Community Program',
     hero_subtitle:
-      'Learn machine setup, stitching, pattern reading, and garment creation with free machines provided during class.',
+      'Learn machine threading, bobbin winding, straight seams, basic clothing repairs, edge finishing, fasteners, buttonholes, pocket construction, pattern cutting, sizing, garment assembly, and creative upcycling. Completion certificate plus option to join intermediate cohort.',
     duration: '6 Weeks',
     capacity: '8 Participants',
     cost: '100% Free',
@@ -154,7 +130,6 @@ const programItems = [
       { week: 5, title: 'Creative Upcycling', content: 'Repurposing thrifted fabrics into new items' },
       { week: 6, title: 'Final Project Showcase', content: 'Complete a personal sewing project to take home' },
     ],
-    commitment_note: 'Attend 5 of 6 sessions to complete all projects.',
     cta_heading: 'Ready to Start Sewing?',
     cta_description:
       "Join our beginner-friendly sewing class and create practical projects you'll be proud of. All machines and fabric provided—no experience needed!",
@@ -195,7 +170,6 @@ const programItems = [
       { week: 7, title: 'Pitch Practice', content: 'Storytelling' },
       { week: 8, title: 'Demo Night', content: 'Pitch to community panel' },
     ],
-    commitment_note: 'Attend 6 of 8 sessions and submit pitch deck for Demo Night.',
     cta_heading: 'Ready to Launch Your Business?',
     cta_description:
       'Join our Entrepreneurship Launchpad and turn your idea into reality. Get mentorship, templates, and the confidence to pitch your business.',
@@ -232,7 +206,6 @@ const programItems = [
       { week: 2, title: 'Learn foundational steps & cultural context', content: 'Discover the stories and traditions behind the movements' },
       { week: 3, title: 'Group choreography & cool-down reflection', content: 'Dance together and reflect on the experience' },
     ],
-    commitment_note: 'Drop-in sessions available, bi-weekly registration recommended.',
     cta_heading: 'Ready to Move & Connect?',
     cta_description:
       'Join us for Cultural Dance & Movement and experience the joy of rhythmic movement, cultural connection, and community belonging. All levels welcome!',
@@ -243,7 +216,7 @@ const programItems = [
 ]
 
 async function seed() {
-  console.log('Seeding all 6 ProgramDetails items into PostgreSQL with 100% exact text...')
+  console.log('Seeding all 6 ProgramDetails items into PostgreSQL with exact original fields...')
 
   const { getPayload } = await import('payload')
   const { default: config } = await import('./payload.config')
@@ -274,7 +247,7 @@ async function seed() {
     }
   }
 
-  console.log('All 6 ProgramDetails documents seeded successfully with 100% exact original text!')
+  console.log('All 6 ProgramDetails documents seeded successfully!')
   process.exit(0)
 }
 
