@@ -86,7 +86,7 @@ const programItems = [
     slug: 'community-cooking-cultural-food',
     badge: 'Culture & Community Program',
     hero_subtitle:
-      'Learn kitchen safety, knife skills, budget meal prep, cultural recipes, food presentation, and basic food business skills in a shared kitchen space. Food Handler Certificate guidance plus culinary business mentorship.',
+      'Learn kitchen basics, cultural recipes, and safe food handling. Completion certificate plus optional mentorship for catering and small food business opportunities.',
     duration: '6 Weeks',
     capacity: '5 Participants',
     cost: '100% Free',
@@ -121,7 +121,7 @@ const programItems = [
     slug: 'sewing-beginners',
     badge: 'Culture & Community Program',
     hero_subtitle:
-      'Learn machine setup, stitching, pattern reading, and garment creation with free machines provided during class.',
+      'Learn essential sewing skills and create practical projects. Free 6-week program with machines and fabric provided.',
     duration: '6 Weeks',
     capacity: '8 Participants',
     cost: '100% Free',
@@ -131,9 +131,9 @@ const programItems = [
     details_cost: 'Free (machines on site; fabric provided for class projects)',
     lead_instructor: 'Trained sewing instructor',
     learning_outcomes: [
-      { text: 'Machine setup & stitching' },
-      { text: 'Reading patterns & fabric selection' },
-      { text: 'Create practical projects (tote bags, garments)' },
+      { text: 'Machine setup, stitching, seam finishes' },
+      { text: 'Reading simple patterns, measuring & cutting' },
+      { text: 'Make: tote bag, pillow cover, simple skirt or joggers' },
     ],
     showTakeaway: true,
     takeaway_title: 'Takeaway',
@@ -141,12 +141,12 @@ const programItems = [
     showCurriculum: true,
     curriculum_title: 'Week-by-Week Curriculum',
     weeks: [
-      { week: 1, title: 'Foundations', content: 'Machine threading, bobbin winding & straight seams' },
-      { week: 2, title: 'Hems & Alterations', content: 'Basic clothing repairs & edge finishing' },
-      { week: 3, title: 'Zippers & Buttons', content: 'Fasteners, buttonholes & pocket construction' },
-      { week: 4, title: 'Simple Garments', content: 'Pattern cutting, sizing & garment assembly' },
-      { week: 5, title: 'Creative Upcycling', content: 'Repurposing thrifted fabrics into new items' },
-      { week: 6, title: 'Final Project Showcase', content: 'Complete a personal sewing project to take home' },
+      { week: 1, title: 'Machine Basics', content: 'Machine basics, threading, straight/zigzag stitches' },
+      { week: 2, title: 'Seams & Hems', content: 'Seams & hems; practice sampler' },
+      { week: 3, title: 'Project 1: Tote Bag', content: 'Project 1: tote bag (pattern, cut, sew)' },
+      { week: 4, title: 'Project 2: Pillow Cover', content: 'Project 2: pillow cover (zipper or envelope)' },
+      { week: 5, title: 'Garment Basics', content: 'Garment basics: measuring, pattern layout' },
+      { week: 6, title: 'Final Project', content: 'Project 3 start/finish; showcase & photos' },
     ],
     commitment_note: null,
     cta_heading: 'Ready to Start Sewing?',
@@ -214,15 +214,15 @@ const programItems = [
     details_cost: 'Free',
     lead_instructor: 'Cultural rhythms, community, and mindful movement',
     learning_outcomes: [
-      { text: 'Stress relief & mental health: Rhythmic movement doubles as meditation' },
-      { text: 'Confidence, mobility, and joy: Low-impact movement builds balance' },
-      { text: 'Belonging across cultures: Shared music and stories foster connection' },
-      { text: 'Low-barrier access: Free, equipment-free, led by trained facilitators' },
+      { text: 'Stress relief & mental health: Rhythmic movement doubles as meditation—reducing stress and improving mood' },
+      { text: 'Confidence, mobility, and joy: Low-impact movement builds balance, flexibility, and self-esteem' },
+      { text: 'Belonging across cultures: Shared music and stories foster social connection and reduce isolation' },
+      { text: 'Low-barrier access: Free, equipment-free, and led by trained facilitators' },
     ],
     showTakeaway: true,
-    takeaway_title: 'What to Bring',
+    takeaway_title: 'No Experience Required',
     takeaway_text:
-      'Comfortable clothes, water bottle, and an open heart. No experience required—judgment-free space for everyone.',
+      'This is a judgment-free space where everyone is welcome, regardless of skill level or background.',
     showCurriculum: true,
     curriculum_title: 'What to Expect',
     weeks: [
@@ -241,7 +241,7 @@ const programItems = [
 ]
 
 async function seed() {
-  console.log('Seeding all 6 ProgramDetails items with conditional showTakeaway & showCurriculum flags...')
+  console.log('Seeding all 6 ProgramDetails items with 100% exact initial commit text...')
 
   const { getPayload } = await import('payload')
   const { default: config } = await import('./payload.config')
@@ -272,7 +272,7 @@ async function seed() {
     }
   }
 
-  console.log('All 6 ProgramDetails documents seeded with toggles successfully!')
+  console.log('All 6 ProgramDetails documents seeded with exact initial text successfully!')
   process.exit(0)
 }
 
