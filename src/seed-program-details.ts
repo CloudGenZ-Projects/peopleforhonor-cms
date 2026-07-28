@@ -159,10 +159,87 @@ const programItems = [
     register_button_url:
       'https://docs.google.com/forms/d/e/1FAIpQLSfragX8BIMhxvgkFhyOc6nOJ7i8AJ9P8dl30OzlovYvCJ60zg/viewform',
   },
+  {
+    title: 'Entrepreneurship Launchpad',
+    slug: 'entrepreneurship-launchpad',
+    badge: 'Culture & Community Program',
+    hero_subtitle:
+      'From idea to pitch: Learn business fundamentals, create your business plan, and pitch to a community panel. Free 6-8 week program with mentors and templates.',
+    duration: '6-8 Weeks',
+    capacity: '10-15 Participants',
+    cost: '100% Free',
+    who_can_join: 'Early-stage founders & side-hustlers (all ages 16+)',
+    details_capacity: '10–15 participants per cohort',
+    schedule: '6–8 weekly workshops + office hours (hybrid)',
+    details_cost: 'Free',
+    lead_instructor: 'Mentors, templates, and pitch feedback',
+    learning_outcomes: [
+      { text: 'One-page business plan' },
+      { text: 'Basic budget' },
+      { text: 'Starter brand kit' },
+      { text: 'A public pitch' },
+    ],
+    takeaway_title: 'Demo Night',
+    takeaway_text: 'Pitch your business to a community panel and get valuable feedback',
+    curriculum_title: 'Program Modules',
+    weeks: [
+      { week: 1, title: 'Problem → Solution', content: 'Clarity & customer discovery' },
+      { week: 2, title: 'Business Model & Pricing', content: 'Break-even, margins' },
+      { week: 3, title: 'Branding', content: 'Simple website/landing pages' },
+      { week: 4, title: 'Sales & Marketing', content: 'Social, email, partnerships' },
+      { week: 5, title: 'Money Matters', content: 'Startup costs, bookkeeping, grants' },
+      { week: 6, title: 'Legal Basics', content: 'Registration, permits, contracts' },
+      { week: 7, title: 'Pitch Practice', content: 'Storytelling' },
+      { week: 8, title: 'Demo Night', content: 'Pitch to community panel' },
+    ],
+    commitment_note: 'Attend 6 of 8 sessions and submit pitch deck for Demo Night.',
+    cta_heading: 'Ready to Launch Your Business?',
+    cta_description:
+      'Join our Entrepreneurship Launchpad and turn your idea into reality. Get mentorship, templates, and the confidence to pitch your business.',
+    register_button_text: 'Apply to Cohort',
+    register_button_url:
+      'https://docs.google.com/forms/d/e/1FAIpQLSfragX8BIMhxvgkFhyOc6nOJ7i8AJ9P8dl30OzlovYvCJ60zg/viewform',
+  },
+  {
+    title: 'Cultural Dance & Movement',
+    slug: 'cultural-dance',
+    badge: 'Culture & Community Program',
+    hero_subtitle:
+      'Stress relief through cultural rhythms and mindful movement. No experience needed. Build confidence, mobility, and belonging across cultures.',
+    duration: 'Bi-Weekly',
+    capacity: '20 Participants',
+    cost: '100% Free',
+    who_can_join: 'All ages 14+ (no experience needed)',
+    details_capacity: '20 participants per session',
+    schedule: 'Every other Saturday, 1.5–2 hours',
+    details_cost: 'Free',
+    lead_instructor: 'Cultural rhythms, community, and mindful movement',
+    learning_outcomes: [
+      { text: 'Stress relief & mental health: Rhythmic movement doubles as meditation' },
+      { text: 'Confidence, mobility, and joy: Low-impact movement builds balance' },
+      { text: 'Belonging across cultures: Shared music and stories foster connection' },
+      { text: 'Low-barrier access: Free, equipment-free, led by trained facilitators' },
+    ],
+    takeaway_title: 'No Experience Required',
+    takeaway_text: 'This is a judgment-free space where everyone is welcome, regardless of skill level or background.',
+    curriculum_title: 'What to Expect Flow',
+    weeks: [
+      { week: 1, title: 'Gentle warm-up and breathwork', content: 'Start with mindful breathing and gentle stretches' },
+      { week: 2, title: 'Learn foundational steps & cultural context', content: 'Discover the stories and traditions behind the movements' },
+      { week: 3, title: 'Group choreography & cool-down reflection', content: 'Dance together and reflect on the experience' },
+    ],
+    commitment_note: 'Drop-in sessions available, bi-weekly registration recommended.',
+    cta_heading: 'Ready to Move & Connect?',
+    cta_description:
+      'Join us for Cultural Dance & Movement and experience the joy of rhythmic movement, cultural connection, and community belonging. All levels welcome!',
+    register_button_text: 'Reserve a Spot',
+    register_button_url:
+      'https://docs.google.com/forms/d/e/1FAIpQLSfragX8BIMhxvgkFhyOc6nOJ7i8AJ9P8dl30OzlovYvCJ60zg/viewform',
+  },
 ]
 
 async function seed() {
-  console.log('Seeding ProgramDetails items into PostgreSQL...')
+  console.log('Seeding all 6 ProgramDetails items into PostgreSQL...')
 
   const { getPayload } = await import('payload')
   const { default: config } = await import('./payload.config')
@@ -170,7 +247,6 @@ async function seed() {
   const payload = await getPayload({ config })
 
   for (const item of programItems) {
-    // Check if exists
     const existing = await payload.find({
       collection: 'program-details',
       where: {
@@ -194,7 +270,7 @@ async function seed() {
     }
   }
 
-  console.log('All ProgramDetails documents seeded successfully!')
+  console.log('All 6 ProgramDetails documents seeded successfully!')
   process.exit(0)
 }
 
