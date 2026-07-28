@@ -10,9 +10,21 @@ import { Media } from './collections/Media'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
+const defaultOrigins = [
+  'http://localhost:5173',
+  'http://localhost:8080',
+  'http://localhost:3000',
+  'http://localhost:4000',
+  'https://client.cloudgenz.com',
+  '*',
+]
+
 const corsOrigins = process.env.CORS_ORIGINS
-  ? process.env.CORS_ORIGINS.split(',').map((origin) => origin.trim())
-  : ['http://localhost:5173', 'http://localhost:3000', 'https://client.cloudgenz.com']
+  ? [
+      ...process.env.CORS_ORIGINS.split(',').map((origin) => origin.trim()),
+      ...defaultOrigins,
+    ]
+  : defaultOrigins
 
 const plugins: any[] = []
 
