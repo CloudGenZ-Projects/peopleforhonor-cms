@@ -1,12 +1,9 @@
 import dotenv from 'dotenv'
 
-// Ensure .env is loaded before Payload initialization
+// Load .env FIRST before anything else
 dotenv.config({ path: '.env' })
 dotenv.config({ path: '.env.production' })
 dotenv.config({ path: '.env.local' })
-
-import { getPayload } from 'payload'
-import config from './payload.config'
 
 async function sync() {
   console.log('Syncing PostgreSQL database tables...')
@@ -15,10 +12,13 @@ async function sync() {
     console.error('Error: DATABASE_URI is missing in .env file!')
     process.exit(1)
   }
-  
-  // Safe debug: print DB URI format (hiding password)
+
   const maskedUri = dbUri.replace(/:([^:@]+)@/, ':****@')
-  console.log(`Connecting to: ${maskedUri}`)
+  console.log('Connecting to:', maskedUri)
+
+  // Dynamic import AFTER dotenv has loaded - this is critical!
+  const { getPayload } = await import('payload')
+  const { default: config } = await import('./payload.config')
 
   const payload = await getPayload({ config })
   console.log('PostgreSQL database tables created successfully!')
