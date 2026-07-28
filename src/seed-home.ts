@@ -149,6 +149,7 @@ async function seed() {
         'https://docs.google.com/forms/d/e/1FAIpQLSeoVDTZ9VLLCRIP-0twZo8urDmzM6VLAhC-QQ2rHOoeyVce4w/viewform?usp=header',
 
       // 5. Home CTA & Newsletter
+      cta_title: 'Ready to Start Your Journey?',
       cta_heading:
         'Building a life in a new country is not easy. We are here so you do not have to do it alone.',
       cta_description:
@@ -162,6 +163,9 @@ async function seed() {
         'Stay connected with our community and be the first to know about new programs, events, and opportunities to make a difference.',
       newsletter_button_text: 'Join Our Community',
       newsletter_footer_quote: 'Contribute to the prosperity of people!',
+      newsletter_link_text: 'Apply for our Computer Access Program',
+      newsletter_link_url:
+        'https://www.zeffy.com/en-CA/newsletter-form/computer-access-program-application',
     },
   })
 

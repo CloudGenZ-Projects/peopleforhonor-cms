@@ -354,8 +354,14 @@ export const HomePage: GlobalConfig = {
           label: '5. Home CTA & Newsletter',
           fields: [
             {
+              name: 'cta_title',
+              label: 'Home CTA Top Title',
+              type: 'text',
+              defaultValue: 'Ready to Start Your Journey?',
+            },
+            {
               name: 'cta_heading',
-              label: 'Home CTA Heading',
+              label: 'Home CTA Subheading',
               type: 'text',
               defaultValue:
                 'Building a life in a new country is not easy. We are here so you do not have to do it alone.',
@@ -415,6 +421,19 @@ export const HomePage: GlobalConfig = {
               label: 'Newsletter Footer Quote',
               type: 'text',
               defaultValue: 'Contribute to the prosperity of people!',
+            },
+            {
+              name: 'newsletter_link_text',
+              label: 'Newsletter Link Text',
+              type: 'text',
+              defaultValue: 'Apply for our Computer Access Program',
+            },
+            {
+              name: 'newsletter_link_url',
+              label: 'Newsletter Link URL',
+              type: 'text',
+              defaultValue:
+                'https://www.zeffy.com/en-CA/newsletter-form/computer-access-program-application',
             },
           ],
         },
