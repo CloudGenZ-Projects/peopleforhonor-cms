@@ -28,21 +28,26 @@ const corsOrigins = process.env.CORS_ORIGINS
 
 const plugins: any[] = []
 
-// Dynamically enable AWS S3 / Cloudflare R2 if credentials are provided in .env
-if (process.env.S3_ACCESS_KEY_ID && process.env.S3_SECRET_ACCESS_KEY && process.env.S3_BUCKET) {
+// Dynamically enable Cloudflare R2 / S3 if credentials are provided in .env
+const r2Key = process.env.R2_ACCESS_KEY_ID || process.env.S3_ACCESS_KEY_ID
+const r2Secret = process.env.R2_SECRET_ACCESS_KEY || process.env.S3_SECRET_ACCESS_KEY
+const r2Bucket = process.env.R2_BUCKET || process.env.S3_BUCKET
+const r2Endpoint = process.env.R2_ENDPOINT || process.env.S3_ENDPOINT
+
+if (r2Key && r2Secret && r2Bucket) {
   plugins.push(
     s3Storage({
       collections: {
         media: true,
       },
-      bucket: process.env.S3_BUCKET,
+      bucket: r2Bucket,
       config: {
         credentials: {
-          accessKeyId: process.env.S3_ACCESS_KEY_ID,
-          secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
+          accessKeyId: r2Key,
+          secretAccessKey: r2Secret,
         },
-        region: process.env.S3_REGION || 'auto',
-        ...(process.env.S3_ENDPOINT ? { endpoint: process.env.S3_ENDPOINT } : {}),
+        region: process.env.R2_REGION || process.env.S3_REGION || 'auto',
+        ...(r2Endpoint ? { endpoint: r2Endpoint } : {}),
       },
     })
   )
