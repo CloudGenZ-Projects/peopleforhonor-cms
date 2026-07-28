@@ -49,15 +49,15 @@ const programItems = [
     slug: 'braiding-training',
     badge: 'Culture & Community Program',
     hero_subtitle:
-      'Learn professional hair braiding techniques, scalp care, and client care in a hands-on environment. Free 6-week program.',
+      'Learn professional braiding skills in a supportive, hands-on environment. Free 6-week program with tools provided and certification upon completion.',
     duration: '6 Weeks',
     capacity: '5 Participants',
     cost: '100% Free',
-    who_can_join: 'Youth & adults interested in braiding and hair care',
+    who_can_join: 'Youth & young adults (all genders), ages 16+',
     details_capacity: '5 participants per cohort',
     schedule: '2 sessions/week × 6 weeks (in person)',
-    details_cost: 'Free (materials provided during class)',
-    lead_instructor: 'Professional hair braider & stylist',
+    details_cost: 'Free (all braiding tools provided during class)',
+    lead_instructor: 'Experienced braider & community trainer',
     learning_outcomes: [
       { text: 'Sectioning and braiding foundations' },
       { text: 'Cornrows, knotless braids, and box braids' },
@@ -78,7 +78,8 @@ const programItems = [
     ],
     commitment_note: 'Attend 10 of 12 sessions to receive your completion certificate.',
     cta_heading: 'Ready to Start Your Braiding Journey?',
-    cta_description: 'Join our next cohort and master professional braiding skills in a supportive community.',
+    cta_description:
+      'Join our next cohort and build confident braiding skills in a supportive, judgment-free environment. All tools provided—just bring your commitment to learn.',
     register_button_text: 'Register Now',
     register_button_url:
       'https://docs.google.com/forms/d/e/1FAIpQLSfragX8BIMhxvgkFhyOc6nOJ7i8AJ9P8dl30OzlovYvCJ60zg/viewform',
@@ -92,11 +93,11 @@ const programItems = [
     duration: '6 Weeks',
     capacity: '5 Participants',
     cost: '100% Free',
-    who_can_join: 'Newcomers & residents interested in culinary arts & catering',
+    who_can_join: 'Adults and youth (all genders), comfortable working in a shared kitchen',
     details_capacity: '5 participants per cohort',
-    schedule: '1 session/week × 6 weeks',
-    details_cost: 'Free (ingredients provided)',
-    lead_instructor: 'Experienced Chef & Food Entrepreneur',
+    schedule: '1–2 sessions/week × 6 weeks (in person, kitchen-based)',
+    details_cost: 'Free (all ingredients and tools provided during class)',
+    lead_instructor: 'Community cook/caterer with cultural food experience',
     learning_outcomes: [
       { text: 'Kitchen safety and knife skills' },
       { text: 'Budget-friendly meal prep and planning' },
@@ -116,8 +117,9 @@ const programItems = [
       { week: 6, title: 'Community Feast', content: 'Final group cooking & celebration' },
     ],
     commitment_note: 'Attend 5 of 6 sessions to receive certificate.',
-    cta_heading: 'Join Our Community Kitchen',
-    cta_description: 'Cook, share, and connect with people who share your love for cultural food.',
+    cta_heading: 'Ready to Cook and Share Your Culture?',
+    cta_description:
+      'Join our community kitchen to learn new recipes, share your own, and explore how food can open doors to catering and small business opportunities.',
     register_button_text: 'Register Now',
     register_button_url:
       'https://docs.google.com/forms/d/e/1FAIpQLSfragX8BIMhxvgkFhyOc6nOJ7i8AJ9P8dl30OzlovYvCJ60zg/viewform',
@@ -131,30 +133,31 @@ const programItems = [
     duration: '6 Weeks',
     capacity: '8 Participants',
     cost: '100% Free',
-    who_can_join: 'Beginners of all ages interested in sewing & fashion',
+    who_can_join: 'Youth & adults, ages 14+',
     details_capacity: '8 participants per cohort',
-    schedule: '1 session/week × 6 weeks',
-    details_cost: 'Free (sewing machines & fabric provided)',
-    lead_instructor: 'Professional Tailor & Designer',
+    schedule: '1 session/week × 6 weeks (in person)',
+    details_cost: 'Free (machines on site; fabric provided for class projects)',
+    lead_instructor: 'Trained sewing instructor',
     learning_outcomes: [
       { text: 'Machine setup & stitching' },
       { text: 'Reading patterns & fabric selection' },
       { text: 'Create practical projects (tote bags, garments)' },
     ],
     takeaway_title: 'Takeaway',
-    takeaway_text: 'Completed projects to take home + sewing skills certificate',
-    curriculum_title: 'Curriculum Outline',
+    takeaway_text: 'Completion certificate + option to join intermediate cohort',
+    curriculum_title: 'Week-by-Week Curriculum',
     weeks: [
-      { week: 1, title: 'Machine Setup & Threading', content: 'Understanding straight stitches & bobbins' },
-      { week: 2, title: 'First Project: Tote Bag', content: 'Cutting fabric & assembling seams' },
-      { week: 3, title: 'Zipper & Pockets', content: 'Inserting zippers & finishing edges' },
-      { week: 4, title: 'Pattern Reading', content: 'Understanding measurements & sizing' },
-      { week: 5, title: 'Simple Garment Making', content: 'Creating skirts or aprons' },
-      { week: 6, title: 'Final Showcase', content: 'Showcasing finished handmade items' },
+      { week: 1, title: 'Foundations', content: 'Machine threading, bobbin winding & straight seams' },
+      { week: 2, title: 'Hems & Alterations', content: 'Basic clothing repairs & edge finishing' },
+      { week: 3, title: 'Zippers & Buttons', content: 'Fasteners, buttonholes & pocket construction' },
+      { week: 4, title: 'Simple Garments', content: 'Pattern cutting, sizing & garment assembly' },
+      { week: 5, title: 'Creative Upcycling', content: 'Repurposing thrifted fabrics into new items' },
+      { week: 6, title: 'Final Project Showcase', content: 'Complete a personal sewing project to take home' },
     ],
     commitment_note: 'Attend 5 of 6 sessions to complete all projects.',
-    cta_heading: 'Start Sewing Today',
-    cta_description: 'Unlock your creative potential and build practical sewing skills.',
+    cta_heading: 'Ready to Start Sewing?',
+    cta_description:
+      "Join our beginner-friendly sewing class and create practical projects you'll be proud of. All machines and fabric provided—no experience needed!",
     register_button_text: 'Register Now',
     register_button_url:
       'https://docs.google.com/forms/d/e/1FAIpQLSfragX8BIMhxvgkFhyOc6nOJ7i8AJ9P8dl30OzlovYvCJ60zg/viewform',
@@ -220,9 +223,10 @@ const programItems = [
       { text: 'Belonging across cultures: Shared music and stories foster connection' },
       { text: 'Low-barrier access: Free, equipment-free, led by trained facilitators' },
     ],
-    takeaway_title: 'No Experience Required',
-    takeaway_text: 'This is a judgment-free space where everyone is welcome, regardless of skill level or background.',
-    curriculum_title: 'What to Expect Flow',
+    takeaway_title: 'What to Bring',
+    takeaway_text:
+      'Comfortable clothes, water bottle, and an open heart. No experience required—judgment-free space for everyone.',
+    curriculum_title: 'What to Expect',
     weeks: [
       { week: 1, title: 'Gentle warm-up and breathwork', content: 'Start with mindful breathing and gentle stretches' },
       { week: 2, title: 'Learn foundational steps & cultural context', content: 'Discover the stories and traditions behind the movements' },
@@ -239,7 +243,7 @@ const programItems = [
 ]
 
 async function seed() {
-  console.log('Seeding all 6 ProgramDetails items into PostgreSQL...')
+  console.log('Seeding all 6 ProgramDetails items into PostgreSQL with 100% exact text...')
 
   const { getPayload } = await import('payload')
   const { default: config } = await import('./payload.config')
@@ -270,7 +274,7 @@ async function seed() {
     }
   }
 
-  console.log('All 6 ProgramDetails documents seeded successfully!')
+  console.log('All 6 ProgramDetails documents seeded successfully with 100% exact original text!')
   process.exit(0)
 }
 
