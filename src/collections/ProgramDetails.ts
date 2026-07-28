@@ -80,11 +80,11 @@ export const ProgramDetails: CollectionConfig = {
     },
     {
       name: 'lead_instructor',
-      label: 'Lead Instructor',
+      label: 'Lead Instructor / Support',
       type: 'text',
     },
 
-    // You'll Learn & Takeaway
+    // You'll Learn Outcomes
     {
       name: 'learning_outcomes',
       label: "You'll Learn Outcomes",
@@ -97,43 +97,69 @@ export const ProgramDetails: CollectionConfig = {
         },
       ],
     },
+
+    // Takeaway Box Toggle & Fields
+    {
+      name: 'showTakeaway',
+      label: 'Enable Takeaway / Special Note Box on Page?',
+      type: 'checkbox',
+      defaultValue: false,
+    },
     {
       name: 'takeaway_title',
       label: 'Takeaway Box Title',
       type: 'text',
       defaultValue: 'Takeaway',
+      admin: {
+        condition: (data) => Boolean(data?.showTakeaway),
+      },
     },
     {
       name: 'takeaway_text',
       label: 'Takeaway Box Description',
       type: 'textarea',
+      admin: {
+        condition: (data) => Boolean(data?.showTakeaway),
+      },
     },
 
-    // Week-by-Week Curriculum
+    // Curriculum Section Toggle & Fields
+    {
+      name: 'showCurriculum',
+      label: 'Enable Week-by-Week / Module Curriculum Section on Page?',
+      type: 'checkbox',
+      defaultValue: false,
+    },
     {
       name: 'curriculum_title',
       label: 'Curriculum Title',
       type: 'text',
       defaultValue: 'Week-by-Week Curriculum',
+      admin: {
+        condition: (data) => Boolean(data?.showCurriculum),
+      },
     },
     {
       name: 'weeks',
-      label: 'Curriculum Weeks',
+      label: 'Curriculum Weeks / Modules',
       type: 'array',
+      admin: {
+        condition: (data) => Boolean(data?.showCurriculum),
+      },
       fields: [
         {
           name: 'week',
-          label: 'Week Number',
+          label: 'Week / Module Number',
           type: 'number',
         },
         {
           name: 'title',
-          label: 'Week Title',
+          label: 'Title',
           type: 'text',
         },
         {
           name: 'content',
-          label: 'Week Content',
+          label: 'Content',
           type: 'textarea',
         },
       ],
@@ -142,6 +168,9 @@ export const ProgramDetails: CollectionConfig = {
       name: 'commitment_note',
       label: 'Commitment Required Note',
       type: 'textarea',
+      admin: {
+        condition: (data) => Boolean(data?.showCurriculum),
+      },
     },
 
     // Bottom CTA

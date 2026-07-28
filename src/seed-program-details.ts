@@ -24,8 +24,10 @@ const programItems = [
       { text: 'Sanitation, client care & shop etiquette' },
       { text: 'Basic business skills (pricing, bookings, tips)' },
     ],
+    showTakeaway: true,
     takeaway_title: 'Takeaway',
     takeaway_text: 'Completion certificate + optional mentorship for internships/apprenticeships',
+    showCurriculum: true,
     curriculum_title: 'Week-by-Week Curriculum',
     weeks: [
       { week: 1, title: 'Foundations', content: 'Tools, safety, sanitation; clipper guards & lengths' },
@@ -65,8 +67,10 @@ const programItems = [
       { text: 'Sanitation and client care' },
       { text: 'Basic business skills' },
     ],
+    showTakeaway: false,
     takeaway_title: null,
     takeaway_text: null,
+    showCurriculum: false,
     curriculum_title: null,
     weeks: [],
     commitment_note: null,
@@ -98,8 +102,10 @@ const programItems = [
       { text: 'Food presentation and potluck basics' },
       { text: 'Introduction to pricing, catering, and small food business skills' },
     ],
+    showTakeaway: false,
     takeaway_title: null,
     takeaway_text: null,
+    showCurriculum: false,
     curriculum_title: null,
     weeks: [],
     commitment_note: null,
@@ -129,8 +135,10 @@ const programItems = [
       { text: 'Reading patterns & fabric selection' },
       { text: 'Create practical projects (tote bags, garments)' },
     ],
+    showTakeaway: true,
     takeaway_title: 'Takeaway',
     takeaway_text: 'Completion certificate + option to join intermediate cohort',
+    showCurriculum: true,
     curriculum_title: 'Week-by-Week Curriculum',
     weeks: [
       { week: 1, title: 'Foundations', content: 'Machine threading, bobbin winding & straight seams' },
@@ -168,8 +176,10 @@ const programItems = [
       { text: 'Starter brand kit' },
       { text: 'A public pitch' },
     ],
+    showTakeaway: true,
     takeaway_title: 'Demo Night',
     takeaway_text: 'Pitch your business to a community panel and get valuable feedback',
+    showCurriculum: true,
     curriculum_title: 'Program Modules',
     weeks: [
       { week: 1, title: 'Problem → Solution', content: 'Clarity & customer discovery' },
@@ -209,9 +219,11 @@ const programItems = [
       { text: 'Belonging across cultures: Shared music and stories foster connection' },
       { text: 'Low-barrier access: Free, equipment-free, led by trained facilitators' },
     ],
+    showTakeaway: true,
     takeaway_title: 'What to Bring',
     takeaway_text:
       'Comfortable clothes, water bottle, and an open heart. No experience required—judgment-free space for everyone.',
+    showCurriculum: true,
     curriculum_title: 'What to Expect',
     weeks: [
       { week: 1, title: 'Gentle warm-up and breathwork', content: 'Start with mindful breathing and gentle stretches' },
@@ -229,7 +241,7 @@ const programItems = [
 ]
 
 async function seed() {
-  console.log('Seeding all 6 ProgramDetails items into PostgreSQL (explicitly wiping unused fields)...')
+  console.log('Seeding all 6 ProgramDetails items with conditional showTakeaway & showCurriculum flags...')
 
   const { getPayload } = await import('payload')
   const { default: config } = await import('./payload.config')
@@ -260,7 +272,7 @@ async function seed() {
     }
   }
 
-  console.log('All 6 ProgramDetails documents cleared & seeded successfully!')
+  console.log('All 6 ProgramDetails documents seeded with toggles successfully!')
   process.exit(0)
 }
 
