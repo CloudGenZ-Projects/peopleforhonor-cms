@@ -23,7 +23,7 @@ export const ProgramDetails: CollectionConfig = {
     },
     {
       name: 'slug',
-      label: 'URL Slug (e.g. barbershop-training)',
+      label: 'URL Slug (e.g. coaching, mentorship, barbershop-training)',
       type: 'text',
       required: true,
       unique: true,
@@ -33,7 +33,7 @@ export const ProgramDetails: CollectionConfig = {
       name: 'badge',
       label: 'Top Badge Tag',
       type: 'text',
-      defaultValue: 'Culture & Community Program',
+      defaultValue: 'Support Program',
     },
     {
       name: 'hero_subtitle',
@@ -47,7 +47,7 @@ export const ProgramDetails: CollectionConfig = {
     },
     {
       name: 'capacity',
-      label: 'Capacity Tag',
+      label: 'Capacity / Location Tag',
       type: 'text',
     },
     {
@@ -57,7 +57,7 @@ export const ProgramDetails: CollectionConfig = {
       defaultValue: '100% Free',
     },
 
-    // Program Details Card
+    // Standard Culture Program Details Card
     {
       name: 'who_can_join',
       label: 'Who Can Join',
@@ -84,7 +84,7 @@ export const ProgramDetails: CollectionConfig = {
       type: 'text',
     },
 
-    // You'll Learn Outcomes
+    // Standard You'll Learn Outcomes
     {
       name: 'learning_outcomes',
       label: "You'll Learn Outcomes",
@@ -95,6 +95,161 @@ export const ProgramDetails: CollectionConfig = {
           label: 'Outcome Text',
           type: 'text',
         },
+      ],
+    },
+
+    // Coaching Specific Fields
+    {
+      name: 'coaching_section_heading',
+      label: 'Coaching Section Heading',
+      type: 'text',
+      admin: {
+        condition: (data) => data?.slug === 'coaching' || Boolean(data?.coaching_career_title),
+      },
+    },
+    {
+      name: 'coaching_section_subtitle',
+      label: 'Coaching Section Subtitle',
+      type: 'text',
+      admin: {
+        condition: (data) => data?.slug === 'coaching' || Boolean(data?.coaching_career_title),
+      },
+    },
+    {
+      name: 'coaching_career_title',
+      label: 'Career Development Card Title',
+      type: 'text',
+      admin: {
+        condition: (data) => data?.slug === 'coaching' || Boolean(data?.coaching_career_title),
+      },
+    },
+    {
+      name: 'coaching_career_desc',
+      label: 'Career Development Card Description',
+      type: 'textarea',
+      admin: {
+        condition: (data) => data?.slug === 'coaching' || Boolean(data?.coaching_career_title),
+      },
+    },
+    {
+      name: 'coaching_career_items',
+      label: 'Career Development Bullet Points',
+      type: 'array',
+      admin: {
+        condition: (data) => data?.slug === 'coaching' || Boolean(data?.coaching_career_title),
+      },
+      fields: [{ name: 'text', type: 'text' }],
+    },
+    {
+      name: 'coaching_life_title',
+      label: 'Life & Wellbeing Card Title',
+      type: 'text',
+      admin: {
+        condition: (data) => data?.slug === 'coaching' || Boolean(data?.coaching_life_title),
+      },
+    },
+    {
+      name: 'coaching_life_desc',
+      label: 'Life & Wellbeing Card Description',
+      type: 'textarea',
+      admin: {
+        condition: (data) => data?.slug === 'coaching' || Boolean(data?.coaching_life_title),
+      },
+    },
+    {
+      name: 'coaching_life_items',
+      label: 'Life & Wellbeing Bullet Points',
+      type: 'array',
+      admin: {
+        condition: (data) => data?.slug === 'coaching' || Boolean(data?.coaching_life_title),
+      },
+      fields: [{ name: 'text', type: 'text' }],
+    },
+    {
+      name: 'coaching_expect_title',
+      label: 'What to Expect Title',
+      type: 'text',
+      admin: {
+        condition: (data) => data?.slug === 'coaching' || Boolean(data?.coaching_expect_title),
+      },
+    },
+    {
+      name: 'coaching_expect_items',
+      label: 'What to Expect Cards',
+      type: 'array',
+      admin: {
+        condition: (data) => data?.slug === 'coaching' || Boolean(data?.coaching_expect_title),
+      },
+      fields: [
+        { name: 'title', type: 'text' },
+        { name: 'description', type: 'textarea' },
+      ],
+    },
+
+    // Mentorship Specific Fields
+    {
+      name: 'mentorship_for_title',
+      label: "Who It's For Title",
+      type: 'text',
+      admin: {
+        condition: (data) => data?.slug === 'mentorship' || Boolean(data?.mentorship_for_title),
+      },
+    },
+    {
+      name: 'mentorship_for_subtitle',
+      label: "Who It's For Subtitle",
+      type: 'textarea',
+      admin: {
+        condition: (data) => data?.slug === 'mentorship' || Boolean(data?.mentorship_for_title),
+      },
+    },
+    {
+      name: 'mentorship_for_cards',
+      label: "Who It's For Cards",
+      type: 'array',
+      admin: {
+        condition: (data) => data?.slug === 'mentorship' || Boolean(data?.mentorship_for_cards?.length),
+      },
+      fields: [
+        { name: 'title', type: 'text' },
+        { name: 'description', type: 'textarea' },
+      ],
+    },
+    {
+      name: 'mentorship_works_title',
+      label: 'How Our Mentorship Works Title',
+      type: 'text',
+      admin: {
+        condition: (data) => data?.slug === 'mentorship' || Boolean(data?.mentorship_works_title),
+      },
+    },
+    {
+      name: 'mentorship_works_items',
+      label: 'How Our Mentorship Works Items',
+      type: 'array',
+      admin: {
+        condition: (data) => data?.slug === 'mentorship' || Boolean(data?.mentorship_works_items?.length),
+      },
+      fields: [{ name: 'text', type: 'text' }],
+    },
+    {
+      name: 'mentorship_why_title',
+      label: 'Why Mentorship Matters Title',
+      type: 'text',
+      admin: {
+        condition: (data) => data?.slug === 'mentorship' || Boolean(data?.mentorship_why_title),
+      },
+    },
+    {
+      name: 'mentorship_why_items',
+      label: 'Why Mentorship Matters Items',
+      type: 'array',
+      admin: {
+        condition: (data) => data?.slug === 'mentorship' || Boolean(data?.mentorship_why_items?.length),
+      },
+      fields: [
+        { name: 'title', type: 'text' },
+        { name: 'description', type: 'text' },
       ],
     },
 
@@ -186,16 +341,26 @@ export const ProgramDetails: CollectionConfig = {
     },
     {
       name: 'register_button_text',
-      label: 'Register Button Text',
+      label: 'Button 1 Text',
       type: 'text',
-      defaultValue: 'Register Now',
+      defaultValue: 'Apply Now',
     },
     {
       name: 'register_button_url',
-      label: 'Register Form URL',
+      label: 'Button 1 Form URL',
       type: 'text',
       defaultValue:
         'https://docs.google.com/forms/d/e/1FAIpQLSfragX8BIMhxvgkFhyOc6nOJ7i8AJ9P8dl30OzlovYvCJ60zg/viewform',
+    },
+    {
+      name: 'cta_btn2_text',
+      label: 'Button 2 Text',
+      type: 'text',
+    },
+    {
+      name: 'cta_btn2_url',
+      label: 'Button 2 Form URL',
+      type: 'text',
     },
   ],
 }

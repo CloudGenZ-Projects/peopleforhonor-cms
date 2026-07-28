@@ -238,10 +238,93 @@ const programItems = [
     register_button_url:
       'https://docs.google.com/forms/d/e/1FAIpQLSfragX8BIMhxvgkFhyOc6nOJ7i8AJ9P8dl30OzlovYvCJ60zg/viewform',
   },
+  {
+    title: 'Coaching Program',
+    slug: 'coaching',
+    badge: 'Support Program',
+    hero_subtitle:
+      'One-on-one support to help you reach your goals. Our Coaching program connects you with trained PFH coaches who guide you through practical steps for personal growth, employment readiness, and everyday wellbeing.',
+    duration: 'Flexible Schedule',
+    capacity: '1-on-1 Sessions',
+    cost: '100% Free',
+    coaching_section_heading: 'Choose Your Coaching Path',
+    coaching_section_subtitle: 'All coaching is free and available online or in person.',
+    coaching_career_title: 'Career Development',
+    coaching_career_desc: "Sharpen your professional skills and get job-ready support. You'll work one-on-one with a coach to:",
+    coaching_career_items: [
+      { text: 'Build a strong, modern résumé that highlights your experience and goals' },
+      { text: 'Create or improve your LinkedIn profile for networking and job searches' },
+      { text: 'Strengthen your computer literacy, using email, job boards, and digital tools with confidence' },
+    ],
+    coaching_life_title: 'Life & Wellbeing',
+    coaching_life_desc: 'Focus on balance, motivation, and everyday habits that help you thrive. Your coach will guide you through:',
+    coaching_life_items: [
+      { text: 'Goal setting that sticks and feels achievable' },
+      { text: 'Time management techniques to get more done, with less stress' },
+      { text: 'Nutrition and sleep basics for sustained energy' },
+      { text: 'Building healthy habits that support your physical and mental wellness' },
+    ],
+    coaching_expect_title: 'What to Expect',
+    coaching_expect_items: [
+      { title: 'A dedicated PFH coach matched to your goals', description: 'Get paired with a coach who understands your journey' },
+      { title: 'Structured sessions with hands-on exercises', description: 'Practical, actionable sessions that build real skills' },
+      { title: 'Simple action plans and accountability check-ins', description: 'Stay on track with clear goals and regular support' },
+      { title: 'Access to templates, resources, and referrals', description: 'Tools and connections to help you succeed' },
+    ],
+    cta_heading: 'Ready to Start Your Coaching Journey?',
+    cta_description:
+      "Whether you're looking to advance your career or improve your wellbeing, our trained coaches are here to support you every step of the way.",
+    register_button_text: 'Apply for Coaching',
+    register_button_url:
+      'https://docs.google.com/forms/d/e/1FAIpQLSfragX8BIMhxvgkFhyOc6nOJ7i8AJ9P8dl30OzlovYvCJ60zg/viewform',
+    cta_btn2_text: 'Become a Volunteer Coach',
+    cta_btn2_url:
+      'https://docs.google.com/forms/d/e/1FAIpQLSfragX8BIMhxvgkFhyOc6nOJ7i8AJ9P8dl30OzlovYvCJ60zg/viewform',
+  },
+  {
+    title: 'Mentorship Program',
+    slug: 'mentorship',
+    badge: 'Support Program',
+    hero_subtitle:
+      'Real people. Real careers. Real guidance. PFH pairs you with a mentor in your field of interest for day-in-the-life insights, career advice, and practical next steps. Free. Safe. Flexible. Hybrid.',
+    duration: 'Flexible Schedule',
+    capacity: 'Virtual or In-Person',
+    cost: '100% Free',
+    mentorship_for_title: "Who It's For",
+    mentorship_for_subtitle:
+      "Whether you're exploring careers, switching fields, or ready to give back, our mentorship program connects you with the right people.",
+    mentorship_for_cards: [
+      { title: 'Grade 12–University Students', description: 'Explore programs, careers, and real "day-in-the-life" experiences.' },
+      { title: 'Adults (Early/Mid-Career)', description: 'Switch roles, level up, or re-enter the workforce with insider guidance.' },
+      { title: 'Adults Helping Adults (Mentors)', description: 'Professionals, entrepreneurs, tradespeople, and community leaders willing to share real-world insight (2–4 hrs/month). Training and support provided.' },
+    ],
+    mentorship_works_title: 'How Our Mentorship Works',
+    mentorship_works_items: [
+      { text: '1:1 mentorship (virtual or in-person), optional group circles' },
+      { text: 'Adults helping Adults: 3 times a year meeting circle' },
+      { text: 'Apply anytime; rolling matches based on availability' },
+    ],
+    mentorship_why_title: 'Why Mentorship Matters',
+    mentorship_why_items: [
+      { title: 'Real-World Insights', description: "Learn what it's really like in your field of interest" },
+      { title: 'Career Navigation', description: 'Get guidance on education, training, and next steps' },
+      { title: 'Professional Network', description: 'Build connections that open doors' },
+      { title: 'Confidence & Clarity', description: 'Make informed decisions about your future' },
+    ],
+    cta_heading: 'Ready to Connect?',
+    cta_description:
+      "Whether you're seeking guidance or ready to share your experience, join our mentorship community today.",
+    register_button_text: 'Apply for a Mentor',
+    register_button_url:
+      'https://docs.google.com/forms/d/e/1FAIpQLSfragX8BIMhxvgkFhyOc6nOJ7i8AJ9P8dl30OzlovYvCJ60zg/viewform',
+    cta_btn2_text: 'Volunteer as a Mentor',
+    cta_btn2_url:
+      'https://docs.google.com/forms/d/e/1FAIpQLSfragX8BIMhxvgkFhyOc6nOJ7i8AJ9P8dl30OzlovYvCJ60zg/viewform',
+  },
 ]
 
 async function seed() {
-  console.log('Seeding all 6 ProgramDetails items with 100% exact initial commit text...')
+  console.log('Seeding all 8 ProgramDetails items into PostgreSQL...')
 
   const { getPayload } = await import('payload')
   const { default: config } = await import('./payload.config')
@@ -272,7 +355,7 @@ async function seed() {
     }
   }
 
-  console.log('All 6 ProgramDetails documents seeded with exact initial text successfully!')
+  console.log('All 8 ProgramDetails documents seeded successfully!')
   process.exit(0)
 }
 
