@@ -65,6 +65,11 @@ const programItems = [
       { text: 'Sanitation and client care' },
       { text: 'Basic business skills' },
     ],
+    takeaway_title: null,
+    takeaway_text: null,
+    curriculum_title: null,
+    weeks: [],
+    commitment_note: null,
     cta_heading: 'Ready to Start Your Braiding Journey?',
     cta_description:
       'Join our next cohort and build confident braiding skills in a supportive, judgment-free environment. All tools provided—just bring your commitment to learn.',
@@ -93,6 +98,11 @@ const programItems = [
       { text: 'Food presentation and potluck basics' },
       { text: 'Introduction to pricing, catering, and small food business skills' },
     ],
+    takeaway_title: null,
+    takeaway_text: null,
+    curriculum_title: null,
+    weeks: [],
+    commitment_note: null,
     cta_heading: 'Ready to Cook and Share Your Culture?',
     cta_description:
       'Join our community kitchen to learn new recipes, share your own, and explore how food can open doors to catering and small business opportunities.',
@@ -105,7 +115,7 @@ const programItems = [
     slug: 'sewing-beginners',
     badge: 'Culture & Community Program',
     hero_subtitle:
-      'Learn machine threading, bobbin winding, straight seams, basic clothing repairs, edge finishing, fasteners, buttonholes, pocket construction, pattern cutting, sizing, garment assembly, and creative upcycling. Completion certificate plus option to join intermediate cohort.',
+      'Learn machine setup, stitching, pattern reading, and garment creation with free machines provided during class.',
     duration: '6 Weeks',
     capacity: '8 Participants',
     cost: '100% Free',
@@ -130,6 +140,7 @@ const programItems = [
       { week: 5, title: 'Creative Upcycling', content: 'Repurposing thrifted fabrics into new items' },
       { week: 6, title: 'Final Project Showcase', content: 'Complete a personal sewing project to take home' },
     ],
+    commitment_note: null,
     cta_heading: 'Ready to Start Sewing?',
     cta_description:
       "Join our beginner-friendly sewing class and create practical projects you'll be proud of. All machines and fabric provided—no experience needed!",
@@ -170,6 +181,7 @@ const programItems = [
       { week: 7, title: 'Pitch Practice', content: 'Storytelling' },
       { week: 8, title: 'Demo Night', content: 'Pitch to community panel' },
     ],
+    commitment_note: null,
     cta_heading: 'Ready to Launch Your Business?',
     cta_description:
       'Join our Entrepreneurship Launchpad and turn your idea into reality. Get mentorship, templates, and the confidence to pitch your business.',
@@ -206,6 +218,7 @@ const programItems = [
       { week: 2, title: 'Learn foundational steps & cultural context', content: 'Discover the stories and traditions behind the movements' },
       { week: 3, title: 'Group choreography & cool-down reflection', content: 'Dance together and reflect on the experience' },
     ],
+    commitment_note: null,
     cta_heading: 'Ready to Move & Connect?',
     cta_description:
       'Join us for Cultural Dance & Movement and experience the joy of rhythmic movement, cultural connection, and community belonging. All levels welcome!',
@@ -216,7 +229,7 @@ const programItems = [
 ]
 
 async function seed() {
-  console.log('Seeding all 6 ProgramDetails items into PostgreSQL with exact original fields...')
+  console.log('Seeding all 6 ProgramDetails items into PostgreSQL (explicitly wiping unused fields)...')
 
   const { getPayload } = await import('payload')
   const { default: config } = await import('./payload.config')
@@ -247,7 +260,7 @@ async function seed() {
     }
   }
 
-  console.log('All 6 ProgramDetails documents seeded successfully!')
+  console.log('All 6 ProgramDetails documents cleared & seeded successfully!')
   process.exit(0)
 }
 
