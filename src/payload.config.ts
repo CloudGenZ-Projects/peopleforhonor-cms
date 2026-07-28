@@ -8,6 +8,7 @@ import { HomePage } from './globals/HomePage'
 import { AboutPage } from './globals/AboutPage'
 import { ProgramsPage } from './globals/ProgramsPage'
 import { Media } from './collections/Media'
+import { ProgramDetails } from './collections/ProgramDetails'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -91,6 +92,7 @@ export default buildConfig({
       ],
     },
     Media,
+    ProgramDetails,
   ],
   globals: [HomePage, AboutPage, ProgramsPage],
   editor: lexicalEditor({}),

@@ -12,7 +12,8 @@
     "db:push": "npx tsx src/sync-db.ts",
     "db:seed-home": "npx tsx src/seed-home.ts",
     "db:seed-about": "npx tsx src/seed-about.ts",
-    "db:seed-programs": "npx tsx src/seed-programs.ts"
+    "db:seed-programs": "npx tsx src/seed-programs.ts",
+    "db:seed-program-details": "npx tsx src/seed-program-details.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.86.0",
