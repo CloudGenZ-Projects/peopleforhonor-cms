@@ -15,7 +15,8 @@
     "db:seed-programs": "npx tsx src/seed-programs.ts",
     "db:seed-program-details": "npx tsx src/seed-program-details.ts",
     "db:seed-gallery": "npx tsx src/seed-gallery.ts",
-    "db:seed-join": "npx tsx src/seed-join.ts"
+    "db:seed-join": "npx tsx src/seed-join.ts",
+    "db:seed-contact": "npx tsx src/seed-contact.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.86.0",
