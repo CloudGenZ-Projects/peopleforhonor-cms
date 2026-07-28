@@ -149,7 +149,6 @@ async function seed() {
         'https://docs.google.com/forms/d/e/1FAIpQLSeoVDTZ9VLLCRIP-0twZo8urDmzM6VLAhC-QQ2rHOoeyVce4w/viewform?usp=header',
 
       // 5. Home CTA & Newsletter
-      cta_title: 'Ready to Start Your Journey?',
       cta_heading:
         'Building a life in a new country is not easy. We are here so you do not have to do it alone.',
       cta_description:

@@ -354,14 +354,8 @@ export const HomePage: GlobalConfig = {
           label: '5. Home CTA & Newsletter',
           fields: [
             {
-              name: 'cta_title',
-              label: 'Home CTA Top Title',
-              type: 'text',
-              defaultValue: 'Ready to Start Your Journey?',
-            },
-            {
               name: 'cta_heading',
-              label: 'Home CTA Subheading',
+              label: 'Home CTA Heading',
               type: 'text',
               defaultValue:
                 'Building a life in a new country is not easy. We are here so you do not have to do it alone.',
