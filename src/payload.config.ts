@@ -63,7 +63,7 @@ export default buildConfig({
       ],
     },
   },
-  cors: corsOrigins,
+  cors: '*',
   csrf: corsOrigins,
   collections: [
     {
