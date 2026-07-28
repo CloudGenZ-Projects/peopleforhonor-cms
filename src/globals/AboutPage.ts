@@ -37,6 +37,12 @@ export const AboutPage: GlobalConfig = {
           label: "2. Founder's Story",
           fields: [
             {
+              name: 'banner_image',
+              label: 'Story Banner Image',
+              type: 'upload',
+              relationTo: 'media',
+            },
+            {
               name: 'founder_badge',
               label: 'Badge Text',
               type: 'text',
