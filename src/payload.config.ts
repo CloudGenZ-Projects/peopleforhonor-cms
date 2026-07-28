@@ -43,6 +43,7 @@ export default buildConfig({
   admin: {
     user: 'users',
     livePreview: {
+      url: process.env.PAYLOAD_PUBLIC_SITE_URL || 'http://localhost:5173',
       breakpoints: [
         { label: 'Mobile', name: 'mobile', width: 375, height: 667 },
         { label: 'Tablet', name: 'tablet', width: 768, height: 1024 },

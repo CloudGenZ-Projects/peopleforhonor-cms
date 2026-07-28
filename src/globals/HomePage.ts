@@ -4,7 +4,7 @@ export const HomePage: GlobalConfig = {
   slug: 'home-page',
   admin: {
     livePreview: {
-      url: process.env.PAYLOAD_PUBLIC_SITE_URL || 'http://localhost:8080',
+      url: process.env.PAYLOAD_PUBLIC_SITE_URL || 'http://localhost:5173',
     },
   },
   access: {
