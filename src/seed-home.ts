@@ -166,6 +166,22 @@ async function seed() {
       newsletter_link_text: 'Apply for our Computer Access Program',
       newsletter_link_url:
         'https://www.zeffy.com/en-CA/newsletter-form/computer-access-program-application',
+
+      // 6. Contact & Journey Section
+      contact_heading: 'Ready to Start Your Journey?',
+      contact_description:
+        "We're here to help you every step of the way. Reach out to us and let's begin building your bright future in Canada together.",
+      contact_phone: '613 672 7062',
+      contact_email: 'info@peopleforhonor.com',
+      contact_address: '1505 laperrieve Ave Suite 506, Ottawa, ON, K127T1',
+      contact_hours: 'Monday - Friday: 9:00 AM - 6:00 PM',
+      contact_box_title: "We're Here for You",
+      contact_box_text:
+        "Your success is our mission. Don't hesitate to reach out - we're committed to supporting your journey in Canada.",
+      zeffy_embed_1_url:
+        'https://www.zeffy.com/en-CA/embed/newsletter-form/sign-up-for-our-newsletter-1932',
+      zeffy_embed_2_url:
+        'https://www.zeffy.com/en-CA/embed/newsletter-form/join-our-mailing-list-18',
     },
   })
 

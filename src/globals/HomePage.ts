@@ -437,6 +437,75 @@ export const HomePage: GlobalConfig = {
             },
           ],
         },
+        {
+          label: '6. Contact & Journey Section',
+          fields: [
+            {
+              name: 'contact_heading',
+              label: 'Contact Section Heading',
+              type: 'text',
+              defaultValue: 'Ready to Start Your Journey?',
+            },
+            {
+              name: 'contact_description',
+              label: 'Contact Section Subtitle',
+              type: 'textarea',
+              defaultValue:
+                "We're here to help you every step of the way. Reach out to us and let's begin building your bright future in Canada together.",
+            },
+            {
+              name: 'contact_phone',
+              label: 'Contact Phone Number',
+              type: 'text',
+              defaultValue: '613 672 7062',
+            },
+            {
+              name: 'contact_email',
+              label: 'Contact Email Address',
+              type: 'text',
+              defaultValue: 'info@peopleforhonor.com',
+            },
+            {
+              name: 'contact_address',
+              label: 'Contact Mailing Address',
+              type: 'text',
+              defaultValue: '1505 laperrieve Ave Suite 506, Ottawa, ON, K127T1',
+            },
+            {
+              name: 'contact_hours',
+              label: 'Office Hours',
+              type: 'text',
+              defaultValue: 'Monday - Friday: 9:00 AM - 6:00 PM',
+            },
+            {
+              name: 'contact_box_title',
+              label: 'Support Card Title',
+              type: 'text',
+              defaultValue: "We're Here for You",
+            },
+            {
+              name: 'contact_box_text',
+              label: 'Support Card Description',
+              type: 'textarea',
+              defaultValue:
+                "Your success is our mission. Don't hesitate to reach out - we're committed to supporting your journey in Canada.",
+            },
+            {
+              name: 'zeffy_embed_1_url',
+              label: 'Zeffy Embed Form 1 URL',
+              type: 'text',
+              defaultValue:
+                'https://www.zeffy.com/en-CA/embed/newsletter-form/sign-up-for-our-newsletter-1932',
+            },
+            {
+              name: 'zeffy_embed_2_url',
+              label: 'Zeffy Embed Form 2 URL',
+              type: 'text',
+              defaultValue:
+                'https://www.zeffy.com/en-CA/embed/newsletter-form/join-our-mailing-list-18',
+            },
+          ],
+        },
       ],
     },
   ],
