@@ -54,16 +54,19 @@ const plugins: any[] = [
   multiTenantPlugin({
     collections: {
       media: {},
+      'program-details': {},
+      'home-page': { isGlobal: true },
+      'about-page': { isGlobal: true },
+      'programs-page': { isGlobal: true },
+      'gallery-page': { isGlobal: true },
+      'join-us-page': { isGlobal: true },
+      'contact-page': { isGlobal: true },
+      'mtsc-home-page': { isGlobal: true },
+      'astro-test-page': { isGlobal: true },
     },
     userHasAccessToAllTenants: (user: any) => {
       if (!user) return false
-      // Only Super Admin email gets access to all tenants
-      if (user.email === 'cloudgenz.dev@gmail.com') {
-        return true
-      }
-      // Otherwise, access is restricted to their assigned tenant(s)
-      const tenantCount = Array.isArray(user.tenants) ? user.tenants.length : 0
-      return tenantCount > 1
+      return user.email === 'cloudgenz.dev@gmail.com'
     },
   } as any),
 ]
