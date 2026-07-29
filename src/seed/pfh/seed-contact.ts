@@ -8,12 +8,12 @@ async function seed() {
   console.log('Seeding ContactPage Global into PostgreSQL...')
 
   const { getPayload } = await import('payload')
-  const { default: config } = await import('./payload.config')
+  const { default: config } = await import('../../payload.config')
 
   const payload = await getPayload({ config })
 
   await payload.updateGlobal({
-    slug: 'contact-page',
+    slug: 'contact-page' as any,
     data: {
       contact_heading: 'Get in Touch',
       contact_description:

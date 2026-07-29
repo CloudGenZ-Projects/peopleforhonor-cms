@@ -327,13 +327,13 @@ async function seed() {
   console.log('Seeding all 8 ProgramDetails items into PostgreSQL...')
 
   const { getPayload } = await import('payload')
-  const { default: config } = await import('./payload.config')
+  const { default: config } = await import('../../payload.config')
 
   const payload = await getPayload({ config })
 
   for (const item of programItems) {
     const existing = await payload.find({
-      collection: 'program-details',
+      collection: 'program-details' as any,
       where: {
         slug: { equals: item.slug },
       },
@@ -341,14 +341,14 @@ async function seed() {
 
     if (existing.docs.length > 0) {
       await payload.update({
-        collection: 'program-details',
+        collection: 'program-details' as any,
         id: existing.docs[0].id,
         data: item,
       })
       console.log(`Updated ProgramDetails document: ${item.slug}`)
     } else {
       await payload.create({
-        collection: 'program-details',
+        collection: 'program-details' as any,
         data: item,
       })
       console.log(`Created ProgramDetails document: ${item.slug}`)

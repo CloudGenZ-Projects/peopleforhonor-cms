@@ -8,12 +8,12 @@ async function seed() {
   console.log('Seeding AstroTestPage Global into PostgreSQL...')
 
   const { getPayload } = await import('payload')
-  const { default: config } = await import('./payload.config')
+  const { default: config } = await import('../../payload.config')
 
   const payload = await getPayload({ config })
 
   await payload.updateGlobal({
-    slug: 'astro-test-page',
+    slug: 'astro-test-page' as any,
     data: {
       test_heading: 'Astro Test',
     },

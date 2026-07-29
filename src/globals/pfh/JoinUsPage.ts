@@ -12,7 +12,6 @@ export const JoinUsPage: GlobalConfig = {
     update: () => true,
   },
   fields: [
-    // 1. Hero Section
     {
       name: 'hero_title',
       label: 'Hero Title',
@@ -51,8 +50,6 @@ export const JoinUsPage: GlobalConfig = {
       type: 'text',
       defaultValue: 'https://chat.whatsapp.com/HSUmX0TTqpxDEIkJWZXRMv',
     },
-
-    // 2. Ways to Give Section
     {
       name: 'give_heading',
       label: 'Give Section Heading',
@@ -66,8 +63,6 @@ export const JoinUsPage: GlobalConfig = {
       defaultValue:
         'Your generosity lifts newcomers and neighbours: helping more people learn, belong, and move forward. Think big. Belong fully. Give back.',
     },
-
-    // 3. One-Time Donation Card
     {
       name: 'onetime_title',
       label: 'One-Time Donation Title',
@@ -108,8 +103,6 @@ export const JoinUsPage: GlobalConfig = {
       type: 'text',
       defaultValue: 'https://www.zeffy.com/en-CA/donation-form/people-for-honor-donate',
     },
-
-    // 4. Monthly Giving Card
     {
       name: 'monthly_title',
       label: 'Monthly Giving Title',
@@ -147,8 +140,6 @@ export const JoinUsPage: GlobalConfig = {
       type: 'text',
       defaultValue: 'https://www.zeffy.com/embed/donation-form/raising-futures-every-month?modal=true',
     },
-
-    // 5. Additional Giving Options (3 Cards)
     {
       name: 'honour_title',
       label: 'Give in Honour Title',
@@ -173,7 +164,6 @@ export const JoinUsPage: GlobalConfig = {
       type: 'text',
       defaultValue: 'https://www.zeffy.com/embed/donation-form/give-in-honour-or-in-memory?modal=true',
     },
-
     {
       name: 'securities_title',
       label: 'Donate Securities Title',
@@ -199,7 +189,6 @@ export const JoinUsPage: GlobalConfig = {
       defaultValue:
         'https://docs.google.com/forms/d/e/1FAIpQLSeCFnInCVyyaS5FA3-BYdb5nrjO45x3A1jVhYuQ76DpjGYcTA/viewform',
     },
-
     {
       name: 'corporate_title',
       label: 'Corporate Partnerships Title',
@@ -224,8 +213,6 @@ export const JoinUsPage: GlobalConfig = {
       type: 'text',
       defaultValue: 'https://www.zeffy.com/embed/donation-form/corporate-partnerships-sponsor-a-program?modal=true',
     },
-
-    // 6. Other Ways to Support Section
     {
       name: 'other_heading',
       label: 'Other Ways Section Heading',
@@ -261,8 +248,6 @@ export const JoinUsPage: GlobalConfig = {
       type: 'text',
       defaultValue: 'Pay to People for Honor, mail to: 1505 laperrieve Ave Suite 506 Ottawa, ON, K127T1',
     },
-
-    // 7. Stay Connected Section
     {
       name: 'stay_heading',
       label: 'Stay Connected Heading',
@@ -299,8 +284,6 @@ export const JoinUsPage: GlobalConfig = {
       type: 'text',
       defaultValue: 'Join Our Mailing List',
     },
-
-    // 8. Community Gathering Gallery (6 Bottom Images)
     {
       name: 'gallery_heading',
       label: 'Bottom Gallery Heading',

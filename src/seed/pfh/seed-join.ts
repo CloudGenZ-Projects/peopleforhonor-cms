@@ -75,12 +75,12 @@ async function seed() {
   console.log('Seeding JoinUsPage Global with 100% exact text and 6 bottom images...')
 
   const { getPayload } = await import('payload')
-  const { default: config } = await import('./payload.config')
+  const { default: config } = await import('../../payload.config')
 
   const payload = await getPayload({ config })
 
   await payload.updateGlobal({
-    slug: 'join-us-page',
+    slug: 'join-us-page' as any,
     data: {
       hero_title: 'Ways to Give',
       hero_subtitle:

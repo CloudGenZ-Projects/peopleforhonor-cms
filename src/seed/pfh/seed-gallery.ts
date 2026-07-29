@@ -42,12 +42,12 @@ async function seed() {
   console.log('Seeding GalleryPage Global with exact 2 images and 12 YouTube video links...')
 
   const { getPayload } = await import('payload')
-  const { default: config } = await import('./payload.config')
+  const { default: config } = await import('../../payload.config')
 
   const payload = await getPayload({ config })
 
   await payload.updateGlobal({
-    slug: 'gallery-page',
+    slug: 'gallery-page' as any,
     data: {
       hero_title: 'Our Community Voice',
       hero_subtitle:

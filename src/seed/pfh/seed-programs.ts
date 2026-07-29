@@ -8,12 +8,12 @@ async function seed() {
   console.log('Seeding complete ProgramsPage dataset into PostgreSQL...')
 
   const { getPayload } = await import('payload')
-  const { default: config } = await import('./payload.config')
+  const { default: config } = await import('../../payload.config')
 
   const payload = await getPayload({ config })
 
   await payload.updateGlobal({
-    slug: 'programs-page',
+    slug: 'programs-page' as any,
     data: {
       // 1. Hero Section
       hero_title: 'Our Programs',

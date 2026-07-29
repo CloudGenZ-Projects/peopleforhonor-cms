@@ -12,7 +12,6 @@ export const GalleryPage: GlobalConfig = {
     update: () => true,
   },
   fields: [
-    // 1. Hero Section
     {
       name: 'hero_title',
       label: 'Hero Title',
@@ -26,8 +25,6 @@ export const GalleryPage: GlobalConfig = {
       defaultValue:
         'Real voices. Real stories. Our community is at the heart of everything we do, built by them, for them. Explore the videos and images below to hear their stories and experiences of our community members.',
     },
-
-    // 2. Images List
     {
       name: 'images',
       label: 'Gallery Images',
@@ -72,8 +69,6 @@ export const GalleryPage: GlobalConfig = {
         },
       ],
     },
-
-    // 3. YouTube Videos List
     {
       name: 'videos',
       label: 'Gallery Videos (YouTube Links)',
@@ -114,8 +109,6 @@ export const GalleryPage: GlobalConfig = {
         },
       ],
     },
-
-    // 4. CTA Section
     {
       name: 'cta_heading',
       label: 'CTA Heading',

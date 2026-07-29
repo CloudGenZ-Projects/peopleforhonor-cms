@@ -9,12 +9,12 @@ async function seed() {
   console.log('Seeding complete HomePage dataset into PostgreSQL...')
 
   const { getPayload } = await import('payload')
-  const { default: config } = await import('./payload.config')
+  const { default: config } = await import('../../payload.config')
 
   const payload = await getPayload({ config })
 
   await payload.updateGlobal({
-    slug: 'home-page',
+    slug: 'home-page' as any,
     data: {
       // 1. Hero Section
       hero_badge: 'Supporting Immigrants to Canada',
