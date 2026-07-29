@@ -21,7 +21,9 @@ const defaultOrigins = [
   'http://localhost:8080',
   'http://localhost:3000',
   'http://localhost:4000',
+  'https://pfh-cms.cloudgenz.com',
   'https://client.cloudgenz.com',
+  'https://peopleforhonor.com',
   '*',
 ]
 
@@ -60,6 +62,7 @@ if (r2Key && r2Secret && r2Bucket) {
 }
 
 export default buildConfig({
+  serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL || 'https://pfh-cms.cloudgenz.com',
   routes: {
     admin: '/cms/admin',
   },
