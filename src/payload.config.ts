@@ -57,11 +57,17 @@ const plugins: any[] = [
         useBaseFilter: false,
         tenantFieldOverrides: {
           required: false,
+          admin: {
+            hidden: false,
+          },
         },
       },
     },
     tenantField: {
       required: false,
+      admin: {
+        hidden: false,
+      },
     },
     useUsersTenantFilter: false,
     useTenantsListFilter: false,
