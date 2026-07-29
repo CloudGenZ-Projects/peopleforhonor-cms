@@ -10,7 +10,7 @@ export const HomePage: GlobalConfig = {
     },
   },
   access: {
-    read: () => true,
+    read: (args) => checkTenantAccess(args, 'peopleforhonor'),
     update: (args) => checkTenantAccess(args, 'peopleforhonor'),
   },
   fields: [

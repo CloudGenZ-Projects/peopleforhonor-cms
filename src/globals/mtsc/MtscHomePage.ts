@@ -11,7 +11,7 @@ export const MtscHomePage: GlobalConfig = {
     },
   },
   access: {
-    read: () => true,
+    read: (args) => checkTenantAccess(args, 'mtsc'),
     update: (args) => checkTenantAccess(args, 'mtsc'),
   },
   fields: [
