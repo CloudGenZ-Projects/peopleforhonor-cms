@@ -54,8 +54,8 @@ const plugins: any[] = [
     collections: {
       media: {},
     },
-    userHasAccess: () => true,
-  }),
+    userHasAccessToAllTenants: () => true,
+  } as any),
 ]
 
 // Dynamically enable Cloudflare R2 / S3 if credentials are provided in .env
