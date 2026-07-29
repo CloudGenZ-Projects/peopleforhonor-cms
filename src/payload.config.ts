@@ -56,7 +56,6 @@ const plugins: any[] = [
       media: {
         useBaseFilter: false,
       },
-      'program-details': {},
     },
     useUsersTenantFilter: false,
     useTenantsListFilter: false,
