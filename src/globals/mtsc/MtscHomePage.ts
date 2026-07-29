@@ -1,16 +1,18 @@
 import type { GlobalConfig } from 'payload'
+import { checkTenantAccess } from '../../utils/tenantAccess'
 
 export const MtscHomePage: GlobalConfig = {
   slug: 'mtsc-home-page',
   label: 'MTSC Home Page',
   admin: {
+    group: 'MTSC Halifax',
     livePreview: {
       url: process.env.PAYLOAD_PUBLIC_SITE_URL || 'http://localhost:5173',
     },
   },
   access: {
-    read: () => true,
-    update: () => true,
+    read: ({ req }) => checkTenantAccess(req, 'mtsc'),
+    update: ({ req }) => checkTenantAccess(req, 'mtsc'),
   },
   fields: [
     {

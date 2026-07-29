@@ -1,15 +1,17 @@
 import type { GlobalConfig } from 'payload'
+import { checkTenantAccess } from '../../utils/tenantAccess'
 
 export const HomePage: GlobalConfig = {
   slug: 'home-page',
   admin: {
+    group: 'People For Honor',
     livePreview: {
       url: process.env.PAYLOAD_PUBLIC_SITE_URL || 'http://localhost:5173',
     },
   },
   access: {
-    read: () => true,
-    update: () => true,
+    read: ({ req }) => checkTenantAccess(req, 'peopleforhonor'),
+    update: ({ req }) => checkTenantAccess(req, 'peopleforhonor'),
   },
   fields: [
     {
