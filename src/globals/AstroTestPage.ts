@@ -5,7 +5,7 @@ export const AstroTestPage: GlobalConfig = {
   label: 'Astro Test Page',
   admin: {
     livePreview: {
-      url: 'http://astro-test.cloudgenz.com',
+      url: 'https://astro-test.cloudgenz.com',
     },
   },
   access: {
