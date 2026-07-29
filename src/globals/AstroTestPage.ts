@@ -3,6 +3,11 @@ import type { GlobalConfig } from 'payload'
 export const AstroTestPage: GlobalConfig = {
   slug: 'astro-test-page',
   label: 'Astro Test Page',
+  admin: {
+    livePreview: {
+      url: process.env.PAYLOAD_PUBLIC_SITE_URL || 'http://localhost:5173',
+    },
+  },
   access: {
     read: () => true,
   },
