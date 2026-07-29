@@ -10,8 +10,8 @@ export const GalleryPage: GlobalConfig = {
     },
   },
   access: {
-    read: ({ req }) => checkTenantAccess(req, 'peopleforhonor'),
-    update: ({ req }) => checkTenantAccess(req, 'peopleforhonor'),
+    read: () => true,
+    update: (args) => checkTenantAccess(args, 'peopleforhonor'),
   },
   fields: [
     {

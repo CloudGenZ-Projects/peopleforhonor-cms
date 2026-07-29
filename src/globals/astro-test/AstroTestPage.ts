@@ -11,8 +11,8 @@ export const AstroTestPage: GlobalConfig = {
     },
   },
   access: {
-    read: ({ req }) => checkTenantAccess(req, 'admin-only'),
-    update: ({ req }) => checkTenantAccess(req, 'admin-only'),
+    read: () => true,
+    update: (args) => checkTenantAccess(args, 'admin-only'),
   },
   hooks: {
     afterChange: [
