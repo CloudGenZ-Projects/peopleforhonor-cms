@@ -53,7 +53,9 @@ const corsOrigins = process.env.CORS_ORIGINS
 const plugins: any[] = [
   multiTenantPlugin({
     collections: {
-      media: {},
+      media: {
+        useBaseFilter: false,
+      },
       'program-details': {},
     },
     useUsersTenantFilter: false,
