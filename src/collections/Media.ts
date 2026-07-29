@@ -6,6 +6,17 @@ export const Media: CollectionConfig = {
     staticDir: 'uploads',
     mimeTypes: ['image/*', 'application/pdf', 'video/*'],
   },
+  hooks: {
+    afterRead: [
+      ({ doc }) => {
+        const cmsUrl = process.env.PAYLOAD_PUBLIC_SERVER_URL || 'https://pfh-cms.cloudgenz.com'
+        if (doc && doc.filename) {
+          doc.url = `${cmsUrl}/api/media/file/${doc.filename}`
+        }
+        return doc
+      },
+    ],
+  },
   access: {
     read: () => true,
     create: () => true,
