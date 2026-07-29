@@ -124,7 +124,7 @@ export default buildConfig({
         create: ({ req }) => checkTenantAccess(req, 'admin-only'),
         update: ({ req }) => checkTenantAccess(req, 'admin-only'),
         delete: ({ req }) => checkTenantAccess(req, 'admin-only'),
-        admin: ({ req }) => checkTenantAccess(req, 'admin-only'),
+        admin: ({ req }) => Boolean(req.user),
       },
       fields: [
         {
