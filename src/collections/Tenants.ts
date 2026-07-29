@@ -1,15 +1,18 @@
 import type { CollectionConfig } from 'payload'
+import { checkTenantAccess } from '../utils/tenantAccess'
 
 export const Tenants: CollectionConfig = {
   slug: 'tenants',
   admin: {
     useAsTitle: 'name',
+    group: 'Admin Settings',
   },
   access: {
-    read: () => true,
-    create: () => true,
-    update: () => true,
-    delete: () => true,
+    read: ({ req }) => checkTenantAccess(req, 'admin-only'),
+    create: ({ req }) => checkTenantAccess(req, 'admin-only'),
+    update: ({ req }) => checkTenantAccess(req, 'admin-only'),
+    delete: ({ req }) => checkTenantAccess(req, 'admin-only'),
+    admin: ({ req }) => checkTenantAccess(req, 'admin-only'),
   },
   fields: [
     {

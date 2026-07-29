@@ -1,18 +1,20 @@
 import type { CollectionConfig } from 'payload'
+import { checkTenantAccess } from '../utils/tenantAccess'
 
 export const ProgramDetails: CollectionConfig = {
   slug: 'program-details',
   admin: {
     useAsTitle: 'title',
+    group: 'People For Honor',
     livePreview: {
       url: process.env.PAYLOAD_PUBLIC_SITE_URL || 'http://localhost:5173',
     },
   },
   access: {
-    read: () => true,
-    create: () => true,
-    update: () => true,
-    delete: () => true,
+    read: ({ req }) => checkTenantAccess(req, 'peopleforhonor'),
+    create: ({ req }) => checkTenantAccess(req, 'peopleforhonor'),
+    update: ({ req }) => checkTenantAccess(req, 'peopleforhonor'),
+    delete: ({ req }) => checkTenantAccess(req, 'peopleforhonor'),
   },
   fields: [
     {

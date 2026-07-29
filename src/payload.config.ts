@@ -5,6 +5,7 @@ import { s3Storage } from '@payloadcms/storage-s3'
 import { multiTenantPlugin } from '@payloadcms/plugin-multi-tenant'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { checkTenantAccess } from './utils/tenantAccess'
 
 // Website 1: People For Honor Globals
 import { HomePage } from './globals/pfh/HomePage'
@@ -115,11 +116,15 @@ export default buildConfig({
     {
       slug: 'users',
       auth: true,
+      admin: {
+        group: 'Admin Settings',
+      },
       access: {
-        read: () => true,
-        create: () => true,
-        update: () => true,
-        delete: () => true,
+        read: ({ req }) => checkTenantAccess(req, 'admin-only'),
+        create: ({ req }) => checkTenantAccess(req, 'admin-only'),
+        update: ({ req }) => checkTenantAccess(req, 'admin-only'),
+        delete: ({ req }) => checkTenantAccess(req, 'admin-only'),
+        admin: ({ req }) => checkTenantAccess(req, 'admin-only'),
       },
       fields: [
         {
