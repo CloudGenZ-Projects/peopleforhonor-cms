@@ -55,15 +55,9 @@ const plugins: any[] = [
     collections: {
       media: {},
       'program-details': {},
-      'home-page': { isGlobal: true },
-      'about-page': { isGlobal: true },
-      'programs-page': { isGlobal: true },
-      'gallery-page': { isGlobal: true },
-      'join-us-page': { isGlobal: true },
-      'contact-page': { isGlobal: true },
-      'mtsc-home-page': { isGlobal: true },
-      'astro-test-page': { isGlobal: true },
     },
+    useUsersTenantFilter: false,
+    useTenantsListFilter: false,
     userHasAccessToAllTenants: (user: any) => {
       if (!user) return false
       return user.email === 'cloudgenz.dev@gmail.com'
