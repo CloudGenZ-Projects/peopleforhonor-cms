@@ -55,7 +55,13 @@ const plugins: any[] = [
     collections: {
       media: {
         useBaseFilter: false,
+        tenantFieldOverrides: {
+          required: false,
+        },
       },
+    },
+    tenantField: {
+      required: false,
     },
     useUsersTenantFilter: false,
     useTenantsListFilter: false,
