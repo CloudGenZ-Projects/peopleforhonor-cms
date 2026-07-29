@@ -5,7 +5,7 @@ export const AstroTestPage: GlobalConfig = {
   slug: 'astro-test-page',
   label: 'Astro Test Page',
   admin: {
-    group: 'Admin Settings',
+    group: 'Astro Test',
     livePreview: {
       url: 'https://astro-test.cloudgenz.com',
     },
