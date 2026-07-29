@@ -25,7 +25,8 @@ const defaultOrigins = [
   'https://pfh-cms.cloudgenz.com',
   'https://client.cloudgenz.com',
   'https://peopleforhonor.com',
-  '*',
+  'https://astro-test.cloudgenz.com',
+  "*"
 ]
 
 const corsOrigins = process.env.CORS_ORIGINS
@@ -79,7 +80,7 @@ export default buildConfig({
       ],
     },
   },
-  cors: '*',
+  cors: corsOrigins,
   csrf: corsOrigins,
   collections: [
     {
