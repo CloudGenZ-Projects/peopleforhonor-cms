@@ -54,7 +54,16 @@ const plugins: any[] = [
     collections: {
       media: {},
     },
-    userHasAccessToAllTenants: () => true,
+    userHasAccessToAllTenants: (user: any) => {
+      if (!user) return false
+      // Only Super Admin email gets access to all tenants
+      if (user.email === 'cloudgenz.dev@gmail.com') {
+        return true
+      }
+      // Otherwise, access is restricted to their assigned tenant(s)
+      const tenantCount = Array.isArray(user.tenants) ? user.tenants.length : 0
+      return tenantCount > 1
+    },
   } as any),
 ]
 
