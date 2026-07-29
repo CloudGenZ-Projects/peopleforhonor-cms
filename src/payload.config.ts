@@ -54,6 +54,7 @@ const plugins: any[] = [
     collections: {
       media: {},
     },
+    userHasAccess: () => true,
   }),
 ]
 
