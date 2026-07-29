@@ -10,6 +10,7 @@ import { ProgramsPage } from './globals/ProgramsPage'
 import { GalleryPage } from './globals/GalleryPage'
 import { JoinUsPage } from './globals/JoinUsPage'
 import { ContactPage } from './globals/ContactPage'
+import { AstroTestPage } from './globals/AstroTestPage'
 import { Media } from './collections/Media'
 import { ProgramDetails } from './collections/ProgramDetails'
 
@@ -100,7 +101,7 @@ export default buildConfig({
     Media,
     ProgramDetails,
   ],
-  globals: [HomePage, AboutPage, ProgramsPage, GalleryPage, JoinUsPage, ContactPage],
+  globals: [HomePage, AboutPage, ProgramsPage, GalleryPage, JoinUsPage, ContactPage, AstroTestPage],
   editor: lexicalEditor({}),
   secret: process.env.PAYLOAD_SECRET || 'peopleforhonor-payload-secret-key-2026',
   db: postgresAdapter({
