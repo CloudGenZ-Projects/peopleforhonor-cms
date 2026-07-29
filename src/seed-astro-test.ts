@@ -1,8 +1,16 @@
-import payload from 'payload'
-import config from './payload.config'
+import dotenv from 'dotenv'
 
-const seed = async () => {
-  await payload.init({ config })
+dotenv.config({ path: '.env' })
+dotenv.config({ path: '.env.production' })
+dotenv.config({ path: '.env.local' })
+
+async function seed() {
+  console.log('Seeding AstroTestPage Global into PostgreSQL...')
+
+  const { getPayload } = await import('payload')
+  const { default: config } = await import('./payload.config')
+
+  const payload = await getPayload({ config })
 
   await payload.updateGlobal({
     slug: 'astro-test-page',
@@ -16,6 +24,6 @@ const seed = async () => {
 }
 
 seed().catch((err) => {
-  console.error('❌ Seed failed:', err)
+  console.error('❌ Seed failed:', err?.message || err)
   process.exit(1)
 })
