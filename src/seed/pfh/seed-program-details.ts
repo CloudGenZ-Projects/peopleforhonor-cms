@@ -321,10 +321,86 @@ const programItems = [
     cta_btn2_url:
       'https://docs.google.com/forms/d/e/1FAIpQLSfragX8BIMhxvgkFhyOc6nOJ7i8AJ9P8dl30OzlovYvCJ60zg/viewform',
   },
+  {
+    title: 'Career Guidance & Support',
+    slug: 'empowerment',
+    badge: 'Support Program',
+    hero_subtitle:
+      'Practical job-market readiness, guided growth, and coaching—on one path. We provide hands-on workshops, resume support, job search guidance, and culturally relevant resources to help newcomers settle, integrate, and thrive.',
+    duration: 'Flexible / Ongoing',
+    capacity: 'Workshop & 1-on-1',
+    cost: '100% Free',
+    who_can_join: 'Newcomers, immigrant youth & adults in Canada',
+    details_capacity: 'Open enrolment',
+    schedule: 'Weekly workshops & 1-on-1 sessions',
+    details_cost: 'Free',
+    lead_instructor: 'PFH Career Coaches & Facilitators',
+    learning_outcomes: [
+      { text: 'Resume writing & LinkedIn optimization' },
+      { text: 'Interview preparation & confidence building' },
+      { text: 'Job search strategies & networking in Canada' },
+      { text: 'Personalized career guidance & resilience training' },
+    ],
+    showTakeaway: true,
+    takeaway_title: 'Unlock Your Potential',
+    takeaway_text: 'Gain actionable skills, continuous support, and connection to mentors across Canada.',
+    showCurriculum: true,
+    curriculum_title: 'What We Offer',
+    weeks: [
+      { week: 1, title: 'Personalized Guidance', content: 'Assessment of goals, experience, and career roadmaps' },
+      { week: 2, title: 'Skill Development', content: 'Hands-on resume, interview, and digital tools workshops' },
+      { week: 3, title: 'Self-Discovery', content: 'Identifying core strengths, leadership potential, and cultural value' },
+      { week: 4, title: 'Resilience Building', content: 'Coping with settlement stress, building positive mindsets' },
+    ],
+    commitment_note: null,
+    cta_heading: 'Ready to Advance Your Career?',
+    cta_description:
+      'Join our Career Guidance & Support program to build practical readiness, connect with coaches, and take control of your future in Canada.',
+    register_button_text: 'Get Started',
+    register_button_url:
+      'https://docs.google.com/forms/d/e/1FAIpQLSfragX8BIMhxvgkFhyOc6nOJ7i8AJ9P8dl30OzlovYvCJ60zg/viewform',
+  },
+  {
+    title: 'Culture & Community',
+    slug: 'culture-and-community-ottawa-program',
+    badge: 'Culture & Community Program',
+    hero_subtitle:
+      'Find your Community in Ottawa. We host activities that bring people together because healing doesn’t always come from a workshop; sometimes, it comes from dancing, laughing, or cooking a familiar meal with someone who understands your story.',
+    duration: 'Ongoing / Monthly',
+    capacity: 'Open to All',
+    cost: '100% Free',
+    who_can_join: 'Newcomers, immigrants, youth, and families in Ottawa',
+    details_capacity: 'Open participation for community events',
+    schedule: 'Monthly gatherings & scheduled cultural workshops',
+    details_cost: 'Free',
+    lead_instructor: 'Community leaders & trained facilitators',
+    learning_outcomes: [
+      { text: 'African & Caribbean Cultural Dance Exchange' },
+      { text: 'Domestic Empowerment & Community Cooking' },
+      { text: 'Peer Support Networks & Social Gatherings' },
+      { text: 'Cultural Celebration and Story-sharing' },
+    ],
+    showTakeaway: true,
+    takeaway_title: 'Practicing Community Together',
+    takeaway_text: 'Community isn’t something we talk about. It’s something we practice together.',
+    showCurriculum: true,
+    curriculum_title: 'Ways We Bring The Community Together',
+    weeks: [
+      { week: 1, title: 'African/Caribbean Cultural Dance Exchange', content: 'Once a month, we turn up the music and turn the room into a global dance floor.' },
+      { week: 2, title: 'Domestic Empowerment & Cooking', content: 'Learn recipes from around Africa and the Caribbean through our domestic empowerment program.' },
+      { week: 3, title: 'Storytelling & Peer Circles', content: 'Share stories, experiences, and build lasting friendships in Ottawa.' },
+    ],
+    commitment_note: null,
+    cta_heading: 'Ready to Join Our Community?',
+    cta_description:
+      'Connect with us and participate in our upcoming culture and community events in Ottawa.',
+    register_button_text: 'Join Us',
+    register_button_url: '/join',
+  },
 ]
 
 async function seed() {
-  console.log('Seeding all 8 ProgramDetails items into PostgreSQL...')
+  console.log('Seeding all 10 ProgramDetails items into PostgreSQL...')
 
   const { getPayload } = await import('payload')
   const { default: config } = await import('../../payload.config')
@@ -355,7 +431,7 @@ async function seed() {
     }
   }
 
-  console.log('All 8 ProgramDetails documents seeded successfully!')
+  console.log('All 9 ProgramDetails documents seeded successfully!')
   process.exit(0)
 }
 

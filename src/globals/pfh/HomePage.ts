@@ -31,13 +31,13 @@ export const HomePage: GlobalConfig = {
               name: 'hero_title',
               label: 'Hero Main Title',
               type: 'text',
-              defaultValue: 'Trusted Help for Your',
+              defaultValue: 'Trusted Help for',
             },
             {
               name: 'hero_title_highlight',
               label: 'Hero Title Highlighted Text',
               type: 'text',
-              defaultValue: 'Life in Canada',
+              defaultValue: 'Your Life in Canada',
             },
             {
               name: 'hero_subtitle',
@@ -466,7 +466,7 @@ export const HomePage: GlobalConfig = {
               name: 'contact_address',
               label: 'Contact Mailing Address',
               type: 'text',
-              defaultValue: '1505 laperrieve Ave Suite 506, Ottawa, ON, K127T1',
+              defaultValue: '1505 Laperriere Ave Suite 506, Ottawa, ON K1Z 7T1',
             },
             {
               name: 'contact_hours',

@@ -249,7 +249,7 @@ export const JoinUsPage: GlobalConfig = {
       name: 'etransfer_cheque',
       label: 'Cheque Payment Info',
       type: 'text',
-      defaultValue: 'Pay to People for Honor, mail to: 1505 laperrieve Ave Suite 506 Ottawa, ON, K127T1',
+      defaultValue: 'Pay to People for Honor, mail to: 1505 Laperriere Ave Suite 506, Ottawa, ON K1Z 7T1',
     },
     {
       name: 'stay_heading',
@@ -279,7 +279,7 @@ export const JoinUsPage: GlobalConfig = {
       name: 'stay_address',
       label: 'Contact Address',
       type: 'textarea',
-      defaultValue: '1505 laperrieve Ave Suite 506\nOttawa, ON, K127T1',
+      defaultValue: '1505 Laperriere Ave Suite 506\nOttawa, ON K1Z 7T1',
     },
     {
       name: 'stay_btn_text',

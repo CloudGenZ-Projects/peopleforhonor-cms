@@ -6,8 +6,9 @@ This file (`cms-docs/05-next-chat-action-plan.md`) contains the exact action pla
 
 ## 🎯 Summary of Items to Execute
 
-### 1. Homepage (`/`) Fixes
+### 1. Homepage (`/`) Fixes & Service Card Links
 - **Hero Title Spacing**: Fix space between "Your" and "Life" in `HomePage.ts` schema, `seed-home.ts`, and `Hero.jsx`.
+- **Services Card URL**: Update Culture & Community service card link to `/service/culture-and-community-ottawa-program` (or `http://localhost:8080/service/culture-and-community-ottawa-program`).
 - **Hero Image Fallback**: Update `Hero.jsx` so if dynamic CMS background image is null/loading, a high-quality fallback hero image displays instead of just a gradient.
 
 ### 2. Address & Postal Code Formatting (All Pages)
@@ -15,9 +16,12 @@ This file (`cms-docs/05-next-chat-action-plan.md`) contains the exact action pla
 - **Postal Code Typo**: Change `"ON, K127T1"` / `"K127T1"` ➔ `"Ottawa, ON K1Z 7T1"`.
 - **Files to update**: `HomePage.ts`, `ContactPage.ts`, `seed-home.ts`, `seed-contact.ts`, `Footer.jsx`, `Contact.jsx`, `ContactPage.jsx`.
 
-### 3. Program Subpages & Content Sync (`/programs/*`)
-- **Issue**: Live subpages (`/programs/entrepreneurship-launchpad`, `/programs/mentorship`, `/programs/coaching`, `/programs/braiding-training`, etc.) feature fully populated curriculum and module details, whereas local shows empty shells if unseeded.
-- **Fix**: Update `seed-program-details.ts` to include rich default seed data for all 9 programs, and update `ProgramDetail.jsx` / `CoachingProgram.jsx` / `MentorshipProgram.jsx` with static fallback data when CMS API is loading or empty.
+### 3. Program Subpages & Content Sync (`/programs/*` & `/service/*`)
+- **Issue**: Live subpages (`/programs/entrepreneurship-launchpad`, `/programs/mentorship`, `/programs/coaching`, `/programs/braiding-training`, `/service/culture-and-community-ottawa-program`, etc.) feature fully populated curriculum and module details, whereas local shows empty shells if unseeded.
+- **Fix**: 
+  1. Update `seed-program-details.ts` to include rich default seed data for all 9 programs.
+  2. Seed `culture-and-community-ottawa-program` in `seed-program-details.ts`.
+  3. Update `ProgramDetail.jsx`, `CultureCommunity.jsx`, `CoachingProgram.jsx`, `MentorshipProgram.jsx` with static fallback data when CMS API is loading or empty.
 
 ### 4. Ways to Give / Join Us Page Alignment (`/join`)
 - **Upcoming Events Card**: Align text between Live ("No upcoming events at the moment. Check back soon for updates!") and Localhost ("Mentorship Info Session") so local matches live config or toggle.
@@ -29,8 +33,9 @@ This file (`cms-docs/05-next-chat-action-plan.md`) contains the exact action pla
 ### 6. Contact Page & Footer Office Hours Formatting
 - **Call Us Hours**: Standardize format to `"Monday - Friday: 9:00 AM - 6:00 PM"` across `ContactPage.ts`, `seed-contact.ts`, `Contact.jsx`, `ContactPage.jsx`, and `Footer.jsx`.
 
-### 7. Dedicated Service Page Route Integration (`/service/*` & `/services`)
-- Ensure `/service/culture-and-community-ottawa-program` and `/services` routes load full service detail page content with complete fallback components.
+### 7. Dedicated Service Page Route Integration (`/service/culture-and-community-ottawa-program`)
+- Route `/service/culture-and-community-ottawa-program` in `App.jsx` linked to `CultureCommunity.jsx`.
+- Populate `CultureCommunity.jsx` with complete dynamic CMS data + static fallbacks for YouTube video, dance exchange, and domestic empowerment cards.
 
 ---
 
@@ -38,12 +43,13 @@ This file (`cms-docs/05-next-chat-action-plan.md`) contains the exact action pla
 
 ### Step 1: Update CMS Schemas & Seed Scripts
 1. Update `F:\peopleforhonor\honor-forge-cms\src\globals\pfh\HomePage.ts` & `ContactPage.ts` with correct typos ("Laperriere Ave", "K1Z 7T1", "Your Life in Canada").
-2. Update seed scripts: `seed-home.ts`, `seed-contact.ts`, `seed-join.ts`, `seed-program-details.ts`.
-3. Push CMS updates to GitHub (`honor-forge-cms`).
+2. Update service card link in `HomePage.ts` & `seed-home.ts` to `/service/culture-and-community-ottawa-program`.
+3. Update seed scripts: `seed-home.ts`, `seed-contact.ts`, `seed-join.ts`, `seed-program-details.ts`.
+4. Push CMS updates to GitHub (`honor-forge-cms`).
 
 ### Step 2: Update WebApp Components & Fallbacks
-1. Update `F:\peopleforhonor\honor-forge-webapp\src\components\Footer.jsx`, `Contact.jsx`, `Hero.jsx`.
-2. Update `F:\peopleforhonor\honor-forge-webapp\src\pages\ContactPage.jsx`, `JoinUs.jsx`, `ProgramDetail.jsx`.
+1. Update `F:\peopleforhonor\honor-forge-webapp\src\components\Footer.jsx`, `Contact.jsx`, `Hero.jsx`, `Services.jsx`.
+2. Update `F:\peopleforhonor\honor-forge-webapp\src\pages\ContactPage.jsx`, `JoinUs.jsx`, `ProgramDetail.jsx`, `CultureCommunity.jsx`.
 3. Push WebApp updates to GitHub (`honor-forge-webapp`).
 
 ### Step 3: Run Seeding on VPS

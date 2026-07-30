@@ -20,7 +20,7 @@ async function seed() {
         "Have questions about our programs or want to get involved? We'd love to hear from you. Fill out the form below or reach out directly.",
       contact_phone: '613 672 7062',
       contact_email: 'info@peopleforhonor.com',
-      contact_address: '1505 laperrieve Ave Suite 506, Ottawa, ON, K127T1',
+      contact_address: '1505 Laperriere Ave Suite 506, Ottawa, ON K1Z 7T1',
       contact_hours: 'Monday - Friday: 9:00 AM - 6:00 PM',
       contact_box_title: "We're Here for You",
       contact_box_text:

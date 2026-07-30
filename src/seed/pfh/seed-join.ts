@@ -133,13 +133,13 @@ async function seed() {
 
       etransfer_title: 'e-Transfer / Cheque',
       etransfer_email: 'info@peopleforhonor.com',
-      etransfer_cheque: 'Pay to People for Honor, mail to: 1505 laperrieve Ave Suite 506 Ottawa, ON, K127T1',
+      etransfer_cheque: 'Pay to People for Honor, mail to: 1505 Laperriere Ave Suite 506, Ottawa, ON K1Z 7T1',
 
       stay_heading: 'Stay Connected',
       stay_description: 'Be first to hear about programs, events, and impact stories.',
       stay_email: 'info@peopleforhonor.com',
       stay_phone: '613 672 7062',
-      stay_address: '1505 laperrieve Ave Suite 506\nOttawa, ON, K127T1',
+      stay_address: '1505 Laperriere Ave Suite 506\nOttawa, ON K1Z 7T1',
       stay_btn_text: 'Join Our Mailing List',
 
       gallery_heading: 'community Gathering',

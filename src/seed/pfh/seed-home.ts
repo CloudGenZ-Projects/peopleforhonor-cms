@@ -18,8 +18,8 @@ async function seed() {
     data: {
       // 1. Hero Section
       hero_badge: 'Supporting Immigrants to Canada',
-      hero_title: 'Trusted Help for Your',
-      hero_title_highlight: 'Life in Canada',
+      hero_title: 'Trusted Help for',
+      hero_title_highlight: 'Your Life in Canada',
       hero_subtitle:
         'Do more than survive in Canada! We provide Career Guidance & Support, mentorship, and community support to help newcomers thrive and build meaningful lives.',
       primary_cta_text: 'Find the Support You Need',
@@ -172,7 +172,7 @@ async function seed() {
         "We're here to help you every step of the way. Reach out to us and let's begin building your bright future in Canada together.",
       contact_phone: '613 672 7062',
       contact_email: 'info@peopleforhonor.com',
-      contact_address: '1505 laperrieve Ave Suite 506, Ottawa, ON, K127T1',
+      contact_address: '1505 Laperriere Ave Suite 506, Ottawa, ON K1Z 7T1',
       contact_hours: 'Monday - Friday: 9:00 AM - 6:00 PM',
       contact_box_title: "We're Here for You",
       contact_box_text:

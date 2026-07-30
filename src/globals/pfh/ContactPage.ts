@@ -45,7 +45,7 @@ export const ContactPage: GlobalConfig = {
       name: 'contact_address',
       label: 'Mailing Address',
       type: 'textarea',
-      defaultValue: '1505 laperrieve Ave Suite 506, Ottawa, ON, K127T1',
+      defaultValue: '1505 Laperriere Ave Suite 506, Ottawa, ON K1Z 7T1',
     },
     {
       name: 'contact_hours',
