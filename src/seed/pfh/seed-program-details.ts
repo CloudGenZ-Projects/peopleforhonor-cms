@@ -350,6 +350,9 @@ const programItems = [
     coaching_section_title: 'Unlock Your Potential, Seize Control of Your Life',
     coaching_section_desc:
       'We create intentional spaces where Black immigrant youths are seen, supported, and matched with mentors who reflect their realities. Through Career Guidance & Support workshops, one-on-one matching, and story-sharing, we help rebuild the self-confidence that often gets chipped away in the immigration process.\n\nOur mentors offer more than advice, they provide friendship, consistency, and a deep understanding of what it means to start over. Here, mentorship is not about fixing people. It\'s about helping them remember who they are.',
+    coaching_offer_heading: 'What We Offer',
+    coaching_offer_subtitle:
+      'Life is full of ups and downs, but with the right mindset and support system, you can weather any storm. Our resilience building workshops will teach you how to bounce back from setbacks, cope with stress, and cultivate a positive outlook on life.',
     coaching_features: [
       { feature_text: 'Personalized Guidance' },
       { feature_text: 'Skill Development' },
@@ -395,7 +398,7 @@ const programItems = [
 ]
 
 async function seed() {
-  console.log('Seeding all ProgramDetails items into PostgreSQL...')
+  console.log('Seeding ProgramDetails items into PostgreSQL...')
 
   const { getPayload } = await import('payload')
   const { default: config } = await import('../../payload.config')

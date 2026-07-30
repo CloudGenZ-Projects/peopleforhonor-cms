@@ -275,6 +275,34 @@ export const ProgramDetails: CollectionConfig = {
       },
     },
     {
+      name: 'coaching_offer_heading',
+      label: 'Coaching - What We Offer Heading',
+      type: 'text',
+      defaultValue: 'What We Offer',
+      admin: {
+        condition: (data) => data?.slug === 'empowerment' || Boolean(data?.coaching_offer_heading),
+      },
+    },
+    {
+      name: 'coaching_offer_subtitle',
+      label: 'Coaching - What We Offer Subtitle',
+      type: 'textarea',
+      defaultValue:
+        'Life is full of ups and downs, but with the right mindset and support system, you can weather any storm. Our resilience building workshops will teach you how to bounce back from setbacks, cope with stress, and cultivate a positive outlook on life.',
+      admin: {
+        condition: (data) => data?.slug === 'empowerment' || Boolean(data?.coaching_offer_heading),
+      },
+    },
+    {
+      name: 'coaching_offer_image',
+      label: 'Coaching - What We Offer Image',
+      type: 'upload',
+      relationTo: 'media',
+      admin: {
+        condition: (data) => data?.slug === 'empowerment' || Boolean(data?.coaching_offer_heading),
+      },
+    },
+    {
       name: 'coaching_features',
       label: 'Coaching Feature Bullet Points',
       type: 'array',
