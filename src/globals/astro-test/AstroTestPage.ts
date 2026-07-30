@@ -6,7 +6,7 @@ export const AstroTestPage: GlobalConfig = {
   label: 'Astro Test Page',
   admin: {
     group: 'Astro Test',
-    hidden: ({ user }) => isHiddenForUser(user, 'admin-only'),
+    hidden: true,
     livePreview: {
       url: 'https://astro-test.cloudgenz.com',
     },
