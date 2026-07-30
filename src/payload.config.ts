@@ -37,6 +37,7 @@ const defaultOrigins = [
   'https://pfh-cms.cloudgenz.com',
   'https://client.cloudgenz.com',
   'https://peopleforhonor.com',
+  'https://www.peopleforhonor.com',
   'https://astro-test.cloudgenz.com',
   'https://mtsc-halifax-cms.cloudgenz.com',
   'https://mtsc-halifax.cloudgenz.com',
@@ -111,7 +112,7 @@ export default buildConfig({
   admin: {
     user: 'users',
     livePreview: {
-      url: process.env.PAYLOAD_PUBLIC_SITE_URL || 'http://localhost:8080',
+      url: process.env.PAYLOAD_PUBLIC_SITE_URL || 'https://peopleforhonor.com',
       collections: ['program-details', 'media'],
       breakpoints: [
         { label: 'Mobile', name: 'mobile', width: 375, height: 667 },

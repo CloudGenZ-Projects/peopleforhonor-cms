@@ -9,7 +9,7 @@ export const ProgramDetails: CollectionConfig = {
     hidden: ({ user }) => isHiddenForUser(user, 'peopleforhonor'),
     livePreview: {
       url: ({ data }) => {
-        const siteUrl = process.env.PAYLOAD_PUBLIC_SITE_URL || 'http://localhost:8080'
+        const siteUrl = process.env.PAYLOAD_PUBLIC_SITE_URL || 'https://peopleforhonor.com'
         if (data?.slug === 'culture-and-community-ottawa-program') {
           return `${siteUrl}/service/culture-and-community-ottawa-program`
         }

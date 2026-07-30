@@ -9,7 +9,7 @@ export const ContactPage: GlobalConfig = {
     hidden: ({ user }) => isHiddenForUser(user, 'peopleforhonor'),
     livePreview: {
       url: () => {
-        const siteUrl = process.env.PAYLOAD_PUBLIC_SITE_URL || 'http://localhost:8080'
+        const siteUrl = process.env.PAYLOAD_PUBLIC_SITE_URL || 'https://peopleforhonor.com'
         return `${siteUrl}/contact`
       },
     },
