@@ -72,7 +72,8 @@ const plugins: any[] = [
     useTenantsListFilter: false,
     userHasAccessToAllTenants: (user: any) => {
       if (!user) return false
-      return user.email === 'cloudgenz.dev@gmail.com'
+      const email = (user.email || '').toLowerCase()
+      return email === 'cloudgenz.dev@gmail.com'
     },
   } as any),
 ]
@@ -110,8 +111,8 @@ export default buildConfig({
   admin: {
     user: 'users',
     livePreview: {
-      url: process.env.PAYLOAD_PUBLIC_SITE_URL || 'http://localhost:5173',
-      collections: ['media'],
+      url: process.env.PAYLOAD_PUBLIC_SITE_URL || 'http://localhost:8080',
+      collections: ['program-details', 'media'],
       breakpoints: [
         { label: 'Mobile', name: 'mobile', width: 375, height: 667 },
         { label: 'Tablet', name: 'tablet', width: 768, height: 1024 },
@@ -132,7 +133,8 @@ export default buildConfig({
       access: {
         read: ({ req: { user } }) => {
           if (!user) return false
-          if (user.email === 'cloudgenz.dev@gmail.com') return true
+          const email = (user.email || '').toLowerCase()
+          if (email === 'cloudgenz.dev@gmail.com') return true
           return {
             id: {
               equals: user.id,
@@ -142,7 +144,8 @@ export default buildConfig({
         create: ({ req }) => checkTenantAccess(req, 'admin-only'),
         update: ({ req: { user } }) => {
           if (!user) return false
-          if (user.email === 'cloudgenz.dev@gmail.com') return true
+          const email = (user.email || '').toLowerCase()
+          if (email === 'cloudgenz.dev@gmail.com') return true
           return {
             id: {
               equals: user.id,
