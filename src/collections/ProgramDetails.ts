@@ -18,7 +18,7 @@ export const ProgramDetails: CollectionConfig = {
     },
   },
   access: {
-    read: ({ req }) => checkTenantAccess(req, 'peopleforhonor'),
+    read: () => true, // 👈 Public website content so frontend visitors can fetch /api/program-details without 403
     create: ({ req }) => checkTenantAccess(req, 'peopleforhonor'),
     update: ({ req }) => checkTenantAccess(req, 'peopleforhonor'),
     delete: ({ req }) => checkTenantAccess(req, 'peopleforhonor'),
