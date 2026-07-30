@@ -7,11 +7,20 @@ export const Media: CollectionConfig = {
     mimeTypes: ['image/*', 'application/pdf', 'video/*'],
   },
   hooks: {
+    beforeChange: [
+      ({ data }) => {
+        if (data && data.filename) {
+          data.url = `/api/media/file/${data.filename}`
+        }
+        return data
+      },
+    ],
     afterRead: [
       ({ doc }) => {
-        const cmsUrl = process.env.PAYLOAD_PUBLIC_SERVER_URL || 'https://pfh-cms.cloudgenz.com'
         if (doc && doc.filename) {
-          doc.url = `${cmsUrl}/api/media/file/${doc.filename}`
+          if (!doc.url || doc.url.includes('localhost') || doc.url.includes('127.0.0.1')) {
+            doc.url = `/api/media/file/${doc.filename}`
+          }
         }
         return doc
       },
