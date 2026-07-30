@@ -1,11 +1,12 @@
 import type { CollectionConfig } from 'payload'
-import { checkTenantAccess } from '../utils/tenantAccess'
+import { checkTenantAccess, isHiddenForUser } from '../utils/tenantAccess'
 
 export const ProgramDetails: CollectionConfig = {
   slug: 'program-details',
   admin: {
     useAsTitle: 'title',
     group: 'People For Honor',
+    hidden: ({ user }) => isHiddenForUser(user, 'peopleforhonor'),
     livePreview: {
       url: process.env.PAYLOAD_PUBLIC_SITE_URL || 'http://localhost:5173',
     },

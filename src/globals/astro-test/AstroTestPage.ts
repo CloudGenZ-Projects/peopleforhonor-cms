@@ -1,17 +1,18 @@
 import type { GlobalConfig } from 'payload'
-import { checkTenantAccess } from '../../utils/tenantAccess'
+import { checkTenantAccess, isHiddenForUser } from '../../utils/tenantAccess'
 
 export const AstroTestPage: GlobalConfig = {
   slug: 'astro-test-page',
   label: 'Astro Test Page',
   admin: {
     group: 'Astro Test',
+    hidden: ({ user }) => isHiddenForUser(user, 'admin-only'),
     livePreview: {
       url: 'https://astro-test.cloudgenz.com',
     },
   },
   access: {
-    read: (args) => checkTenantAccess(args, 'admin-only'),
+    read: () => true,
     update: (args) => checkTenantAccess(args, 'admin-only'),
   },
   hooks: {

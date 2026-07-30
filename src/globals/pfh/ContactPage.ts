@@ -1,17 +1,18 @@
 import type { GlobalConfig } from 'payload'
-import { checkTenantAccess } from '../../utils/tenantAccess'
+import { checkTenantAccess, isHiddenForUser } from '../../utils/tenantAccess'
 
 export const ContactPage: GlobalConfig = {
   slug: 'contact-page',
   label: 'Contact Page',
   admin: {
     group: 'People For Honor',
+    hidden: ({ user }) => isHiddenForUser(user, 'peopleforhonor'),
     livePreview: {
       url: process.env.PAYLOAD_PUBLIC_SITE_URL || 'http://localhost:5173',
     },
   },
   access: {
-    read: (args) => checkTenantAccess(args, 'peopleforhonor'),
+    read: () => true,
     update: (args) => checkTenantAccess(args, 'peopleforhonor'),
   },
   fields: [

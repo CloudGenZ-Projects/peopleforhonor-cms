@@ -54,7 +54,6 @@ const plugins: any[] = [
   multiTenantPlugin({
     collections: {
       media: {
-        useBaseFilter: false,
         tenantFieldOverrides: {
           required: false,
           admin: {
