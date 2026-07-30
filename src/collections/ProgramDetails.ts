@@ -32,7 +32,7 @@ export const ProgramDetails: CollectionConfig = {
     },
     {
       name: 'slug',
-      label: 'URL Slug (e.g. coaching, mentorship, barbershop-training, empowerment, culture-and-community-ottawa-program)',
+      label: 'URL Slug (e.g. coaching, mentorship, barbershop-training)',
       type: 'text',
       required: true,
       unique: true,
