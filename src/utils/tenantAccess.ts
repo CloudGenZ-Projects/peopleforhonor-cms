@@ -28,7 +28,7 @@ export function checkTenantAccess(reqOrArgs: any, targetTenantSlug: string): boo
       if (typeof t === 'number' || typeof t === 'string') {
         const val = String(t)
         return (
-          (targetTenantSlug === 'peopleforhonor' && (val === '1' || val === 'peopleforhonor')) ||
+          (targetTenantSlug === 'peopleforhonor' && (val === '1' || val === '3' || val === 'peopleforhonor')) ||
           (targetTenantSlug === 'mtsc' && (val === '2' || val === 'mtsc'))
         )
       }
@@ -38,7 +38,7 @@ export function checkTenantAccess(reqOrArgs: any, targetTenantSlug: string): boo
         const id = String(t.id || '')
         return (
           slug.includes(targetTenantSlug) ||
-          (targetTenantSlug === 'peopleforhonor' && (slug === 'peopleforhonor' || id === '1')) ||
+          (targetTenantSlug === 'peopleforhonor' && (slug === 'peopleforhonor' || id === '3' || id === '1')) ||
           (targetTenantSlug === 'mtsc' && (slug === 'mtsc' || id === '2'))
         )
       }
@@ -82,7 +82,7 @@ export function isHiddenForUser(user: any, targetTenantSlug: string): boolean {
       if (typeof t === 'number' || typeof t === 'string') {
         const val = String(t)
         return (
-          (targetTenantSlug === 'peopleforhonor' && (val === '1' || val === 'peopleforhonor')) ||
+          (targetTenantSlug === 'peopleforhonor' && (val === '1' || val === '3' || val === 'peopleforhonor')) ||
           (targetTenantSlug === 'mtsc' && (val === '2' || val === 'mtsc'))
         )
       }
@@ -92,7 +92,7 @@ export function isHiddenForUser(user: any, targetTenantSlug: string): boolean {
         const id = String(t.id || '')
         return (
           slug.includes(targetTenantSlug) ||
-          (targetTenantSlug === 'peopleforhonor' && (slug === 'peopleforhonor' || id === '1')) ||
+          (targetTenantSlug === 'peopleforhonor' && (slug === 'peopleforhonor' || id === '3' || id === '1')) ||
           (targetTenantSlug === 'mtsc' && (slug === 'mtsc' || id === '2'))
         )
       }
