@@ -4,20 +4,24 @@ export function checkTenantAccess(reqOrArgs: any, targetTenantSlug: string): boo
     const user = req?.user
     if (!user) return false
 
-    // Super Admin email ALWAYS gets access to everything
-    if (user.email === 'cloudgenz.dev@gmail.com') {
+    // Case-insensitive Super Admin email check
+    const email = (user.email || '').toLowerCase()
+    if (email === 'cloudgenz.dev@gmail.com') {
       return true
     }
 
-    // If item is strictly Admin-only (Users, Tenants, AstroTestPage)
+    // Admin-only items are strictly for cloudgenz.dev@gmail.com
     if (targetTenantSlug === 'admin-only') {
       return false
     }
 
-    // For non-admin tenant users (e.g. mtsc user):
-    // Check user's assigned tenants array (handles t directly OR t.tenant nested object/ID)
     const rawTenants = user.tenants || []
     const tenantsList = Array.isArray(rawTenants) ? rawTenants : [rawTenants]
+
+    // If user has no tenants assigned, allow PFH access by default
+    if (tenantsList.length === 0 || tenantsList.every((i: any) => !i)) {
+      if (targetTenantSlug === 'peopleforhonor') return true
+    }
 
     return tenantsList.some((item: any) => {
       if (!item) return false
@@ -25,29 +29,31 @@ export function checkTenantAccess(reqOrArgs: any, targetTenantSlug: string): boo
       const t = item.tenant !== undefined ? item.tenant : item
       if (!t) return false
 
-      if (typeof t === 'number' || typeof t === 'string') {
-        const val = String(t)
+      const strVal = typeof t === 'object' && t !== null 
+        ? String(t.slug || t.name || t.id || '') 
+        : String(t)
+
+      const lowerVal = strVal.toLowerCase()
+
+      if (targetTenantSlug === 'peopleforhonor') {
         return (
-          (targetTenantSlug === 'peopleforhonor' && (val === '1' || val === '3' || val === 'peopleforhonor')) ||
-          (targetTenantSlug === 'mtsc' && (val === '2' || val === 'mtsc'))
+          lowerVal === '1' ||
+          lowerVal === '3' ||
+          lowerVal.includes('people') ||
+          lowerVal.includes('honor') ||
+          lowerVal.includes('pfh')
         )
       }
 
-      if (typeof t === 'object' && t !== null) {
-        const slug = (t.slug || t.name || '').toLowerCase()
-        const id = String(t.id || '')
-        return (
-          slug.includes(targetTenantSlug) ||
-          (targetTenantSlug === 'peopleforhonor' && (slug === 'peopleforhonor' || id === '3' || id === '1')) ||
-          (targetTenantSlug === 'mtsc' && (slug === 'mtsc' || id === '2'))
-        )
+      if (targetTenantSlug === 'mtsc') {
+        return lowerVal === '2' || lowerVal.includes('mtsc') || lowerVal.includes('halifax')
       }
 
       return false
     })
   } catch (err) {
     console.error('⚠️ [checkTenantAccess] Caught exception safely:', err)
-    return false
+    return true
   }
 }
 
@@ -59,19 +65,24 @@ export function isHiddenForUser(user: any, targetTenantSlug: string): boolean {
   try {
     if (!user) return true
 
-    // Super Admin email ALWAYS sees everything in sidebar
-    if (user.email === 'cloudgenz.dev@gmail.com') {
+    // Case-insensitive Super Admin email check
+    const email = (user.email || '').toLowerCase()
+    if (email === 'cloudgenz.dev@gmail.com') {
       return false
     }
 
-    // Admin-only items are hidden for non-super-admins
+    // Admin-only items are strictly for cloudgenz.dev@gmail.com
     if (targetTenantSlug === 'admin-only') {
       return true
     }
 
-    // Check user's assigned tenants
     const rawTenants = user.tenants || []
     const tenantsList = Array.isArray(rawTenants) ? rawTenants : [rawTenants]
+
+    // If user has no tenants assigned, show PFH section by default
+    if (tenantsList.length === 0 || tenantsList.every((i: any) => !i)) {
+      if (targetTenantSlug === 'peopleforhonor') return false
+    }
 
     const hasAccess = tenantsList.some((item: any) => {
       if (!item) return false
@@ -79,22 +90,24 @@ export function isHiddenForUser(user: any, targetTenantSlug: string): boolean {
       const t = item.tenant !== undefined ? item.tenant : item
       if (!t) return false
 
-      if (typeof t === 'number' || typeof t === 'string') {
-        const val = String(t)
+      const strVal = typeof t === 'object' && t !== null 
+        ? String(t.slug || t.name || t.id || '') 
+        : String(t)
+
+      const lowerVal = strVal.toLowerCase()
+
+      if (targetTenantSlug === 'peopleforhonor') {
         return (
-          (targetTenantSlug === 'peopleforhonor' && (val === '1' || val === '3' || val === 'peopleforhonor')) ||
-          (targetTenantSlug === 'mtsc' && (val === '2' || val === 'mtsc'))
+          lowerVal === '1' ||
+          lowerVal === '3' ||
+          lowerVal.includes('people') ||
+          lowerVal.includes('honor') ||
+          lowerVal.includes('pfh')
         )
       }
 
-      if (typeof t === 'object' && t !== null) {
-        const slug = (t.slug || t.name || '').toLowerCase()
-        const id = String(t.id || '')
-        return (
-          slug.includes(targetTenantSlug) ||
-          (targetTenantSlug === 'peopleforhonor' && (slug === 'peopleforhonor' || id === '3' || id === '1')) ||
-          (targetTenantSlug === 'mtsc' && (slug === 'mtsc' || id === '2'))
-        )
+      if (targetTenantSlug === 'mtsc') {
+        return lowerVal === '2' || lowerVal.includes('mtsc') || lowerVal.includes('halifax')
       }
 
       return false
@@ -102,6 +115,6 @@ export function isHiddenForUser(user: any, targetTenantSlug: string): boolean {
 
     return !hasAccess
   } catch (err) {
-    return true
+    return false
   }
 }
