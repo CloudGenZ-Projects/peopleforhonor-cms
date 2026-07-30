@@ -5,7 +5,7 @@ import { s3Storage } from '@payloadcms/storage-s3'
 import { multiTenantPlugin } from '@payloadcms/plugin-multi-tenant'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { checkTenantAccess } from './utils/tenantAccess'
+import { checkTenantAccess, isHiddenForUser } from './utils/tenantAccess'
 
 // Website 1: People For Honor Globals
 import { HomePage } from './globals/pfh/HomePage'
@@ -103,7 +103,7 @@ if (r2Key && r2Secret && r2Bucket) {
 }
 
 export default buildConfig({
-  serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL || 'https://pfh-cms.cloudgenz.com',
+  serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL || '',
   routes: {
     admin: '/cms/admin',
   },
@@ -127,11 +127,28 @@ export default buildConfig({
       auth: true,
       admin: {
         group: 'Admin Settings',
+        hidden: ({ user }) => isHiddenForUser(user, 'admin-only'),
       },
       access: {
-        read: ({ req }) => checkTenantAccess(req, 'admin-only'),
+        read: ({ req: { user } }) => {
+          if (!user) return false
+          if (user.email === 'cloudgenz.dev@gmail.com') return true
+          return {
+            id: {
+              equals: user.id,
+            },
+          }
+        },
         create: ({ req }) => checkTenantAccess(req, 'admin-only'),
-        update: ({ req }) => checkTenantAccess(req, 'admin-only'),
+        update: ({ req: { user } }) => {
+          if (!user) return false
+          if (user.email === 'cloudgenz.dev@gmail.com') return true
+          return {
+            id: {
+              equals: user.id,
+            },
+          }
+        },
         delete: ({ req }) => checkTenantAccess(req, 'admin-only'),
         admin: ({ req }) => Boolean(req.user),
       },
@@ -142,7 +159,13 @@ export default buildConfig({
         },
       ],
     },
-    Tenants,
+    {
+      ...Tenants,
+      admin: {
+        ...Tenants.admin,
+        hidden: ({ user }) => isHiddenForUser(user, 'admin-only'),
+      },
+    },
     Media,
     ProgramDetails,
   ],
