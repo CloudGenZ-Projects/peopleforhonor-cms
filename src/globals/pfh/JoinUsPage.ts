@@ -7,7 +7,10 @@ export const JoinUsPage: GlobalConfig = {
     group: 'People For Honor',
     hidden: ({ user }) => isHiddenForUser(user, 'peopleforhonor'),
     livePreview: {
-      url: process.env.PAYLOAD_PUBLIC_SITE_URL || 'http://localhost:5173',
+      url: () => {
+        const siteUrl = process.env.PAYLOAD_PUBLIC_SITE_URL || 'http://localhost:8080'
+        return `${siteUrl}/join`
+      },
     },
   },
   access: {
@@ -49,23 +52,27 @@ export const JoinUsPage: GlobalConfig = {
     },
     {
       name: 'hero_whatsapp_url',
-      label: 'WhatsApp Link',
+      label: 'WhatsApp Group Link URL',
       type: 'text',
       defaultValue: 'https://chat.whatsapp.com/HSUmX0TTqpxDEIkJWZXRMv',
     },
+
+    // 2. Ways to Give Section Header
     {
       name: 'give_heading',
-      label: 'Give Section Heading',
+      label: 'Ways to Give Heading',
       type: 'text',
       defaultValue: "Give in a Way That's Meaningful to You",
     },
     {
       name: 'give_description',
-      label: 'Give Section Subtitle',
+      label: 'Ways to Give Subtitle',
       type: 'textarea',
       defaultValue:
         'Your generosity lifts newcomers and neighbours: helping more people learn, belong, and move forward. Think big. Belong fully. Give back.',
     },
+
+    // 3. One-Time Donation Card
     {
       name: 'onetime_title',
       label: 'One-Time Donation Title',
@@ -81,31 +88,33 @@ export const JoinUsPage: GlobalConfig = {
     },
     {
       name: 'onetime_impact_heading',
-      label: 'One-Time Impact Heading',
+      label: 'One-Time Impact Box Heading',
       type: 'text',
       defaultValue: 'Examples of Impact:',
     },
     {
       name: 'onetime_impact_items',
-      label: 'One-Time Impact Bullet Points',
+      label: 'One-Time Impact Items',
       type: 'array',
       fields: [
-        { name: 'amount', label: 'Amount (e.g. $5 →)', type: 'text' },
-        { name: 'text', label: 'Impact Description', type: 'text' },
+        { name: 'amount', type: 'text', label: 'Amount (e.g. $25)' },
+        { name: 'text', type: 'text', label: 'Impact Description' },
       ],
     },
     {
       name: 'onetime_button_text',
-      label: 'One-Time Donation Button Text',
+      label: 'One-Time Button Text',
       type: 'text',
       defaultValue: 'Make a One-Time Donation',
     },
     {
       name: 'onetime_button_url',
-      label: 'One-Time Donation Form Link',
+      label: 'One-Time Zeffy URL',
       type: 'text',
       defaultValue: 'https://www.zeffy.com/en-CA/donation-form/people-for-honor-donate',
     },
+
+    // 4. Monthly Giving Card
     {
       name: 'monthly_title',
       label: 'Monthly Giving Title',
@@ -127,98 +136,105 @@ export const JoinUsPage: GlobalConfig = {
     },
     {
       name: 'monthly_why_items',
-      label: 'Why Monthly Giving Bullet Points',
+      label: 'Monthly Why Bullet Points',
       type: 'array',
-      fields: [{ name: 'text', type: 'text' }],
+      fields: [{ name: 'text', type: 'text', label: 'Bullet Text' }],
     },
     {
       name: 'monthly_button_text',
-      label: 'Monthly Giving Button Text',
+      label: 'Monthly Button Text',
       type: 'text',
       defaultValue: 'Raising Futures Every Month',
     },
     {
       name: 'monthly_button_url',
-      label: 'Monthly Giving Form Link',
+      label: 'Monthly Zeffy URL',
       type: 'text',
       defaultValue: 'https://www.zeffy.com/embed/donation-form/raising-futures-every-month?modal=true',
     },
+
+    // 5. Additional Giving Options (3 Cards)
     {
       name: 'honour_title',
-      label: 'Give in Honour Title',
+      label: 'Honour/Memory Card Title',
       type: 'text',
       defaultValue: 'Give in Honour or in Memory',
     },
     {
       name: 'honour_desc',
-      label: 'Give in Honour Description',
-      type: 'textarea',
+      label: 'Honour/Memory Card Description',
+      type: 'text',
       defaultValue: 'Recognize a loved one, mentor, or community leader with a tribute gift.',
     },
     {
       name: 'honour_btn_text',
-      label: 'Give in Honour Button Text',
+      label: 'Honour/Memory Button Text',
       type: 'text',
       defaultValue: 'Donate in Honour/Memory',
     },
     {
       name: 'honour_btn_url',
-      label: 'Give in Honour Form URL',
+      label: 'Honour/Memory Link URL',
       type: 'text',
       defaultValue: 'https://www.zeffy.com/embed/donation-form/give-in-honour-or-in-memory?modal=true',
     },
+
     {
       name: 'securities_title',
-      label: 'Donate Securities Title',
+      label: 'Securities Card Title',
       type: 'text',
       defaultValue: 'Donate Securities',
     },
     {
       name: 'securities_desc',
-      label: 'Donate Securities Description',
-      type: 'textarea',
+      label: 'Securities Card Description',
+      type: 'text',
       defaultValue: 'Donate stocks, mutual funds, or ETFs. Avoid capital gains tax while maximizing impact.',
     },
     {
       name: 'securities_btn_text',
-      label: 'Donate Securities Button Text',
+      label: 'Securities Button Text',
       type: 'text',
       defaultValue: 'Donate Securities',
     },
     {
       name: 'securities_btn_url',
-      label: 'Donate Securities Form URL',
+      label: 'Securities Form URL',
       type: 'text',
       defaultValue:
         'https://docs.google.com/forms/d/e/1FAIpQLSeCFnInCVyyaS5FA3-BYdb5nrjO45x3A1jVhYuQ76DpjGYcTA/viewform',
     },
+
     {
       name: 'corporate_title',
-      label: 'Corporate Partnerships Title',
+      label: 'Corporate Card Title',
       type: 'text',
       defaultValue: 'Corporate Partnerships',
     },
     {
       name: 'corporate_desc',
-      label: 'Corporate Partnerships Description',
-      type: 'textarea',
+      label: 'Corporate Card Description',
+      type: 'text',
       defaultValue: 'Sponsor a cohort, match employee gifts, or support a campaign.',
     },
     {
       name: 'corporate_btn_text',
-      label: 'Corporate Partnerships Button Text',
+      label: 'Corporate Button Text',
       type: 'text',
       defaultValue: 'Sponsor a Program',
     },
     {
       name: 'corporate_btn_url',
-      label: 'Corporate Partnerships Form URL',
+      label: 'Corporate Link URL',
       type: 'text',
-      defaultValue: 'https://www.zeffy.com/embed/donation-form/corporate-partnerships-sponsor-a-program?modal=true',
+      defaultValue:
+        'https://www.zeffy.com/embed/donation-form/corporate-partnerships-sponsor-a-program?modal=true',
     },
+
+    // 6. Other Ways to Support Section
     {
       name: 'other_heading',
-      label: 'Other Ways Section Heading',
+      label: 'Other Ways Heading',
       type: 'text',
       defaultValue: 'Other Ways to Support People for Honor',
     },
@@ -227,30 +243,34 @@ export const JoinUsPage: GlobalConfig = {
       label: 'Other Ways Support Cards',
       type: 'array',
       fields: [
-        { name: 'title', type: 'text' },
-        { name: 'description', type: 'textarea' },
-        { name: 'btn_text', type: 'text' },
-        { name: 'btn_url', type: 'text' },
+        { name: 'title', type: 'text', label: 'Card Title' },
+        { name: 'description', type: 'textarea', label: 'Card Description' },
+        { name: 'btn_text', type: 'text', label: 'Button Text' },
+        { name: 'btn_url', type: 'text', label: 'Button URL' },
       ],
     },
+
+    // e-Transfer / Cheque Box
     {
       name: 'etransfer_title',
-      label: 'e-Transfer / Cheque Title',
+      label: 'e-Transfer Box Title',
       type: 'text',
       defaultValue: 'e-Transfer / Cheque',
     },
     {
       name: 'etransfer_email',
-      label: 'e-Transfer Email',
+      label: 'e-Transfer Email Address',
       type: 'text',
       defaultValue: 'info@peopleforhonor.com',
     },
     {
       name: 'etransfer_cheque',
-      label: 'Cheque Payment Info',
-      type: 'text',
+      label: 'Cheque Instructions',
+      type: 'textarea',
       defaultValue: 'Pay to People for Honor, mail to: 1505 Laperriere Ave Suite 506, Ottawa, ON K1Z 7T1',
     },
+
+    // 7. Stay Connected Section
     {
       name: 'stay_heading',
       label: 'Stay Connected Heading',
@@ -259,25 +279,25 @@ export const JoinUsPage: GlobalConfig = {
     },
     {
       name: 'stay_description',
-      label: 'Stay Connected Description',
+      label: 'Stay Connected Subtitle',
       type: 'textarea',
       defaultValue: 'Be first to hear about programs, events, and impact stories.',
     },
     {
       name: 'stay_email',
-      label: 'Contact Email',
+      label: 'Stay Connected Email',
       type: 'text',
       defaultValue: 'info@peopleforhonor.com',
     },
     {
       name: 'stay_phone',
-      label: 'Contact Phone',
+      label: 'Stay Connected Phone',
       type: 'text',
       defaultValue: '613 672 7062',
     },
     {
       name: 'stay_address',
-      label: 'Contact Address',
+      label: 'Stay Connected Address',
       type: 'textarea',
       defaultValue: '1505 Laperriere Ave Suite 506\nOttawa, ON K1Z 7T1',
     },
@@ -287,37 +307,39 @@ export const JoinUsPage: GlobalConfig = {
       type: 'text',
       defaultValue: 'Join Our Mailing List',
     },
+
+    // 8. Community Gathering Gallery (6 Bottom Images)
     {
       name: 'gallery_heading',
-      label: 'Bottom Gallery Heading',
+      label: 'Community Gathering Gallery Title',
       type: 'text',
       defaultValue: 'community Gathering',
     },
     {
       name: 'gallery_description',
-      label: 'Bottom Gallery Subtitle',
+      label: 'Community Gathering Gallery Subtitle',
       type: 'textarea',
       defaultValue: 'At People for Honor, we believe in the power of hope to transform lives.',
     },
     {
       name: 'community_images',
-      label: 'Bottom 6 Community Images',
+      label: 'Community Gathering Images (6 Images)',
       type: 'array',
       fields: [
         {
           name: 'image',
-          label: 'Image File Upload / Media',
+          label: 'Media Upload Image',
           type: 'upload',
           relationTo: 'media',
         },
         {
           name: 'imageUrl',
-          label: 'Direct Image URL (Fallback if no file uploaded)',
+          label: 'Direct Image URL Fallback',
           type: 'text',
         },
         {
           name: 'alt',
-          label: 'Alt Text / Caption',
+          label: 'Alt Text Description',
           type: 'text',
         },
       ],

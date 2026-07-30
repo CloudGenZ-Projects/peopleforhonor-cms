@@ -7,7 +7,10 @@ export const AboutPage: GlobalConfig = {
     group: 'People For Honor',
     hidden: ({ user }) => isHiddenForUser(user, 'peopleforhonor'),
     livePreview: {
-      url: process.env.PAYLOAD_PUBLIC_SITE_URL || 'http://localhost:5173',
+      url: () => {
+        const siteUrl = process.env.PAYLOAD_PUBLIC_SITE_URL || 'http://localhost:8080'
+        return `${siteUrl}/about`
+      },
     },
   },
   access: {
