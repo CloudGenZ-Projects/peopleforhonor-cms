@@ -8,7 +8,10 @@ export const MtscHomePage: GlobalConfig = {
     group: 'MTSC Halifax',
     hidden: ({ user }) => isHiddenForUser(user, 'mtsc'),
     livePreview: {
-      url: process.env.PAYLOAD_PUBLIC_MTSC_SITE_URL || 'http://localhost:5173',
+      url: () => {
+        const siteUrl = process.env.PAYLOAD_PUBLIC_MTSC_SITE_URL || 'http://localhost:5173'
+        return `${siteUrl}/`
+      },
     },
   },
   access: {
