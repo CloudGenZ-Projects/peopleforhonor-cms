@@ -22,6 +22,7 @@
     "db:seed-mtsc-home": "npx tsx src/seed/mtsc/seed-mtsc-home.ts",
     "db:seed-mtsc-whoweare": "npx tsx src/seed/mtsc/seed-mtsc-whoweare.ts",
     "db:seed-mtsc-support": "npx tsx src/seed/mtsc/seed-mtsc-support.ts",
+    "db:seed-mtsc-waystogive": "npx tsx src/seed/mtsc/seed-mtsc-waystogive.ts",
     "db:backup": "npx tsx src/backup-db.ts"
   },
   "dependencies": {
