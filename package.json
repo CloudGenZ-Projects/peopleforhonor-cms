@@ -20,7 +20,8 @@
     "db:seed-astro-test": "npx tsx src/seed/astro-test/seed-astro-test.ts",
     "db:seed-tenants": "npx tsx src/seed/tenants/seed-tenants.ts",
     "db:seed-mtsc-home": "npx tsx src/seed/mtsc/seed-mtsc-home.ts",
-    "db:seed-mtsc-whoweare": "npx tsx src/seed/mtsc/seed-mtsc-whoweare.ts"
+    "db:seed-mtsc-whoweare": "npx tsx src/seed/mtsc/seed-mtsc-whoweare.ts",
+    "db:backup": "npx tsx src/backup-db.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.86.0",
