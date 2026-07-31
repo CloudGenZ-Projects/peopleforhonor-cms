@@ -21,6 +21,7 @@ import { MtscWhoWeArePage } from './globals/mtsc/MtscWhoWeArePage'
 import { MtscSeafarerSupportPage } from './globals/mtsc/MtscSeafarerSupportPage'
 import { MtscWaysToGivePage } from './globals/mtsc/MtscWaysToGivePage'
 import { MtscPublicationsPage } from './globals/mtsc/MtscPublicationsPage'
+import { MtscContactPage } from './globals/mtsc/MtscContactPage'
 
 // Test/Demo Globals
 import { AstroTestPage } from './globals/astro-test/AstroTestPage'
@@ -190,6 +191,7 @@ export default buildConfig({
     MtscSeafarerSupportPage,
     MtscWaysToGivePage,
     MtscPublicationsPage,
+    MtscContactPage,
   ],
   editor: lexicalEditor({}),
   secret: process.env.PAYLOAD_SECRET || 'peopleforhonor-payload-secret-key-2026',
