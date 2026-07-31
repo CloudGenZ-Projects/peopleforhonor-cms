@@ -21,6 +21,7 @@
     "db:seed-tenants": "npx tsx src/seed/tenants/seed-tenants.ts",
     "db:seed-mtsc-home": "npx tsx src/seed/mtsc/seed-mtsc-home.ts",
     "db:seed-mtsc-whoweare": "npx tsx src/seed/mtsc/seed-mtsc-whoweare.ts",
+    "db:seed-mtsc-support": "npx tsx src/seed/mtsc/seed-mtsc-support.ts",
     "db:backup": "npx tsx src/backup-db.ts"
   },
   "dependencies": {

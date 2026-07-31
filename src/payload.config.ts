@@ -18,6 +18,7 @@ import { ContactPage } from './globals/pfh/ContactPage'
 // Website 2: MTSC Halifax Globals
 import { MtscHomePage } from './globals/mtsc/MtscHomePage'
 import { MtscWhoWeArePage } from './globals/mtsc/MtscWhoWeArePage'
+import { MtscSeafarerSupportPage } from './globals/mtsc/MtscSeafarerSupportPage'
 
 // Test/Demo Globals
 import { AstroTestPage } from './globals/astro-test/AstroTestPage'
@@ -184,6 +185,7 @@ export default buildConfig({
     AstroTestPage,
     MtscHomePage,
     MtscWhoWeArePage,
+    MtscSeafarerSupportPage,
   ],
   editor: lexicalEditor({}),
   secret: process.env.PAYLOAD_SECRET || 'peopleforhonor-payload-secret-key-2026',
