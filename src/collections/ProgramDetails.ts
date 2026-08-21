@@ -4,7 +4,7 @@ import { checkTenantAccess, isHiddenForUser } from '../utils/tenantAccess'
 export const ProgramDetails: CollectionConfig = {
   slug: 'program-details',
   versions: {
-    maxPerDoc: 20,
+    maxPerDoc: 5,
   },
   admin: {
     useAsTitle: 'title',

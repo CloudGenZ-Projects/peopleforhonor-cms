@@ -4,7 +4,7 @@ import { checkTenantAccess, isHiddenForUser } from '../../utils/tenantAccess'
 export const AboutPage: GlobalConfig = {
   slug: 'about-page',
   versions: {
-    max: 20,
+    max: 5,
   },
   admin: {
     group: 'People For Honor',

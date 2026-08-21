@@ -5,7 +5,7 @@ export const MtscHomePage: GlobalConfig = {
   slug: 'mtsc-home-page',
   label: 'MTSC Home Page',
   versions: {
-    max: 20,
+    max: 5,
   },
   admin: {
     group: 'MTSC Halifax',

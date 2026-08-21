@@ -5,7 +5,7 @@ export const ContactPage: GlobalConfig = {
   slug: 'contact-page',
   label: 'Contact Page',
   versions: {
-    max: 20,
+    max: 5,
   },
   admin: {
     group: 'People For Honor',
