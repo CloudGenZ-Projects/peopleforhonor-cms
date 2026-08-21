@@ -3,6 +3,9 @@ import { checkTenantAccess, isHiddenForUser } from '../../utils/tenantAccess'
 
 export const GalleryPage: GlobalConfig = {
   slug: 'gallery-page',
+  versions: {
+    max: 20,
+  },
   admin: {
     group: 'People For Honor',
     hidden: ({ user }) => isHiddenForUser(user, 'peopleforhonor'),

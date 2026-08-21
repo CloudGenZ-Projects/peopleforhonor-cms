@@ -4,6 +4,9 @@ import { checkTenantAccess, isHiddenForUser } from '../../utils/tenantAccess'
 export const ContactPage: GlobalConfig = {
   slug: 'contact-page',
   label: 'Contact Page',
+  versions: {
+    max: 20,
+  },
   admin: {
     group: 'People For Honor',
     hidden: ({ user }) => isHiddenForUser(user, 'peopleforhonor'),

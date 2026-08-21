@@ -4,6 +4,9 @@ import { checkTenantAccess, isHiddenForUser } from '../../utils/tenantAccess'
 export const MtscHomePage: GlobalConfig = {
   slug: 'mtsc-home-page',
   label: 'MTSC Home Page',
+  versions: {
+    max: 20,
+  },
   admin: {
     group: 'MTSC Halifax',
     hidden: ({ user }) => isHiddenForUser(user, 'mtsc'),

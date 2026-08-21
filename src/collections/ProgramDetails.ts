@@ -3,6 +3,9 @@ import { checkTenantAccess, isHiddenForUser } from '../utils/tenantAccess'
 
 export const ProgramDetails: CollectionConfig = {
   slug: 'program-details',
+  versions: {
+    max: 20,
+  },
   admin: {
     useAsTitle: 'title',
     group: 'People For Honor',
