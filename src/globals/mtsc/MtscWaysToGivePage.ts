@@ -4,6 +4,9 @@ import { checkTenantAccess, isHiddenForUser } from '../../utils/tenantAccess'
 export const MtscWaysToGivePage: GlobalConfig = {
   slug: 'mtsc-waystogive-page',
   label: 'MTSC Ways to Give Page',
+  versions: {
+    max: 5,
+  },
   admin: {
     group: 'MTSC Halifax',
     hidden: ({ user }) => isHiddenForUser(user, 'mtsc'),
