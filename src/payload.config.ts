@@ -94,6 +94,16 @@ const r2Bucket = process.env.R2_BUCKET || process.env.S3_BUCKET
 const r2Endpoint = process.env.R2_ENDPOINT || process.env.S3_ENDPOINT
 
 if (r2Key && r2Secret && r2Bucket) {
+  let sanitizedEndpoint = r2Endpoint
+  if (sanitizedEndpoint) {
+    sanitizedEndpoint = sanitizedEndpoint.replace(/\/+$/, '')
+    if (r2Bucket && sanitizedEndpoint.endsWith(`/${r2Bucket}`)) {
+      sanitizedEndpoint = sanitizedEndpoint.slice(0, -`/${r2Bucket}`.length)
+    }
+  }
+
+  const r2PublicUrl = process.env.R2_PUBLIC_URL ? process.env.R2_PUBLIC_URL.replace(/\/+$/, '') : null
+
   plugins.push(
     s3Storage({
       collections: {
@@ -106,8 +116,17 @@ if (r2Key && r2Secret && r2Bucket) {
           secretAccessKey: r2Secret,
         },
         region: process.env.R2_REGION || process.env.S3_REGION || 'auto',
-        ...(r2Endpoint ? { endpoint: r2Endpoint } : {}),
+        ...(sanitizedEndpoint ? { endpoint: sanitizedEndpoint } : {}),
+        forcePathStyle: true,
       },
+      ...(r2PublicUrl
+        ? {
+            generateFileURL: ({ filename, prefix }) => {
+              const fileKey = prefix ? `${prefix}/${filename}` : filename
+              return `${r2PublicUrl}/${fileKey}`
+            },
+          }
+        : {}),
     })
   )
 }
