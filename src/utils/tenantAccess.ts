@@ -46,7 +46,11 @@ export function checkTenantAccess(reqOrArgs: any, targetTenantSlug: string): boo
       }
 
       if (targetTenantSlug === 'mtsc') {
-        return lowerVal === '2' || lowerVal.includes('mtsc') || lowerVal.includes('halifax')
+        return (lowerVal === '2' || lowerVal.includes('mtsc') || lowerVal.includes('halifax')) && !lowerVal.includes('newfoundland') && !lowerVal.includes('nl')
+      }
+
+      if (targetTenantSlug === 'mtscnl') {
+        return lowerVal.includes('newfoundland') || lowerVal.includes('mtscnl') || lowerVal.includes('nl')
       }
 
       return false
@@ -107,7 +111,11 @@ export function isHiddenForUser(user: any, targetTenantSlug: string): boolean {
       }
 
       if (targetTenantSlug === 'mtsc') {
-        return lowerVal === '2' || lowerVal.includes('mtsc') || lowerVal.includes('halifax')
+        return (lowerVal === '2' || lowerVal.includes('mtsc') || lowerVal.includes('halifax')) && !lowerVal.includes('newfoundland') && !lowerVal.includes('nl')
+      }
+
+      if (targetTenantSlug === 'mtscnl') {
+        return lowerVal.includes('newfoundland') || lowerVal.includes('mtscnl') || lowerVal.includes('nl')
       }
 
       return false
