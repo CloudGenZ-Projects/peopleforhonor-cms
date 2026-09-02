@@ -25,6 +25,7 @@
     "db:seed-mtsc-waystogive": "npx tsx src/seed/mtsc/seed-mtsc-waystogive.ts",
     "db:seed-mtsc-publications": "npx tsx src/seed/mtsc/seed-mtsc-publications.ts",
     "db:seed-mtsc-contact": "npx tsx src/seed/mtsc/seed-mtsc-contact.ts",
+    "db:seed-mtscnl-home": "npx tsx src/seed/mtscnl/seed-mtscnl-home.ts",
     "db:backup": "npx tsx src/backup-db.ts"
   },
   "dependencies": {

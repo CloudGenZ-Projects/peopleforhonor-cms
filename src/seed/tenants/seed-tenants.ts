@@ -48,6 +48,24 @@ async function seedTenants() {
     console.log('✅ Created Tenant: MTSC Halifax')
   }
 
+  // 3. Tenant: MTSC Newfoundland
+  const mtscnlExisting = await payload.find({
+    collection: 'tenants' as any,
+    where: { slug: { equals: 'MTSCNL' } },
+  })
+
+  if (mtscnlExisting.docs.length === 0) {
+    await payload.create({
+      collection: 'tenants' as any,
+      data: {
+        name: 'MTSC Newfoundland',
+        slug: 'mtscnl',
+        domain: 'mtsc-nl-cms.cloudgenz.com', // You can change this domain if needed
+      },
+    })
+    console.log('✅ Created Tenant: MTSC Newfoundland')
+  }
+
   console.log('🎉 Tenants seeded successfully!')
   process.exit(0)
 }
