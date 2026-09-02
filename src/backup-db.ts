@@ -1,6 +1,8 @@
 import dotenv from 'dotenv'
 import fs from 'fs'
 import path from 'path'
+import os from 'os'
+import { execSync } from 'child_process'
 
 dotenv.config({ path: '.env' })
 dotenv.config({ path: '.env.production' })
@@ -14,62 +16,61 @@ async function backupDatabase() {
   }
 
   const maskedUri = dbUri.replace(/:([^:@]+)@/, ':****@')
-  console.log('📦 Starting Full PostgreSQL Database Backup...')
+  console.log('📦 Starting PostgreSQL Database Backup (.sql.gz)...')
   console.log('🔌 Connecting to:', maskedUri)
 
+  // 1. Target directory: /root/cms_backup or ~/cms_backup
+  const homeBackupDir = path.join(os.homedir(), 'cms_backup')
+  const backupDir = process.env.BACKUP_DIR || (fs.existsSync('/root') ? '/root/cms_backup' : homeBackupDir)
+
+  if (!fs.existsSync(backupDir)) {
+    fs.mkdirSync(backupDir, { recursive: true })
+  }
+
+  // 2. Generate timestamped filename: DB_backup_YYYY-MM-DD_HH-mm_peopleforhonor.sql.gz
+  const now = new Date()
+  const dateStr = now.toISOString().split('T')[0] // YYYY-MM-DD
+  const timeStr = `${String(now.getHours()).padStart(2, '0')}-${String(now.getMinutes()).padStart(2, '0')}`
+  const sqlBackupFileName = `DB_backup_${dateStr}_${timeStr}_peopleforhonor.sql.gz`
+  const sqlBackupFilePath = path.join(backupDir, sqlBackupFileName)
+
   try {
-    const { getPayload } = await import('payload')
-    const { default: config } = await import('./payload.config')
+    console.log('🐘 Generating native PostgreSQL .sql.gz dump using pg_dump...')
+    execSync(`pg_dump "${dbUri}" | gzip > "${sqlBackupFilePath}"`, { stdio: 'pipe' })
 
-    const payload = await getPayload({ config })
-    const adapter: any = payload.db
-
-    // 1. Fetch all table names in public schema
-    let tables: string[] = []
-    
-    if (adapter?.pool?.query) {
-      const res = await adapter.pool.query(`
-        SELECT table_name 
-        FROM information_schema.tables 
-        WHERE table_schema = 'public' 
-          AND table_type = 'BASE TABLE';
-      `)
-      tables = res.rows.map((row: any) => row.table_name)
-    } else {
-      console.error('❌ Database pool connection unavailable.')
-      process.exit(1)
-    }
-
-    console.log(`🔍 Found ${tables.length} tables to backup:`, tables.join(', '))
-
-    const backupData: Record<string, any[]> = {}
-
-    // 2. Export row data for each table
-    for (const table of tables) {
-      const res = await adapter.pool.query(`SELECT * FROM "${table}";`)
-      backupData[table] = res.rows
-    }
-
-    // 3. Generate timestamped JSON filename matching DB_backup format
-    const now = new Date()
-    const day = now.getDate()
-    const month = now.getMonth() + 1
-    const year = String(now.getFullYear()).slice(-2)
-    const backupFileName = `DB_backup_${day}-${month}-${year}_peopleforhonor_done.json`
-    const backupFilePath = path.join(process.cwd(), backupFileName)
-
-    fs.writeFileSync(backupFilePath, JSON.stringify(backupData, null, 2), 'utf-8')
-
+    const sqlStat = fs.statSync(sqlBackupFilePath)
     console.log(`\n======================================================`)
-    console.log(`✅ SUCCESS! Full DB Backup saved to:`)
-    console.log(`   ${backupFilePath}`)
-    console.log(`📊 Total Tables Backed Up: ${Object.keys(backupData).length}`)
-    console.log(`======================================================\n`)
-    process.exit(0)
-  } catch (error) {
-    console.error('❌ Error creating DB backup:', error)
+    console.log(`✅ SUCCESS! PostgreSQL .sql.gz Backup saved to:`)
+    console.log(`   ${sqlBackupFilePath} (${(sqlStat.size / 1024).toFixed(2)} KB)`)
+  } catch (pgErr) {
+    console.error('❌ Error generating PostgreSQL .sql.gz backup:', pgErr)
     process.exit(1)
   }
+
+  // 3. Prune backups older than 7 days
+  try {
+    const sevenDaysAgo = Date.now() - 7 * 24 * 60 * 60 * 1000
+    const existingBackups = fs.readdirSync(backupDir)
+    let purgedCount = 0
+
+    for (const file of existingBackups) {
+      const filePath = path.join(backupDir, file)
+      const stat = fs.statSync(filePath)
+      if (stat.isFile() && stat.mtimeMs < sevenDaysAgo) {
+        fs.unlinkSync(filePath)
+        purgedCount++
+      }
+    }
+
+    if (purgedCount > 0) {
+      console.log(`🧹 Cleaned up ${purgedCount} backup file(s) older than 7 days.`)
+    }
+  } catch (cleanErr) {
+    console.warn('⚠️ Warning: Failed to clean old backups:', cleanErr)
+  }
+
+  console.log(`======================================================\n`)
+  process.exit(0)
 }
 
 backupDatabase()
