@@ -43,7 +43,7 @@ Standalone **Payload CMS 3.0** backend for **MTSC Halifax** and **People for Hon
 
 1. **Open SSH Tunnel on your Local PC Terminal**:
    ```powershell
-   ssh -i "E:\InviData\Docs\server\TestServers\id_dev_g91" -L 4983:localhost:4983 root@31.97.207.35
+   ssh -i "your_location/id_dev_g91" -L 4983:localhost:4983 your_username@your_vps_ip
    ```
 2. **Inside VPS Terminal (Once logged in)**:
    ```bash
@@ -81,7 +81,7 @@ PAYLOAD_SECRET=peopleforhonor-payload-secret-key-2026
 PAYLOAD_PUBLIC_SERVER_URL=https://mtsc-halifax-cms.cloudgenz.com
 PAYLOAD_PUBLIC_MTSC_SITE_URL=https://www.missiontoseafarershalifax.ca
 CORS_ORIGINS=https://www.missiontoseafarershalifax.ca,https://mtsc-halifax-dev.web.app,http://localhost:5173
-DATABASE_URI=postgresql://honor_user:peopleforhonorAxuPassword123@127.0.0.1:5432/honor_forge_db
+DATABASE_URI=postgresql://honor_user:xxxx@127.0.0.1:5432/honor_forge_db
 
 # Cloudflare R2 / S3 Uploads
 R2_BUCKET=
@@ -91,7 +91,10 @@ R2_ENDPOINT=
 R2_REGION=auto
 ```
 
----
+For DB backup:
+```bash
+gunzip -c /root/cms_backup/DB_backup_2026-09-02_03-00_peopleforhonor.sql.gz | psql "postgresql://honor_user:xxx@127.0.0.1:5432/honor_forge_db"
+```
 
 ## 📦 VPS Production Update & Deployment Flow
 
