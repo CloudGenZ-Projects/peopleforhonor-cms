@@ -26,6 +26,10 @@
     "db:seed-mtsc-publications": "npx tsx src/seed/mtsc/seed-mtsc-publications.ts",
     "db:seed-mtsc-contact": "npx tsx src/seed/mtsc/seed-mtsc-contact.ts",
     "db:seed-mtscnl-home": "npx tsx src/seed/mtscnl/seed-mtscnl-home.ts",
+    "db:seed-mtscnl-about": "npx tsx src/seed/mtscnl/seed-mtscnl-about.ts",
+    "db:seed-mtscnl-contact": "npx tsx src/seed/mtscnl/seed-mtscnl-contact.ts",
+    "db:seed-mtscnl-get-involved": "npx tsx src/seed/mtscnl/seed-mtscnl-get-involved.ts",
+    "db:seed-mtscnl-support": "npx tsx src/seed/mtscnl/seed-mtscnl-support.ts",
     "db:backup": "npx tsx src/backup-db.ts"
   },
   "dependencies": {
