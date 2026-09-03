@@ -25,6 +25,10 @@ import { MtscContactPage } from './globals/mtsc/MtscContactPage'
 
 // Website 3: MTSC Newfoundland & Labrador Globals
 import { MtscnlHomePage } from './globals/mtscnl/MtscnlHomePage'
+import { MtscnlAboutPage } from './globals/mtscnl/MtscnlAboutPage'
+import { MtscnlContactPage } from './globals/mtscnl/MtscnlContactPage'
+import { MtscnlGetInvolvedPage}  from './globals/mtscnl/MtscnlGetInvolvedPage'
+import { MtscnlSupportPage} from './globals/mtscnl/MtscnlSupportPage'
 
 // Test/Demo Globals
 import { AstroTestPage } from './globals/astro-test/AstroTestPage'
@@ -215,6 +219,10 @@ export default buildConfig({
     MtscPublicationsPage,
     MtscContactPage,
     MtscnlHomePage,
+    MtscnlAboutPage,
+    MtscnlContactPage,
+    MtscnlGetInvolvedPage,
+    MtscnlSupportPage,
   ],
   editor: lexicalEditor({}),
   secret: process.env.PAYLOAD_SECRET || 'peopleforhonor-payload-secret-key-2026',
