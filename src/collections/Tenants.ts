@@ -1,5 +1,5 @@
 import type { CollectionConfig } from 'payload'
-import { checkTenantAccess } from '../utils/tenantAccess'
+import { checkTenantAccess, setTenantInCache, removeTenantFromCache } from '../utils/tenantAccess'
 
 export const Tenants: CollectionConfig = {
   slug: 'tenants',
@@ -13,6 +13,22 @@ export const Tenants: CollectionConfig = {
     update: ({ req }) => checkTenantAccess(req, 'admin-only'),
     delete: ({ req }) => checkTenantAccess(req, 'admin-only'),
     admin: ({ req }) => Boolean(req.user),
+  },
+  hooks: {
+    afterChange: [
+      async ({ doc }) => {
+        if (doc?.id && doc?.slug) {
+          setTenantInCache(doc.id, doc.slug, doc.name)
+        }
+      },
+    ],
+    afterDelete: [
+      async ({ id }) => {
+        if (id) {
+          removeTenantFromCache(id)
+        }
+      },
+    ],
   },
   fields: [
     {

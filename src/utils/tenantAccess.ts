@@ -1,124 +1,192 @@
-export function checkTenantAccess(reqOrArgs: any, targetTenantSlug: string): boolean {
+
+const tenantCache = new Map<string, { slug: string; name: string }>()
+
+
+function normalizeSlug(str: string): string {
+  return String(str || '')
+    .trim()
+    .toLowerCase()
+    .replace(/[-_\s]/g, '')
+}
+
+export function setTenantInCache(id: string | number, slug: string, name?: string): void {
+  if (!id || !slug) return
+  tenantCache.set(String(id), {
+    slug: String(slug).trim().toLowerCase(),
+    name: String(name || '').trim().toLowerCase(),
+  })
+}
+
+
+export function removeTenantFromCache(id: string | number): void {
+  if (!id) return
+  tenantCache.delete(String(id))
+}
+
+export function getTenantFromCache(id: string | number): { slug: string; name: string } | undefined {
+  if (!id) return undefined
+  return tenantCache.get(String(id))
+}
+
+
+export async function refreshTenantCache(payload: any): Promise<void> {
+  try {
+    const result = await payload.find({
+      collection: 'tenants',
+      limit: 1000,
+      depth: 0,
+    })
+    const docs = result?.docs || []
+    if (Array.isArray(docs)) {
+      for (const t of docs) {
+        if (t?.id && t?.slug) {
+          setTenantInCache(t.id, t.slug, t.name)
+        }
+      }
+      console.log(`✅ [tenantAccess] Loaded ${docs.length} tenants into dynamic memory cache`)
+    }
+  } catch (err) {
+    console.error('⚠️ [tenantAccess] Failed to pre-load tenants cache:', err)
+  }
+}
+
+
+function matchesTargetSlug(tenantRef: any, targetNormalized: string): boolean {
+  if (!tenantRef) return false
+
+  let slug = ''
+  let idStr = ''
+
+  if (typeof tenantRef === 'object' && tenantRef !== null) {
+    slug = String(tenantRef.slug || '')
+    idStr = String(tenantRef.id || '')
+  } else {
+    idStr = String(tenantRef)
+  }
+
+  // 1. Direct match on populated tenant slug
+  if (slug && normalizeSlug(slug) === targetNormalized) {
+    return true
+  }
+
+  // 2. Match via cached tenant ID
+  if (idStr && tenantCache.has(idStr)) {
+    const cached = tenantCache.get(idStr)!
+    if (normalizeSlug(cached.slug) === targetNormalized) {
+      return true
+    }
+  }
+
+  return false
+}
+
+
+export async function checkTenantAccess(reqOrArgs: any, targetTenantSlug: string): Promise<boolean> {
   try {
     const req = reqOrArgs?.req ? reqOrArgs.req : reqOrArgs
     const user = req?.user
     if (!user) return false
 
-    // Case-insensitive Super Admin email check
+    // 1. Super Admin email bypass
     const email = (user.email || '').toLowerCase()
     if (email === 'cloudgenz.dev@gmail.com') {
       return true
     }
 
-    // Admin-only items are strictly for cloudgenz.dev@gmail.com
+    // 2. Global Admin / Super-Admin roles bypass
+    const roles = Array.isArray(user.roles) ? user.roles : (user.role ? [user.role] : [])
+    if (roles.includes('admin') || roles.includes('super-admin')) {
+      return true
+    }
+
+    // 3. Admin-only sections are reserved for super admins
     if (targetTenantSlug === 'admin-only') {
       return false
     }
 
+    const targetNorm = normalizeSlug(targetTenantSlug)
     const rawTenants = user.tenants || []
     const tenantsList = Array.isArray(rawTenants) ? rawTenants : [rawTenants]
 
-    // If user has no tenants assigned, allow PFH access by default
+    // Default fallback: If user has no tenants assigned, grant access only to default primary tenant
     if (tenantsList.length === 0 || tenantsList.every((i: any) => !i)) {
-      if (targetTenantSlug === 'peopleforhonor') return true
+      return targetNorm === normalizeSlug('peopleforhonor')
     }
 
-    return tenantsList.some((item: any) => {
-      if (!item) return false
-
+    for (const item of tenantsList) {
+      if (!item) continue
       const t = item.tenant !== undefined ? item.tenant : item
-      if (!t) return false
+      if (!t) continue
 
-      const strVal = typeof t === 'object' && t !== null 
-        ? String(t.slug || t.name || t.id || '') 
-        : String(t)
-
-      const lowerVal = strVal.toLowerCase()
-
-      if (targetTenantSlug === 'peopleforhonor') {
-        return (
-          lowerVal === '1' ||
-          lowerVal === '3' ||
-          lowerVal.includes('people') ||
-          lowerVal.includes('honor') ||
-          lowerVal.includes('pfh')
-        )
+      // Check against populated object or in-memory cache
+      if (matchesTargetSlug(t, targetNorm)) {
+        return true
       }
 
-      if (targetTenantSlug === 'mtsc') {
-        return (lowerVal === '2' || lowerVal.includes('mtsc') || lowerVal.includes('halifax')) && !lowerVal.includes('newfoundland') && !lowerVal.includes('nl')
+      // If tenant ID is not yet in cache, fetch dynamically from database using req.payload
+      const idStr = String(typeof t === 'object' && t !== null ? t.id || '' : t)
+      if (idStr && !tenantCache.has(idStr) && req?.payload) {
+        try {
+          const doc = await req.payload.findByID({
+            collection: 'tenants',
+            id: idStr,
+            depth: 0,
+          })
+          if (doc?.slug) {
+            setTenantInCache(idStr, doc.slug, doc.name)
+            if (normalizeSlug(doc.slug) === targetNorm) {
+              return true
+            }
+          }
+        } catch {
+          // Lookup failed, continue checking remaining tenants
+        }
       }
+    }
 
-      if (targetTenantSlug === 'mtscnl') {
-        return lowerVal.includes('newfoundland') || lowerVal.includes('mtscnl') || lowerVal.includes('nl')
-      }
-
-      return false
-    })
+    return false
   } catch (err) {
     console.error('⚠️ [checkTenantAccess] Caught exception safely:', err)
     return true
   }
 }
 
-/**
- * Official Payload 3 helper for admin.hidden property on Globals/Collections.
- * Returns true if the global/collection SHOULD BE HIDDEN in sidebar for this user.
- */
+
 export function isHiddenForUser(user: any, targetTenantSlug: string): boolean {
   try {
     if (!user) return true
 
-    // Case-insensitive Super Admin email check
+    // 1. Super Admin email bypass
     const email = (user.email || '').toLowerCase()
     if (email === 'cloudgenz.dev@gmail.com') {
       return false
     }
 
-    // Admin-only items are strictly for cloudgenz.dev@gmail.com
+    // 2. Global Admin / Super-Admin roles bypass
+    const roles = Array.isArray(user.roles) ? user.roles : (user.role ? [user.role] : [])
+    if (roles.includes('admin') || roles.includes('super-admin')) {
+      return false
+    }
+
+    // 3. Admin-only sections are reserved for super admins
     if (targetTenantSlug === 'admin-only') {
       return true
     }
 
+    const targetNorm = normalizeSlug(targetTenantSlug)
     const rawTenants = user.tenants || []
     const tenantsList = Array.isArray(rawTenants) ? rawTenants : [rawTenants]
 
-    // If user has no tenants assigned, show PFH section by default
+    // Default fallback: If user has no tenants assigned, show only default primary tenant
     if (tenantsList.length === 0 || tenantsList.every((i: any) => !i)) {
-      if (targetTenantSlug === 'peopleforhonor') return false
+      return targetNorm !== normalizeSlug('peopleforhonor')
     }
 
     const hasAccess = tenantsList.some((item: any) => {
       if (!item) return false
-
       const t = item.tenant !== undefined ? item.tenant : item
       if (!t) return false
-
-      const strVal = typeof t === 'object' && t !== null 
-        ? String(t.slug || t.name || t.id || '') 
-        : String(t)
-
-      const lowerVal = strVal.toLowerCase()
-
-      if (targetTenantSlug === 'peopleforhonor') {
-        return (
-          lowerVal === '1' ||
-          lowerVal === '3' ||
-          lowerVal.includes('people') ||
-          lowerVal.includes('honor') ||
-          lowerVal.includes('pfh')
-        )
-      }
-
-      if (targetTenantSlug === 'mtsc') {
-        return (lowerVal === '2' || lowerVal.includes('mtsc') || lowerVal.includes('halifax')) && !lowerVal.includes('newfoundland') && !lowerVal.includes('nl')
-      }
-
-      if (targetTenantSlug === 'mtscnl') {
-        return lowerVal.includes('newfoundland') || lowerVal.includes('mtscnl') || lowerVal.includes('nl')
-      }
-
-      return false
+      return matchesTargetSlug(t, targetNorm)
     })
 
     return !hasAccess

@@ -5,7 +5,7 @@ import { s3Storage } from '@payloadcms/storage-s3'
 import { multiTenantPlugin } from '@payloadcms/plugin-multi-tenant'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { checkTenantAccess, isHiddenForUser } from './utils/tenantAccess'
+import { checkTenantAccess, isHiddenForUser, refreshTenantCache } from './utils/tenantAccess'
 
 // Website 1: People For Honor Globals
 import { HomePage } from './globals/pfh/HomePage'
@@ -232,6 +232,9 @@ export default buildConfig({
     },
     push: true,
   }),
+  onInit: async (payload) => {
+    await refreshTenantCache(payload)
+  },
   plugins,
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
