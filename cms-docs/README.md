@@ -24,3 +24,4 @@ Welcome! This documentation directory (`cms-docs/`) contains a complete, AI-read
 - 📄 [`03-frontend-architecture-and-live-preview.md`](./03-frontend-architecture-and-live-preview.md) — React Query, Live Preview, relative media URLs, dynamic program routing.
 - 📄 [`04-vps-deployment-and-seed-scripts.md`](./04-vps-deployment-and-seed-scripts.md) — VPS git pull/build/pm2 commands, database seed commands, env vars.
 - 📘 [`05-how-to-add-new-pages-programs-and-globals.md`](./05-how-to-add-new-pages-programs-and-globals.md) — **Universal Guide: How any AI agent adds new pages, custom programs, or services.**
+- 🌐 [`HOW_TO_ADD_A_NEW_WEBSITE.md`](./HOW_TO_ADD_A_NEW_WEBSITE.md) — **Universal Guide: How to Add a New Website / Tenant (0 Hardcoding Architecture).**
