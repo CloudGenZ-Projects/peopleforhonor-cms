@@ -53,6 +53,8 @@ const defaultOrigins = [
   'https://astro-test.cloudgenz.com',
   'https://mtsc-halifax-cms.cloudgenz.com',
   'https://mtsc-halifax.cloudgenz.com',
+  'https://mtsc-nl-cms.cloudgenz.com',
+  'https://mtsc-nl.cloudgenz.com',
   '*',
 ]
 
