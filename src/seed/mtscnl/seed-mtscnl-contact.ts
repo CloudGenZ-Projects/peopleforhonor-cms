@@ -15,6 +15,7 @@ async function seedMtscnlContact() {
   await payload.updateGlobal({
     slug: 'mtscnl-contact-page' as any,
     data: {
+      hero_background_image: null,
       hero_badge: 'Contact Us',
       hero_title: 'We want to hear from you!',
       hero_subtitle: 'Whether it’s by email, social media, or LinkedIn — we want to hear from you!',
@@ -41,7 +42,7 @@ async function seedMtscnlContact() {
     },
   })
 
-  console.log('🎉 MtscnlContactPage Global seeded successfully!')
+  console.log('🎉 MtscnlContactPage Global seeded successfully with Image Fields mapped!')
   process.exit(0)
 }
 

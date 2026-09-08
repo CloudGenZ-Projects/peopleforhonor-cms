@@ -29,6 +29,12 @@ export const MtscnlAboutPage: GlobalConfig = {
         {
           label: 'Hero & History',
           fields: [
+            { 
+              name: 'hero_background_image', 
+              label: 'Hero Background Image', 
+              type: 'upload', 
+              relationTo: 'media' 
+            },
             { name: 'hero_title', label: 'Hero Title', type: 'text', defaultValue: 'Newfoundland and Labrador Station History' },
             { name: 'history_eyebrow', label: 'History Eyebrow', type: 'text', defaultValue: 'Our Story' },
             { name: 'history_title', label: 'History Title', type: 'text', defaultValue: 'Decades of Care in Newfoundland and Labrador' },
@@ -37,6 +43,12 @@ export const MtscnlAboutPage: GlobalConfig = {
               label: 'History Blocks',
               type: 'array',
               fields: [
+                {
+                  name: 'image',
+                  label: 'History Block Image',
+                  type: 'upload',
+                  relationTo: 'media',
+                },
                 { name: 'era', label: 'Era/Year', type: 'text' },
                 { name: 'title', label: 'Title', type: 'text' },
                 { name: 'paragraph_1', label: 'Paragraph 1', type: 'textarea' },
@@ -57,6 +69,12 @@ export const MtscnlAboutPage: GlobalConfig = {
               label: 'Team Members',
               type: 'array',
               fields: [
+                {
+                  name: 'image',
+                  label: 'Team Member Photo',
+                  type: 'upload',
+                  relationTo: 'media',
+                },
                 { name: 'name', label: 'Name', type: 'text' },
                 { name: 'role', label: 'Role', type: 'text' },
                 { name: 'bio_p1', label: 'Bio Paragraph 1', type: 'textarea' },
@@ -94,6 +112,19 @@ export const MtscnlAboutPage: GlobalConfig = {
             { name: 'gallery_eyebrow', label: 'Eyebrow', type: 'text', defaultValue: 'Our Community in Action' },
             { name: 'gallery_title', label: 'Title', type: 'text', defaultValue: "Newfoundland and Labrador Seafarers' Centre Gallery" },
             { name: 'gallery_subtitle', label: 'Subtitle', type: 'textarea', defaultValue: 'A glimpse into our local facilities, activities, and dedicated teams welcoming international crews to our ports.' },
+            {
+              name: 'gallery_images',
+              label: 'Gallery Slider Images',
+              type: 'array',
+              fields: [
+                {
+                  name: 'image',
+                  label: 'Image',
+                  type: 'upload',
+                  relationTo: 'media',
+                }
+              ]
+            }
           ],
         },
 

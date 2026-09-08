@@ -15,6 +15,7 @@ async function seedMtscnlGetInvolved() {
   await payload.updateGlobal({
     slug: 'mtscnl-get-involved-page' as any,
     data: {
+      hero_background_image: null,
       hero_badge: 'Get Involved',
       hero_title: 'Get Involved with Mission to Seafarers Newfoundland and Labrador',
       hero_subtitle: 'Whether you volunteer, donate, attend an event or simply help us welcome a seafarer, you become part of a connected network of care reaching from Newfoundland and Labrador to ports around the world.',
@@ -46,6 +47,7 @@ async function seedMtscnlGetInvolved() {
       donate_button_label: 'Donate Now',
       donate_iframe_url: 'https://www.canadahelps.org/en/dn/145961',
 
+      ways_background_image: null,
       ways_eyebrow: 'Other Ways to Help',
       ways_title: 'Choose How You Would Like to Support',
       ways_cards: [
@@ -107,7 +109,7 @@ async function seedMtscnlGetInvolved() {
     },
   })
 
-  console.log('🎉 MtscnlGetInvolvedPage Global seeded successfully!')
+  console.log('🎉 MtscnlGetInvolvedPage Global seeded successfully with Image Fields mapped!')
   process.exit(0)
 }
 

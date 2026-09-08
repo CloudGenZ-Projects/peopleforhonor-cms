@@ -29,6 +29,12 @@ export const MtscnlContactPage: GlobalConfig = {
         {
           label: 'Hero Section',
           fields: [
+            {
+              name: 'hero_background_image',
+              label: 'Hero Background Image',
+              type: 'upload',
+              relationTo: 'media',
+            },
             { name: 'hero_badge', label: 'Badge', type: 'text', defaultValue: 'Contact Us' },
             { name: 'hero_title', label: 'Title', type: 'text', defaultValue: 'We want to hear from you!' },
             { name: 'hero_subtitle', label: 'Subtitle', type: 'textarea', defaultValue: 'Whether it’s by email, social media, or LinkedIn — we want to hear from you!' },

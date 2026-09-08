@@ -31,6 +31,7 @@
     "db:seed-mtscnl-contact": "npx tsx src/seed/mtscnl/seed-mtscnl-contact.ts",
     "db:seed-mtscnl-get-involved": "npx tsx src/seed/mtscnl/seed-mtscnl-get-involved.ts",
     "db:seed-mtscnl-support": "npx tsx src/seed/mtscnl/seed-mtscnl-support.ts",
+    "db:seed-mtscnl-donate": "npx tsx src/seed/mtscnl/seed-mtscnl-donate.ts",
     "db:backup": "npx tsx src/backup-db.ts"
   },
   "dependencies": {

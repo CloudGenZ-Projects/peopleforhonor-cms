@@ -15,6 +15,13 @@ async function seedMtscnlHome() {
   await payload.updateGlobal({
     slug: 'mtscnl-home-page' as any,
     data: {
+      // Images will initially be seeded as null to use frontend fallback files. 
+      // You can upload them manually from the CMS afterwards.
+      hero_background_image: null,
+      hero_skyline_image: null,
+      hero_main_image: null,
+      get_involved_background_image: null,
+
       // TAB 1: HERO
       hero_eyebrow: 'Mission to Seafarers · Newfoundland and Labrador',
       hero_title_line_1: 'Here When Seafarers',
@@ -134,7 +141,7 @@ async function seedMtscnlHome() {
     },
   })
 
-  console.log('🎉 MtscnlHomePage Global seeded successfully with 100% of the content!')
+  console.log('🎉 MtscnlHomePage Global seeded successfully with 100% of the content and Image Upload setup!')
   process.exit(0)
 }
 

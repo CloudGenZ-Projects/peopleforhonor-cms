@@ -15,6 +15,7 @@ async function seedMtscnlSupport() {
   await payload.updateGlobal({
     slug: 'mtscnl-support-page' as any,
     data: {
+      hero_background_image: null,
       hero_badge: 'For Seafarers',
       hero_title: 'Support While You’re at Port',
       hero_subtitle: 'Wherever you’re from, you are welcome here. We’re here to support you with practical help, connection and care while you’re in Newfoundland and Labrador.',
@@ -27,6 +28,7 @@ async function seedMtscnlSupport() {
         { id: 'explore', icon: 'Globe', title: 'Explore NL', desc: 'An Adventure Awaits', isLink: true, isExternal: true, link: 'https://www.newfoundlandlabrador.com/' },
       ],
 
+      centre_image: null,
       centre_title: 'Seafarers’ Centre',
       centre_subtitle: 'A Welcoming Haven for Rest and Connection',
       centre_description: 'Our Seafarers’ Centre is a safe, welcoming space designed to help seafarers relax, recharge, and connect with loved ones. When you come ashore, you can access a variety of services, including',
@@ -38,6 +40,7 @@ async function seedMtscnlSupport() {
       ],
       centre_button: 'Come visit us',
 
+      transport_image: null,
       transport_title: 'Transportation Assistance',
       transport_subtitle: 'Making Your Time in Port Easier',
       transport_desc_1: 'Whether you’re staying on board or able to go ashore, our transportation assistance ensures your time in port is as comfortable as possible.',
@@ -54,6 +57,7 @@ async function seedMtscnlSupport() {
       ship_callout: 'If you would like to learn more about our ship visit program or request a visit to your vessel, we would be happy to connect with you.',
       ship_button: 'Connect Us Today',
 
+      religion_image: null,
       religion_title: 'Religious Services',
       religion_subtitle: 'Spiritual Support for All Beliefs',
       religion_description: 'Our chaplain is available to provide spiritual care, regardless of your faith tradition. Whether you seek Anglican, Catholic, Orthodox, or multi-faith services, we are here to support you. We also offer:',
@@ -84,7 +88,7 @@ async function seedMtscnlSupport() {
     },
   })
 
-  console.log('🎉 MtscnlSupportPage Global seeded successfully!')
+  console.log('🎉 MtscnlSupportPage Global seeded successfully with Image Fields mapped!')
   process.exit(0)
 }
 

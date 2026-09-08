@@ -29,6 +29,12 @@ export const MtscnlSupportPage: GlobalConfig = {
         {
           label: 'Hero & Quick Access',
           fields: [
+            {
+              name: 'hero_background_image',
+              label: 'Hero Background Image',
+              type: 'upload',
+              relationTo: 'media',
+            },
             { name: 'hero_badge', label: 'Hero Badge', type: 'text', defaultValue: 'For Seafarers' },
             { name: 'hero_title', label: 'Hero Title', type: 'text', defaultValue: 'Support While You’re at Port' },
             { name: 'hero_subtitle', label: 'Hero Subtitle', type: 'textarea', defaultValue: 'Wherever you’re from, you are welcome here. We’re here to support you with practical help, connection and care while you’re in Newfoundland and Labrador.' },
@@ -55,6 +61,12 @@ export const MtscnlSupportPage: GlobalConfig = {
         {
           label: 'Seafarers Centre',
           fields: [
+            {
+              name: 'centre_image',
+              label: 'Section Image',
+              type: 'upload',
+              relationTo: 'media',
+            },
             { name: 'centre_title', label: 'Title', type: 'text', defaultValue: 'Seafarers’ Centre' },
             { name: 'centre_subtitle', label: 'Subtitle', type: 'text', defaultValue: 'A Welcoming Haven for Rest and Connection' },
             { name: 'centre_description', label: 'Description', type: 'textarea', defaultValue: 'Our Seafarers’ Centre is a safe, welcoming space designed to help seafarers relax, recharge, and connect with loved ones. When you come ashore, you can access a variety of services, including' },
@@ -72,6 +84,12 @@ export const MtscnlSupportPage: GlobalConfig = {
         {
           label: 'Transportation',
           fields: [
+            {
+              name: 'transport_image',
+              label: 'Section Image',
+              type: 'upload',
+              relationTo: 'media',
+            },
             { name: 'transport_title', label: 'Title', type: 'text', defaultValue: 'Transportation Assistance' },
             { name: 'transport_subtitle', label: 'Subtitle', type: 'text', defaultValue: 'Making Your Time in Port Easier' },
             { name: 'transport_desc_1', label: 'Description (Top)', type: 'textarea', defaultValue: 'Whether you’re staying on board or able to go ashore, our transportation assistance ensures your time in port is as comfortable as possible.' },
@@ -102,6 +120,12 @@ export const MtscnlSupportPage: GlobalConfig = {
         {
           label: 'Religious Services',
           fields: [
+            {
+              name: 'religion_image',
+              label: 'Section Image',
+              type: 'upload',
+              relationTo: 'media',
+            },
             { name: 'religion_title', label: 'Title', type: 'text', defaultValue: 'Religious Services' },
             { name: 'religion_subtitle', label: 'Subtitle', type: 'text', defaultValue: 'Spiritual Support for All Beliefs' },
             { name: 'religion_description', label: 'Description', type: 'textarea', defaultValue: 'Our chaplain is available to provide spiritual care, regardless of your faith tradition. Whether you seek Anglican, Catholic, Orthodox, or multi-faith services, we are here to support you. We also offer:' },

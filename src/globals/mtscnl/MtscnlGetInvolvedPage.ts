@@ -29,6 +29,12 @@ export const MtscnlGetInvolvedPage: GlobalConfig = {
         {
           label: 'Hero',
           fields: [
+            {
+              name: 'hero_background_image',
+              label: 'Hero Background Image',
+              type: 'upload',
+              relationTo: 'media',
+            },
             { name: 'hero_badge', label: 'Hero Badge', type: 'text', defaultValue: 'Get Involved' },
             { name: 'hero_title', label: 'Hero Title', type: 'text', defaultValue: 'Get Involved with Mission to Seafarers Newfoundland and Labrador' },
             { name: 'hero_subtitle', label: 'Hero Subtitle', type: 'textarea', defaultValue: 'Whether you volunteer, donate, attend an event or simply help us welcome a seafarer, you become part of a connected network of care reaching from Newfoundland and Labrador to ports around the world.' },
@@ -73,6 +79,12 @@ export const MtscnlGetInvolvedPage: GlobalConfig = {
         {
           label: 'Ways to Help',
           fields: [
+            {
+              name: 'ways_background_image',
+              label: 'Ways to Help Background Image',
+              type: 'upload',
+              relationTo: 'media',
+            },
             { name: 'ways_eyebrow', label: 'Eyebrow', type: 'text', defaultValue: 'Other Ways to Help' },
             { name: 'ways_title', label: 'Title', type: 'text', defaultValue: 'Choose How You Would Like to Support' },
             {

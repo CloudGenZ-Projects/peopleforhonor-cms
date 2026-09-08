@@ -30,6 +30,24 @@ export const MtscnlHomePage: GlobalConfig = {
           label: 'Hero Section',
           fields: [
             {
+              name: 'hero_background_image',
+              label: 'Hero Background Image',
+              type: 'upload',
+              relationTo: 'media', 
+            },
+            {
+              name: 'hero_skyline_image',
+              label: 'Hero Skyline Floating Image',
+              type: 'upload',
+              relationTo: 'media', 
+            },
+            {
+              name: 'hero_main_image',
+              label: 'Hero Main Image (Right Side)',
+              type: 'upload',
+              relationTo: 'media', 
+            },
+            {
               name: 'hero_eyebrow',
               label: 'Eyebrow Text',
               type: 'text',
@@ -283,6 +301,12 @@ export const MtscnlHomePage: GlobalConfig = {
         {
           label: 'Involve & Donate',
           fields: [
+            {
+              name: 'get_involved_background_image',
+              label: 'Get Involved & Donate Background Image',
+              type: 'upload',
+              relationTo: 'media',
+            },
             // Get Involved Card
             {
               name: 'involved_eyebrow',
