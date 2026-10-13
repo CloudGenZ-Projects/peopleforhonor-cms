@@ -36,7 +36,8 @@
     "db:seed-uip-home": "npx tsx src/seed/uip/seed-uip-home.ts",
     "db:seed-uip-about": "npx tsx src/seed/uip/seed-uip-about.ts",
     "db:seed-uip-stories": "npx tsx src/seed/uip/seed-uip-stories.ts",
-    "db:seed-uip-partners": "npx tsx src/seed/uip/seed-uip-partners.ts"
+    "db:seed-uip-partners": "npx tsx src/seed/uip/seed-uip-partners.ts",
+    "db:seed-uip-waystogive": "npx tsx src/seed/uip/seed-uip-waystogive.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.86.0",
