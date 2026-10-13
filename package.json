@@ -41,7 +41,8 @@
     "db:seed-uip-carepacks": "npx tsx src/seed/uip/seed-uip-carepacks.ts",
     "db:seed-uip-involved": "npx tsx src/seed/uip/seed-uip-involved.ts",
     "db:seed-uip-programs": "npx tsx src/seed/uip/seed-uip-programs.ts",
-    "db:seed-uip-donate": "npx tsx src/seed/uip/seed-uip-donate.ts"
+    "db:seed-uip-donate": "npx tsx src/seed/uip/seed-uip-donate.ts",
+    "db:seed-uip-contact": "npx tsx src/seed/uip/seed-uip-contact.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.86.0",
