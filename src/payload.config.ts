@@ -30,6 +30,9 @@ import { MtscnlContactPage } from './globals/mtscnl/MtscnlContactPage'
 import { MtscnlGetInvolvedPage}  from './globals/mtscnl/MtscnlGetInvolvedPage'
 import { MtscnlSupportPage} from './globals/mtscnl/MtscnlSupportPage'
 
+// Website 4: UIP Globals
+import { UipHomePage } from './globals/uip/UipHomePage'
+
 // Test/Demo Globals
 import { AstroTestPage } from './globals/astro-test/AstroTestPage'
 
@@ -55,6 +58,8 @@ const defaultOrigins = [
   'https://mtsc-halifax.cloudgenz.com',
   'https://mtsc-nl-cms.cloudgenz.com',
   'https://mtsc-nl.cloudgenz.com',
+  'https://uip-cms.cloudgenz.com',
+  'https://uip.cloudgenz.com',
   '*',
 ]
 
@@ -225,6 +230,7 @@ export default buildConfig({
     MtscnlContactPage,
     MtscnlGetInvolvedPage,
     MtscnlSupportPage,
+    UipHomePage,
   ],
   editor: lexicalEditor({}),
   secret: process.env.PAYLOAD_SECRET || 'peopleforhonor-payload-secret-key-2026',
