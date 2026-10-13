@@ -32,6 +32,7 @@ import { MtscnlSupportPage} from './globals/mtscnl/MtscnlSupportPage'
 
 // Website 4: UIP Globals
 import { UipHomePage } from './globals/uip/UipHomePage'
+import { UipAboutPage } from './globals/uip/UipAboutPage'
 
 // Test/Demo Globals
 import { AstroTestPage } from './globals/astro-test/AstroTestPage'
@@ -231,6 +232,7 @@ export default buildConfig({
     MtscnlGetInvolvedPage,
     MtscnlSupportPage,
     UipHomePage,
+    UipAboutPage,
   ],
   editor: lexicalEditor({}),
   secret: process.env.PAYLOAD_SECRET || 'peopleforhonor-payload-secret-key-2026',
