@@ -26,12 +26,12 @@
     "#_DISABLED_PROD_SAFETY_seed-mtsc-contact": "echo 'PROTECTED: MTSC is live on production. Do not run seed.'",
     "#_DISABLED_PROD_SAFETY_seed-mtscnl-home": "echo 'PROTECTED: MTSCNL is live on production. Do not run seed.'",
     "#_DISABLED_PROD_SAFETY_seed-tenants": "echo 'PROTECTED: Tenants are live on production. Do not run seed.'",
-    "db:migrate-r2": "npx tsx src/scripts/migrate-to-r2.ts",
-    "db:seed-mtscnl-about": "npx tsx src/seed/mtscnl/seed-mtscnl-about.ts",
-    "db:seed-mtscnl-contact": "npx tsx src/seed/mtscnl/seed-mtscnl-contact.ts",
-    "db:seed-mtscnl-get-involved": "npx tsx src/seed/mtscnl/seed-mtscnl-get-involved.ts",
-    "db:seed-mtscnl-support": "npx tsx src/seed/mtscnl/seed-mtscnl-support.ts",
-    "db:seed-mtscnl-donate": "npx tsx src/seed/mtscnl/seed-mtscnl-donate.ts",
+    "#_DISABLED_PROD_SAFETY_migrate-r2": "echo 'PROTECTED: Do not run migrate-to-r2.'",
+    "#_DISABLED_PROD_SAFETY_seed-mtscnl-about": "echo 'PROTECTED: MTSCNL is live on production. Do not run seed.'",
+    "#_DISABLED_PROD_SAFETY_seed-mtscnl-contact": "echo 'PROTECTED: MTSCNL is live on production. Do not run seed.'",
+    "#_DISABLED_PROD_SAFETY_seed-mtscnl-get-involved": "echo 'PROTECTED: MTSCNL is live on production. Do not run seed.'",
+    "#_DISABLED_PROD_SAFETY_seed-mtscnl-support": "echo 'PROTECTED: MTSCNL is live on production. Do not run seed.'",
+    "#_DISABLED_PROD_SAFETY_seed-mtscnl-donate": "echo 'PROTECTED: MTSCNL is live on production. Do not run seed.'",
     "db:backup": "npx tsx src/backup-db.ts"
   },
   "dependencies": {
