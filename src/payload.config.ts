@@ -37,6 +37,7 @@ import { UipStoriesPage } from './globals/uip/UipStoriesPage'
 import { UipPartnersPage } from './globals/uip/UipPartnersPage'
 import { UipWaysToGivePage } from './globals/uip/UipWaysToGivePage'
 import { UipCarePacksPage } from './globals/uip/UipCarePacksPage'
+import { UipInvolvedPage } from './globals/uip/UipInvolvedPage'
 
 // Test/Demo Globals
 import { AstroTestPage } from './globals/astro-test/AstroTestPage'
@@ -241,6 +242,7 @@ export default buildConfig({
     UipPartnersPage,
     UipWaysToGivePage,
     UipCarePacksPage,
+    UipInvolvedPage,
   ],
   editor: lexicalEditor({}),
   secret: process.env.PAYLOAD_SECRET || 'peopleforhonor-payload-secret-key-2026',
