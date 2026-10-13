@@ -55,18 +55,6 @@ export const UipHomePage: GlobalConfig = {
                 'We support LGBTQ+ newcomers, immigrants, and refugees through community programs, peer support, and culturally affirming spaces.',
             },
             {
-              name: 'hero_youtube_id',
-              label: 'Hero Background YouTube Video ID',
-              type: 'text',
-              defaultValue: 'RHaZ3dy1rc0',
-            },
-            {
-              name: 'hero_fallback_image',
-              label: 'Hero Fallback Background Image',
-              type: 'upload',
-              relationTo: 'media',
-            },
-            {
               type: 'row',
               fields: [
                 {
@@ -361,30 +349,6 @@ export const UipHomePage: GlobalConfig = {
               label: 'Section Subtitle',
               type: 'text',
               defaultValue: 'Inspiring journeys of resilience and growth',
-            },
-            {
-              name: 'community_videos',
-              label: 'Featured Videos',
-              type: 'array',
-              defaultValue: [
-                { youtube_id: 'fadY9BXl79o', title: 'Community Voice 1' },
-                { youtube_id: 'd58Gft_Ioa0', title: 'Community Voice 2' },
-                { youtube_id: 'RSvC4Ps-u1Y', title: 'Community Voice 3' },
-              ],
-              fields: [
-                {
-                  name: 'title',
-                  label: 'Video Title',
-                  type: 'text',
-                  required: true,
-                },
-                {
-                  name: 'youtube_id',
-                  label: 'YouTube Video ID',
-                  type: 'text',
-                  required: true,
-                },
-              ],
             },
           ],
         },
