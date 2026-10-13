@@ -21,8 +21,6 @@ async function seedUipHome() {
       hero_title_gradient: 'Start your journey with people who understand you.',
       hero_description:
         'We support LGBTQ+ newcomers, immigrants, and refugees through community programs, peer support, and culturally affirming spaces.',
-      hero_youtube_id: 'RHaZ3dy1rc0',
-      hero_fallback_image: null,
       hero_cta_primary_label: 'Get Support',
       hero_cta_primary_link: '/contact',
       hero_cta_secondary_label: 'Join Our Programs',
@@ -90,11 +88,6 @@ async function seedUipHome() {
       // TAB 6: COMMUNITY VOICES
       community_vid_title: 'Community Voices',
       community_vid_subtitle: 'Inspiring journeys of resilience and growth',
-      community_videos: [
-        { youtube_id: 'fadY9BXl79o', title: 'Community Voice 1' },
-        { youtube_id: 'd58Gft_Ioa0', title: 'Community Voice 2' },
-        { youtube_id: 'RSvC4Ps-u1Y', title: 'Community Voice 3' },
-      ],
 
       // TAB 7: PARTNERS
       partners_title: 'Our Community Partners',
