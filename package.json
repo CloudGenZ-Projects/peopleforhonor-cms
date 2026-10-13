@@ -34,7 +34,8 @@
     "#_DISABLED_PROD_SAFETY_seed-mtscnl-donate": "echo 'PROTECTED: MTSCNL is live on production. Do not run seed.'",
     "db:backup": "npx tsx src/backup-db.ts",
     "db:seed-uip-home": "npx tsx src/seed/uip/seed-uip-home.ts",
-    "db:seed-uip-about": "npx tsx src/seed/uip/seed-uip-about.ts"
+    "db:seed-uip-about": "npx tsx src/seed/uip/seed-uip-about.ts",
+    "db:seed-uip-stories": "npx tsx src/seed/uip/seed-uip-stories.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.86.0",
