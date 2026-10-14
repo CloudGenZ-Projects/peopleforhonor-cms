@@ -74,19 +74,25 @@ export const UipContactPage: GlobalConfig = {
               defaultValue: 'Fill out the form below and our team will get back to you.',
             },
             {
+              name: 'connectHeading',
+              type: 'text',
+              label: 'Connect Section Heading',
+              defaultValue: 'Connect With Us',
+            },
+            {
               type: 'row',
               fields: [
                 {
                   name: 'contactEmail',
                   type: 'text',
                   label: 'Email Address',
-                  defaultValue: 'hello@unitedinpride.org',
+                  defaultValue: 'info@unitedinpride.ca',
                 },
                 {
                   name: 'contactEmailSub',
                   type: 'text',
                   label: 'Email Subtitle',
-                  defaultValue: 'We typically respond within 24-48 hours',
+                  defaultValue: 'We typically respond within 24–48 hours',
                 },
               ],
             },
@@ -94,24 +100,35 @@ export const UipContactPage: GlobalConfig = {
               type: 'row',
               fields: [
                 {
-                  name: 'contactPhone',
+                  name: 'socialHandle',
                   type: 'text',
-                  label: 'Phone Number',
-                  defaultValue: '+1 (613) 296-3392',
+                  label: 'Social Media Handle',
+                  defaultValue: '@unitedinpride',
                 },
                 {
-                  name: 'contactPhoneSub',
+                  name: 'socialSub',
                   type: 'text',
-                  label: 'Phone Subtitle',
-                  defaultValue: 'Monday - Friday, 9am - 5pm EST',
+                  label: 'Social Subtitle',
+                  defaultValue: 'Prefer a quicker response? Reach out via social media',
                 },
               ],
             },
             {
-              name: 'whatsappUrl',
-              type: 'text',
-              label: 'WhatsApp Channel URL',
-              defaultValue: 'https://whatsapp.com/channel/0029VbC7CIMJpe8eQBfVNN3K',
+              type: 'row',
+              fields: [
+                {
+                  name: 'whatsappUrl',
+                  type: 'text',
+                  label: 'WhatsApp Channel URL',
+                  defaultValue: 'https://whatsapp.com/channel/0029VbC7CIMJpe8eQBfVNN3K',
+                },
+                {
+                  name: 'whatsappSub',
+                  type: 'text',
+                  label: 'WhatsApp Subtitle',
+                  defaultValue: 'Stay connected with our WhatsApp community',
+                },
+              ],
             },
             {
               type: 'row',
@@ -141,7 +158,24 @@ export const UipContactPage: GlobalConfig = {
               type: 'textarea',
               label: 'Availability Subtitle',
               defaultValue:
-                'Most responses are provided within 24–48 hours. Your information is kept confidential and used only to support you and connect you to appropriate resources.',
+                'Most responses are provided within 24–48 hours.\nYour information is kept confidential and used only to support you and connect you to appropriate resources.',
+            },
+            {
+              type: 'row',
+              fields: [
+                {
+                  name: 'followHeading',
+                  type: 'text',
+                  label: 'Follow Journey Heading',
+                  defaultValue: 'Follow Our Journey',
+                },
+                {
+                  name: 'followSub',
+                  type: 'text',
+                  label: 'Follow Journey Subtitle',
+                  defaultValue: 'Stay updated with our events, stories, and community highlights',
+                },
+              ],
             },
             {
               name: 'mapEmbedUrl',
