@@ -33,9 +33,16 @@ import { MtscnlSupportPage} from './globals/mtscnl/MtscnlSupportPage'
 // Website 4: UIP Globals
 import { UipHomePage } from './globals/uip/UipHomePage'
 import { UipAboutPage } from './globals/uip/UipAboutPage'
+import { UipStoriesPage } from './globals/uip/UipStoriesPage'
+import { UipPartnersPage } from './globals/uip/UipPartnersPage'
+import { UipWaysToGivePage } from './globals/uip/UipWaysToGivePage'
+import { UipCarePacksPage } from './globals/uip/UipCarePacksPage'
+import { UipInvolvedPage } from './globals/uip/UipInvolvedPage'
+import { UipProgramsPage } from './globals/uip/UipProgramsPage'
+import { UipDonatePage } from './globals/uip/UipDonatePage'
+import { UipContactPage } from './globals/uip/UipContactPage'
 
-
-// Website 5: MTSC Toronto Globals
+// Website 5 :MTSCTORONTO
 import { MtscTorontoHomePage } from './globals/mtsctoronto/MtscTorontoHomePage'
 
 // Test/Demo Globals
@@ -239,7 +246,14 @@ export default buildConfig({
     MtscnlSupportPage,
     UipHomePage,
     UipAboutPage,
-    MtscTorontoHomePage, 
+    UipStoriesPage,
+    UipPartnersPage,
+    UipWaysToGivePage,
+    UipCarePacksPage,
+    UipInvolvedPage,
+    UipProgramsPage,
+    UipDonatePage,
+    UipContactPage,
   ],
   editor: lexicalEditor({}),
   secret: process.env.PAYLOAD_SECRET || 'peopleforhonor-payload-secret-key-2026',
