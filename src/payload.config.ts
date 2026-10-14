@@ -34,6 +34,10 @@ import { MtscnlSupportPage} from './globals/mtscnl/MtscnlSupportPage'
 import { UipHomePage } from './globals/uip/UipHomePage'
 import { UipAboutPage } from './globals/uip/UipAboutPage'
 
+
+// Website 5: MTSC Toronto Globals
+import { MtscTorontoHomePage } from './globals/mtsctoronto/MtscTorontoHomePage'
+
 // Test/Demo Globals
 import { AstroTestPage } from './globals/astro-test/AstroTestPage'
 
@@ -61,6 +65,8 @@ const defaultOrigins = [
   'https://mtsc-nl.cloudgenz.com',
   'https://uip-cms.cloudgenz.com',
   'https://uip.cloudgenz.com',
+  'https://mtsc-toronto-cms.cloudgenz.com',
+  'https://mtsc-toronto.cloudgenz.com',
   '*',
 ]
 
@@ -233,6 +239,7 @@ export default buildConfig({
     MtscnlSupportPage,
     UipHomePage,
     UipAboutPage,
+    MtscTorontoHomePage, 
   ],
   editor: lexicalEditor({}),
   secret: process.env.PAYLOAD_SECRET || 'peopleforhonor-payload-secret-key-2026',
