@@ -9,7 +9,7 @@ export const MtscTorontoHomePage: GlobalConfig = {
   },
   admin: {
     group: 'MTSC Toronto',
-    hidden: ({ user }) => isHiddenForUser(user, 'mtsctoronto'),
+    hidden: ({ user }) => isHiddenForUser(user, 'tornto'),
     livePreview: {
       url: () => {
         const siteUrl = process.env.PAYLOAD_PUBLIC_MTSC_TORONTO_SITE_URL || 'http://localhost:5173'
@@ -19,7 +19,7 @@ export const MtscTorontoHomePage: GlobalConfig = {
   },
   access: {
     read: () => true,
-    update: (args) => checkTenantAccess(args, 'mtsctoronto'),
+    update: (args) => checkTenantAccess(args, 'tornto'),
   },
   fields: [
     {

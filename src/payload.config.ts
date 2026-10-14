@@ -254,6 +254,7 @@ export default buildConfig({
     UipProgramsPage,
     UipDonatePage,
     UipContactPage,
+    MtscTorontoHomePage,
   ],
   editor: lexicalEditor({}),
   secret: process.env.PAYLOAD_SECRET || 'peopleforhonor-payload-secret-key-2026',
