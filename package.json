@@ -35,9 +35,7 @@
     "db:backup": "npx tsx src/backup-db.ts",
     "db:seed-uip-home": "npx tsx src/seed/uip/seed-uip-home.ts",
     "db:seed-uip-about": "npx tsx src/seed/uip/seed-uip-about.ts",
-<<<<<<< HEAD
-    "db:seed-mtsc-toronto-home": "npx tsx src/seed/mtsctoronto/seedMtscTorontoHome.ts"
-=======
+    "db:seed-mtsc-toronto-home": "npx tsx src/seed/mtsctoronto/seedMtscTorontoHome.ts",
     "db:seed-uip-stories": "npx tsx src/seed/uip/seed-uip-stories.ts",
     "db:seed-uip-partners": "npx tsx src/seed/uip/seed-uip-partners.ts",
     "db:seed-uip-waystogive": "npx tsx src/seed/uip/seed-uip-waystogive.ts",
@@ -46,7 +44,6 @@
     "db:seed-uip-programs": "npx tsx src/seed/uip/seed-uip-programs.ts",
     "db:seed-uip-donate": "npx tsx src/seed/uip/seed-uip-donate.ts",
     "db:seed-uip-contact": "npx tsx src/seed/uip/seed-uip-contact.ts"
->>>>>>> 1a1ce6ac7c8cb815e80ea3f404ac6eb3175f14f2
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.86.0",
