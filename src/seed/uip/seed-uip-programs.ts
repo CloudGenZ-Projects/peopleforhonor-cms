@@ -1,7 +1,13 @@
-import { getPayload } from 'payload'
-import config from '../../payload.config'
+import dotenv from 'dotenv'
+
+dotenv.config({ path: '.env' })
+dotenv.config({ path: '.env.production' })
+dotenv.config({ path: '.env.local' })
 
 async function seed() {
+  const { getPayload } = await import('payload')
+  const { default: config } = await import('../../payload.config')
+
   console.log('Seeding UipProgramsPage Global into PostgreSQL...')
   const payload = await getPayload({ config })
 
