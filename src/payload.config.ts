@@ -53,6 +53,13 @@ import { MtscTorontoHeader } from './globals/mtsctoronto/MtscTorontoHeader'
 import { MtscTorontoEventsPage } from './globals/mtsctoronto/MtscTorontoEventsPage'
 // Website 6: MTSC Colbern
 import { MtscColbernHomePage } from './globals/colbern/MtscColbernHomePage'
+import { MtscColbernAboutPage } from './globals/colbern/MtscColbernAboutPage'
+import { MtscColbernSupportPage } from './globals/colbern/MtscColbernSupportPage'
+import { MtscColbernGetInvolvedPage } from './globals/colbern/MtscColbernGetInvolvedPage'
+import { MtscColbernContactPage } from './globals/colbern/MtscColbernContactPage'
+import { MtscColbernFooter } from './globals/colbern/MtscColbernFooter'
+import { MtscColbernHeader } from './globals/colbern/MtscColbernHeader'
+import { MtscColbernEventsPage } from './globals/colbern/MtscColbernEventsPage'
 
 // Test/Demo Globals
 import { AstroTestPage } from './globals/astro-test/AstroTestPage'
@@ -274,6 +281,13 @@ export default buildConfig({
     MtscTorontoHeader,
     MtscTorontoEventsPage,
     MtscColbernHomePage,
+    MtscColbernAboutPage,
+    MtscColbernSupportPage,
+    MtscColbernGetInvolvedPage,
+    MtscColbernContactPage,
+    MtscColbernFooter,
+    MtscColbernHeader,
+    MtscColbernEventsPage,
   ],
   editor: lexicalEditor({}),
   secret: process.env.PAYLOAD_SECRET || 'peopleforhonor-payload-secret-key-2026',

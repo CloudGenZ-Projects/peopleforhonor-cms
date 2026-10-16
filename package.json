@@ -51,7 +51,14 @@
     "db:seed-mtsc-toronto-footer": "npx tsx src/seed/mtsctoronto/seedMtscTorontoFooter.ts",
     "db:seed-mtsc-toronto-header": "npx tsx src/seed/mtsctoronto/seedMtscTorontoHeader.ts",
     "db:seed-mtsc-toronto-events": "npx tsx src/seed/mtsctoronto/seedMtscTorontoEvents.ts",
-    "db:seed-mtsc-colbern-home": "npx tsx src/seed/colbern/seedMtscColbernHome.ts"
+    "db:seed-mtsc-colbern-home": "npx tsx src/seed/colbern/seedMtscColbernHome.ts",
+    "db:seed-mtsc-colbern-about": "npx tsx src/seed/colbern/seedMtscColbernAbout.ts",
+    "db:seed-mtsc-colbern-support": "npx tsx src/seed/colbern/seedMtscColbernSupport.ts",
+    "db:seed-mtsc-colbern-get-involved": "npx tsx src/seed/colbern/seedMtscColbernGetInvolved.ts",
+    "db:seed-mtsc-colbern-contact": "npx tsx src/seed/colbern/seedMtscColbernContact.ts",
+    "db:seed-mtsc-colbern-footer": "npx tsx src/seed/colbern/seedMtscColbernFooter.ts",
+    "db:seed-mtsc-colbern-header": "npx tsx src/seed/colbern/seedMtscColbernHeader.ts",
+    "db:seed-mtsc-colbern-events": "npx tsx src/seed/colbern/seedMtscColbernEvents.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.86.0",
