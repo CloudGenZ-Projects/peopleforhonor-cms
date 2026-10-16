@@ -48,7 +48,8 @@
     "db:seed-mtsc-toronto-support": "npx tsx src/seed/mtsctoronto/seedMtscTorontoSupport.ts",
     "db:seed-mtsc-toronto-get-involved": "npx tsx src/seed/mtsctoronto/seedMtscTorontoGetInvolved.ts",
     "db:seed-mtsc-toronto-contact": "npx tsx src/seed/mtsctoronto/seedMtscTorontoContact.ts",
-    "db:seed-mtsc-toronto-footer": "npx tsx src/seed/mtsctoronto/seedMtscTorontoFooter.ts"
+    "db:seed-mtsc-toronto-footer": "npx tsx src/seed/mtsctoronto/seedMtscTorontoFooter.ts",
+    "db:seed-mtsc-toronto-header": "npx tsx src/seed/mtsctoronto/seedMtscTorontoHeader.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.86.0",
