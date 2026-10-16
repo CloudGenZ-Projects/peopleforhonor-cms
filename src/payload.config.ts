@@ -44,6 +44,7 @@ import { UipContactPage } from './globals/uip/UipContactPage'
 
 // Website 5 :MTSCTORONTO
 import { MtscTorontoHomePage } from './globals/mtsctoronto/MtscTorontoHomePage'
+import { MtscTorontoAboutPage } from './globals/mtsctoronto/MtscTorontoAboutPage'
 
 // Test/Demo Globals
 import { AstroTestPage } from './globals/astro-test/AstroTestPage'
@@ -255,6 +256,7 @@ export default buildConfig({
     UipDonatePage,
     UipContactPage,
     MtscTorontoHomePage,
+    MtscTorontoAboutPage,
   ],
   editor: lexicalEditor({}),
   secret: process.env.PAYLOAD_SECRET || 'peopleforhonor-payload-secret-key-2026',
