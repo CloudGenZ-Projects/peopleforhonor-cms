@@ -48,7 +48,7 @@ import { MtscTorontoAboutPage } from './globals/mtsctoronto/MtscTorontoAboutPage
 import { MtscTorontoSupportPage } from './globals/mtsctoronto/MtscTorontoSupportPage'
 import { MtscTorontoGetInvolvedPage } from './globals/mtsctoronto/MtscTorontoGetInvolvedPage'
 import { MtscTorontoContactPage } from './globals/mtsctoronto/MtscTorontoContactPage'
-
+import { MtscTorontoFooter } from './globals/mtsctoronto/MtscTorontoFooter'
 // Test/Demo Globals
 import { AstroTestPage } from './globals/astro-test/AstroTestPage'
 
@@ -262,7 +262,8 @@ export default buildConfig({
     MtscTorontoAboutPage,
     MtscTorontoSupportPage,
     MtscTorontoGetInvolvedPage,
-    MtscTorontoContactPage
+    MtscTorontoContactPage,
+    MtscTorontoFooter
   ],
   editor: lexicalEditor({}),
   secret: process.env.PAYLOAD_SECRET || 'peopleforhonor-payload-secret-key-2026',
