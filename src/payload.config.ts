@@ -45,7 +45,7 @@ import { UipContactPage } from './globals/uip/UipContactPage'
 // Website 5 :MTSCTORONTO
 import { MtscTorontoHomePage } from './globals/mtsctoronto/MtscTorontoHomePage'
 import { MtscTorontoAboutPage } from './globals/mtsctoronto/MtscTorontoAboutPage'
-import { MtscTorontoSupportPage } from './globals/mtsctoronto/MtscTorontoSupportPage',
+import { MtscTorontoSupportPage } from './globals/mtsctoronto/MtscTorontoSupportPage'
 import { MtscTorontoGetInvolvedPage } from './globals/mtsctoronto/MtscTorontoGetInvolvedPage'
 
 // Test/Demo Globals
