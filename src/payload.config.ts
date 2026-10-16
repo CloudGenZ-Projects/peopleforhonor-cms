@@ -51,6 +51,9 @@ import { MtscTorontoContactPage } from './globals/mtsctoronto/MtscTorontoContact
 import { MtscTorontoFooter } from './globals/mtsctoronto/MtscTorontoFooter'
 import { MtscTorontoHeader } from './globals/mtsctoronto/MtscTorontoHeader'
 import { MtscTorontoEventsPage } from './globals/mtsctoronto/MtscTorontoEventsPage'
+// Website 6: MTSC Colbern
+import { MtscColbernHomePage } from './globals/colbern/MtscColbernHomePage'
+
 // Test/Demo Globals
 import { AstroTestPage } from './globals/astro-test/AstroTestPage'
 
@@ -80,6 +83,8 @@ const defaultOrigins = [
   'https://uip.cloudgenz.com',
   'https://mtsc-toronto-cms.cloudgenz.com',
   'https://mtsc-toronto.cloudgenz.com',
+  'https://mtsc-colbern-cms.cloudgenz.com',
+  'http://mtsc-colbern-cms.cloudgenz.com',
   '*',
 ]
 
@@ -267,7 +272,8 @@ export default buildConfig({
     MtscTorontoContactPage,
     MtscTorontoFooter,
     MtscTorontoHeader,
-    MtscTorontoEventsPage
+    MtscTorontoEventsPage,
+    MtscColbernHomePage,
   ],
   editor: lexicalEditor({}),
   secret: process.env.PAYLOAD_SECRET || 'peopleforhonor-payload-secret-key-2026',
