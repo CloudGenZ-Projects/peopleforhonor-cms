@@ -44,7 +44,8 @@
     "db:seed-uip-donate": "npx tsx src/seed/uip/seed-uip-donate.ts",
     "db:seed-uip-contact": "npx tsx src/seed/uip/seed-uip-contact.ts",
     "db:seed-mtsc-toronto-home": "npx tsx src/seed/mtsctoronto/seedMtscTorontoHome.ts",
-    "db:seed-mtsc-toronto-about": "npx tsx src/seed/mtsctoronto/seedMtscTorontoAbout.ts"
+    "db:seed-mtsc-toronto-about": "npx tsx src/seed/mtsctoronto/seedMtscTorontoAbout.ts",
+    "db:seed-mtsc-toronto-support": "npx tsx src/seed/mtsctoronto/seedMtscTorontoSupport.ts"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.86.0",
