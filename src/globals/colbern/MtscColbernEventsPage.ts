@@ -40,7 +40,7 @@ export const MtscColbernEventsPage: GlobalConfig = {
               label: 'Hero Subtitle',
               type: 'textarea',
               defaultValue:
-                'Mission to Seafarers Toronto hosts events, conversations, awareness initiatives, and waterfront gatherings that help connect people to maritime life and the seafarers who help keep global trade moving.',
+                'Mission to Seafarers Port Colborne hosts events, conversations, awareness initiatives, and waterfront gatherings that help connect people to maritime life and the seafarers who help keep global trade moving.',
             },
             {
               name: 'hero_btn_label',
@@ -91,7 +91,7 @@ export const MtscColbernEventsPage: GlobalConfig = {
               label: 'Subtheme Text (Coral)',
               type: 'text',
               defaultValue:
-                'International Day for Women in Maritime & Reopening of the Mission to Seafarers Toronto Station',
+                'International Day for Women in Maritime & Reopening of the Mission to Seafarers Port Colborne Station',
             },
             {
               type: 'row',
@@ -106,7 +106,7 @@ export const MtscColbernEventsPage: GlobalConfig = {
                   name: 'featured_location',
                   label: 'Event Location',
                   type: 'text',
-                  defaultValue: 'Port of Toronto Cruise Ship Terminal',
+                  defaultValue: 'Port of Port Colborne Cruise Ship Terminal',
                 },
               ],
             },
@@ -122,7 +122,7 @@ export const MtscColbernEventsPage: GlobalConfig = {
               label: 'Description Paragraph 2',
               type: 'textarea',
               defaultValue:
-                'The event also marks the reopening of the Mission to Seafarers Toronto Station, helping restore a welcoming place of care and connection for seafarers arriving at the Port of Toronto.',
+                'The event also marks the reopening of the Mission to Seafarers Port Colborne Station, helping restore a welcoming place of care and connection for seafarers arriving at the Port of Port Colborne.',
             },
             {
               name: 'featured_btn_label',
@@ -224,7 +224,7 @@ export const MtscColbernEventsPage: GlobalConfig = {
               label: 'CTA Description',
               type: 'textarea',
               defaultValue:
-                'Whether through attending an event, volunteering, donating, partnering with us, or supporting the station, every act of involvement helps strengthen care and visibility for seafarers visiting Toronto.',
+                'Whether through attending an event, volunteering, donating, partnering with us, or supporting the station, every act of involvement helps strengthen care and visibility for seafarers visiting Port Colborne.',
             },
             {
               type: 'row',
@@ -267,7 +267,7 @@ export const MtscColbernEventsPage: GlobalConfig = {
                   name: 'cta_btn3_label',
                   label: 'Button 3 Label',
                   type: 'text',
-                  defaultValue: 'Support the Toronto Station',
+                  defaultValue: 'Support the Port Colborne Station',
                 },
                 {
                   name: 'cta_btn3_link',

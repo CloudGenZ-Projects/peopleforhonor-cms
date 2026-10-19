@@ -33,7 +33,7 @@ export const MtscColbernAboutPage: GlobalConfig = {
               name: 'hero_title',
               label: 'Hero Title',
               type: 'text',
-              defaultValue: 'Toronto Station History',
+              defaultValue: 'Port Colborne Station History',
             },
             {
               name: 'hero_bg_image',
@@ -58,7 +58,7 @@ export const MtscColbernAboutPage: GlobalConfig = {
               name: 'history_title',
               label: 'Main Heading',
               type: 'text',
-              defaultValue: 'Decades of Care at the Port of Toronto',
+              defaultValue: 'Our Story Along the Welland Canal',
             },
             {
               name: 'history_blocks',
@@ -115,20 +115,20 @@ export const MtscColbernAboutPage: GlobalConfig = {
               name: 'team_title',
               label: 'Section Heading',
               type: 'text',
-              defaultValue: 'Toronto & MTSSO team',
+              defaultValue: 'Port Colborne Team',
             },
             // Featured Leader
             {
               name: 'leader_heading',
               label: 'Featured Leader Title',
               type: 'text',
-              defaultValue: 'Toronto Station Chaplin and Manager-Rev. Judith Alltree',
+              defaultValue: 'Local Chaplain & Ship Visitor - Deacon Annette Hoare',
             },
             {
               name: 'leader_name',
               label: 'Featured Leader Subtitle / Name',
               type: 'text',
-              defaultValue: 'REV. JUDITH ALLTREE',
+              defaultValue: 'DEACON ANNETTE HOARE',
             },
             {
               name: 'leader_image',
@@ -256,7 +256,7 @@ export const MtscColbernAboutPage: GlobalConfig = {
               label: 'Bottom Highlight Quote',
               type: 'textarea',
               defaultValue:
-                'Together, ensure that every seafarer who comes through Toronto is not only seen, but cared for.',
+                'Together, ensure that every seafarer who comes through Port Colborne is not only seen, but cared for.',
             },
           ],
         },

@@ -5,7 +5,7 @@ dotenv.config({ path: '.env.production' })
 dotenv.config({ path: '.env.local' })
 
 async function seedMtscColbernAbout() {
-  console.log('Seeding MtscColbernAboutPage Global into PostgreSQL...')
+  console.log('Seeding MtscColbernAboutPage Global into PostgreSQL with Port Colborne Brief Data...')
 
   const { getPayload } = await import('payload')
   const { default: config } = await import('../../payload.config')
@@ -16,101 +16,114 @@ async function seedMtscColbernAbout() {
     slug: 'mtsc-colbern-about-page' as any,
     data: {
       // TAB 1: HERO
-      hero_title: 'Toronto Station History',
+      hero_eyebrow: 'About Port Colborne',
+      hero_title: 'Our Story Along the Welland Canal',
+      hero_subtitle:
+        'A local expression of an international mission of care, serving people whose work brings them through the Great Lakes.',
+      hero_cta_label: 'Meet Our Local Contact',
+      hero_cta_link: '#chaplain',
       hero_bg_image: null,
 
-      // TAB 2: HISTORY
-      history_eyebrow: 'Our Story',
-      history_title: 'Decades of Care at the Port of Toronto',
+      // TAB 2: STORY BLOCKS (REPLACING DATED TIMELINE)
+      history_eyebrow: 'People Behind the Vessels',
+      history_title: 'Our Work, Our Community, Our Commitment',
       history_blocks: [
         {
-          era: '1960s - 1970s',
-          title: 'The Beginning & A Permanent Home',
+          era: 'OUR PORT',
+          title: 'A Community Connected to the Great Lakes',
           paragraphs: [
-            { text: 'The Toronto Station of The Mission to Seafarers has been serving seafarers in the Port of Toronto since the early 1960s. It is believed the Mission first began around 1961 and, in its earliest years, operated in connection with the Lutheran Church in Toronto.' },
-            { text: 'Before the Mission had a permanent building, there was an industrial trailer located in or near the Port. At that time, there was very little security between the harbour and Cherry Street, allowing seafarers to simply walk from their ships to the Mission.' },
-            { text: 'In the early 1970s, Viceroy Homes donated an Alpine-style cottage to become the Toronto Mission’s first and only permanent building. This building served as the home of the Mission until January 2019. It included both an upstairs and downstairs, and over time a large commercial kitchen and a spacious back patio were added. The station became known as a place of hospitality, fellowship, and practical support, especially during the summer months when donated barbecues were often used to host seafarers.' }
+            {
+              text: 'Port Colborne sits where Lake Erie meets the southern entrance to the Welland Canal. This location connects the community directly to the movement of ships and the people who crew them.',
+            },
           ],
           image: null,
         },
         {
-          era: 'Decades of Service - 2019',
-          title: 'A Home Away From Home & A Devastating Loss',
+          era: 'OUR PEOPLE',
+          title: 'Seafarers Aboard Visiting Vessels',
           paragraphs: [
-            { text: 'For decades, the Toronto Station provided far more than a building. It became a “home away from home” for seafarers arriving in Toronto, many of whom were far from family, short on money, and facing long periods at sea. One memorable story recalls a crew arriving from Kyiv with nowhere to stay before joining their ship. The Mission welcomed them, provided a meal, shelter, and transportation to their vessel. During their week in Toronto, they returned each evening to use the Mission’s Wi-Fi to connect with their families across the world.' },
-            { text: 'The Toronto Mission remained the last active harbour mission presence after the Lutheran and Catholic churches had left the waterfront many years earlier, with the Anglicans continuing the ministry. Until 2019, the station maintained a physical location in the port, while also focusing heavily on ship visiting and pastoral care.' },
-            { text: 'In January 2019, the historic station was lost following a devastating flood, at the same time the Port was preparing to demolish the building to make way for road expansion. The loss meant that many historical items and records connected to the Mission could not be preserved.' }
+            {
+              text: 'Seafarers aboard commercial ships and cruise vessels work long days far from home, with limited opportunities to rest, communicate with family, or speak privately about a concern.',
+            },
           ],
           image: null,
         },
         {
-          era: 'Today',
-          title: 'A New Chapter',
+          era: 'OUR PURPOSE',
+          title: 'Welcoming Care Along the Canal',
           paragraphs: [
-            { text: 'Now, after seven years, the Toronto Station is beginning a new chapter. With the support of the Toronto Port Authority, The Mission to Seafarers is reopening a new station space within the Port of Toronto. The new location is being designed to once again provide seafarers with a welcoming place to rest, connect with loved ones, receive support, and experience the care and community that has defined the Toronto Mission since the early 1960s.' },
-            { text: 'Whether it is offering Wi-Fi, a haircut, transportation, a warm drink, a listening ear, or simply a place to rest, each act of support is part of something much larger: a connected network of care reaching from Toronto to ports across Canada and around the world.' }
+            {
+              text: 'Mission to Seafarers exists to recognise the human side of maritime life. Here in Port Colborne, that purpose is expressed through local chaplaincy, ship visiting, and connections to wider seafarer welfare resources.',
+            },
           ],
           image: null,
-        }
+        },
       ],
 
-      // TAB 3: TEAM
-      team_eyebrow: 'Leadership',
-      team_title: 'Toronto & MTSSO team',
-      leader_heading: 'Toronto Station Chaplin and Manager-Rev. Judith Alltree',
-      leader_name: 'REV. JUDITH ALLTREE',
+      // TAB 3: LEADERSHIP & TEAM
+      team_eyebrow: 'Local Leadership',
+      team_title: 'Meet Deacon Annette Hoare',
+      leader_heading: 'Local Chaplain & Ship Visitor',
+      leader_name: 'DEACON ANNETTE HOARE',
       leader_image: null,
       leader_paragraphs: [
-        { text: 'Rev. Judith Alltree has dedicated her career to serving people across cultures, from the travel and music industries to parish ministry and maritime chaplaincy. She joined the Mission to Seafarers in 2012 as Executive Director for Toronto and later led the Mission to Seafarers Southern Ontario (MTSSO), expanding services across multiple ports.' },
-        { text: 'She went on to serve as Regional Director for Mission to Seafarers Canada, supporting stations nationwide through the COVID-19 pandemic and contributing to the formation of the Canadian National Seafarers Welfare Board. She also played a key role in advancing seafarer welfare in Newfoundland and Labrador, helping to establish a Port Welfare Committee in St. John’s.' },
-        { text: 'Now serving as Vice-President of the MTSSO Board, Rev. Alltree continues her lifelong commitment as a volunteer ship visitor and Port Chaplain in Toronto. In 2024, she received the North American Maritime Ministry Association Distinguished Service Award.' }
+        {
+          text: 'Deacon Annette Hoare is listed by Mission to Seafarers Southern Ontario as the principal contact for Port Colborne. The international Mission also lists her as a chaplain and ship visitor serving Port Colborne, Port Weller, and Hamilton.',
+        },
+        {
+          text: 'For assistance, pastoral support, or enquiries about visiting ships along the Welland Canal, Annette can be contacted directly by phone at +1 905-328-0300 or by email at revannette@caecc.ca.',
+        },
       ],
-      team_members: [
-        { name: 'Alicia Hamming Navarrete', role: 'Program Manager -MTSSO', image: null },
-        { name: 'Pastor Dan Phannenhour', role: 'Hamilton Station Chapalin-', image: null }
-      ],
+      team_members: [],
 
-      // TAB 4: BOARD OF DIRECTORS
-      board_title: 'Our Board of Directors',
-      board_members: [
-        { name: 'Walter Stewart', role: 'Director', image: null },
-        { name: 'Kelly McDonald', role: 'Board President', image: null },
-        { name: 'Rev. Judith Alltree', role: 'Vice-President', image: null },
-        { name: 'Jennifer Carruthers', role: 'Treasurer', image: null },
-        { name: 'Allwyn Phillips', role: 'Secretary', image: null },
-        { name: 'Noah Bonis Charancle', role: 'Director', image: null },
-        { name: 'Kelly Noseworthy', role: 'Director', image: null },
-        { name: 'Captain Jim Pound', role: 'Director', image: null },
-        { name: 'Sean Reid', role: 'Director', image: null },
-        { name: 'Sean Slater', role: 'Director', image: null },
-        { name: 'Isabelle Therrien', role: 'Director', image: null }
-      ],
+      // TAB 4: REGIONAL LEADERSHIP
+      board_title: 'Regional Leadership & Board',
+      board_members: [],
 
-      // TAB 5: STRUCTURE
-      structure_eyebrow: 'How the Structure Works',
-      structure_title: 'One Mission. Many Hands. Shared Care.',
+      // TAB 5: STRUCTURE & NETWORK
+      structure_eyebrow: 'One Mission. Local Presence. Connected Care.',
+      structure_title: 'Connected in Purpose Across Canada and Worldwide',
       structure_cards: [
-        { org_title: 'Mission to Seafarers Canada', description: 'provides the national foundation, leadership, and support.' },
-        { org_title: 'Mission to Seafarers Southern Ontario', description: 'guides and supports the ministry across Southern Ontario ports.' },
-        { org_title: 'Mission to Seafarers Toronto', description: 'brings that mission to life locally at the Port of Toronto.' }
+        {
+          org_title: 'THE INTERNATIONAL MISSION',
+          description:
+            'A worldwide maritime welfare network offering practical, emotional and spiritual help to seafarers across 200+ ports.',
+        },
+        {
+          org_title: 'MISSION TO SEAFARERS CANADA',
+          description:
+            'A national connection among Canadian Mission stations and partners strengthening maritime welfare across the country.',
+        },
+        {
+          org_title: 'MISSION TO SEAFARERS SOUTHERN ONTARIO',
+          description:
+            'An independent regional welfare organisation serving Toronto, Hamilton, Oshawa and Port Colborne.',
+        },
+        {
+          org_title: 'PORT COLBORNE LOCAL TEAM',
+          description:
+            'A local chaplaincy point of contact for visiting seafarers along the Welland Canal, led by Deacon Annette Hoare.',
+        },
       ],
-      structure_bottom_quote: 'Together, ensure that every seafarer who comes through Toronto is not only seen, but cared for.',
+      structure_bottom_quote:
+        'Port Colborne is supported within the wider Southern Ontario network of chaplains, volunteers, and organisational leadership.',
 
-      // TAB 6: CTA
-      cta_title: 'Be part of the welcome.',
-      cta_description: 'Visit, volunteer, or give. Every contribution helps a seafarer feel seen.',
+      // TAB 6: CTA BANNER
+      cta_title: 'A Port Community That Cares',
+      cta_description:
+        'Help extend a warm welcome to the people who keep the Great Lakes moving.',
       cta_btn1_label: 'Get Involved',
       cta_btn1_link: '/get-involved',
-      cta_btn2_label: 'Donate Now',
-      cta_btn2_link: '/get-involved#donate'
+      cta_btn2_label: 'Contact Us',
+      cta_btn2_link: '/contact',
     },
   })
 
-  console.log('✅ MtscColbernAboutPage Global seeded successfully with 100% About content!')
+  console.log('✅ MtscColbernAboutPage seeded successfully with Port Colborne Brief Data!')
   process.exit(0)
 }
 
 seedMtscColbernAbout().catch((err) => {
-  console.error('❌ Error seeding MtscColbernAboutPage:', err)
+  console.error('❌ Failed to seed MtscColbernAboutPage:', err)
   process.exit(1)
 })

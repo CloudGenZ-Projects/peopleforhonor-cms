@@ -33,7 +33,7 @@ export const MtscColbernHomePage: GlobalConfig = {
               name: 'hero_eyebrow',
               label: 'Hero Eyebrow Badge',
               type: 'text',
-              defaultValue: 'Mission to Seafarers · Toronto',
+              defaultValue: 'Mission to Seafarers · Port Colborne',
             },
             {
               type: 'row',
@@ -57,14 +57,14 @@ export const MtscColbernHomePage: GlobalConfig = {
               label: 'Hero Bold Callout Paragraph',
               type: 'textarea',
               defaultValue:
-                'Welcoming seafarers at the Port of Toronto with hospitality, practical support, and a place to belong while they are far from home.',
+                'Welcoming seafarers at the Port Colborne and Welland Canal with hospitality, practical support, and a place to belong while they are far from home.',
             },
             {
               name: 'hero_description',
               label: 'Hero Main Story / Paragraph',
               type: 'textarea',
               defaultValue:
-                'At the Port of Toronto, seafarers arrive after time at sea, sometimes for days, weeks and even months. Mission to Seafarers Toronto is here during that window. With practical support. With a place to step off the vessel. With people to speak to while they are ashore. We are a part of Mission to Seafarers Southern Ontario and Mission to Seafarers Canada, connected to a wider network that meets seafarers in ports around world.',
+                'At the Port Colborne and Welland Canal, seafarers arrive after time at sea, sometimes for days, weeks and even months. Mission to Seafarers Port Colborne is here during that window. With practical support. With a place to step off the vessel. With people to speak to while they are ashore. We are a part of Mission to Seafarers Southern Ontario and Mission to Seafarers Canada, connected to a wider network that meets seafarers in ports around world.',
             },
             {
               type: 'row',
@@ -102,7 +102,7 @@ export const MtscColbernHomePage: GlobalConfig = {
                   name: 'hero_card_tag',
                   label: 'Overlay Card Tag',
                   type: 'text',
-                  defaultValue: 'Toronto Station',
+                  defaultValue: 'Welland Canal',
                 },
                 {
                   name: 'hero_card_text',
@@ -308,7 +308,7 @@ export const MtscColbernHomePage: GlobalConfig = {
               label: 'Paragraph 1',
               type: 'textarea',
               defaultValue:
-                'After extended periods at sea, small things can feel significant. Haircuts are available at the Toronto station by appointment. They can be arranged in advance by seafarers, ship agents, or crew representatives.',
+                'After extended periods at sea, small things can feel significant. Haircuts are available at the Port Colborne station by appointment. They can be arranged in advance by seafarers, ship agents, or crew representatives.',
             },
             {
               name: 'haircut_subtext',
@@ -357,7 +357,7 @@ export const MtscColbernHomePage: GlobalConfig = {
               name: 'network_subtitle',
               label: 'Subtitle',
               type: 'textarea',
-              defaultValue: 'Mission to Seafarers Toronto is part of a connected network of care.',
+              defaultValue: 'Mission to Seafarers Port Colborne is part of a connected network of care.',
             },
             // Tier 1: Global
             {
@@ -431,7 +431,7 @@ export const MtscColbernHomePage: GlobalConfig = {
               label: 'Tier 3 Description',
               type: 'textarea',
               defaultValue:
-                'Within Ontario, Mission to Seafarers Southern Ontario leads work across regional ports including Toronto, Hamilton, and Oshawa.',
+                'Within Ontario, Mission to Seafarers Southern Ontario leads work across regional ports including Port Colborne, Hamilton, and Oshawa.',
             },
             // Tier 4: Local
             {
@@ -447,7 +447,7 @@ export const MtscColbernHomePage: GlobalConfig = {
                   name: 'tier4_title',
                   label: 'Tier 4 Title',
                   type: 'text',
-                  defaultValue: 'Toronto Station',
+                  defaultValue: 'Welland Canal',
                 },
               ],
             },
@@ -456,14 +456,14 @@ export const MtscColbernHomePage: GlobalConfig = {
               label: 'Tier 4 Description',
               type: 'textarea',
               defaultValue:
-                'At the Port of Toronto, that work becomes direct. Here, we offer seafarers a welcoming place where they can rest, connect with loved ones, access practical help, receive a haircut, and know that they are not alone.',
+                'At the Port Colborne and Welland Canal, that work becomes direct. Here, we offer seafarers a welcoming place where they can rest, connect with loved ones, access practical help, receive a haircut, and know that they are not alone.',
             },
             {
               name: 'network_closing_quote',
               label: 'Bottom Italic Quote',
               type: 'textarea',
               defaultValue:
-                'Toronto is an important gateway within Canada’s maritime network. Every year, seafarers arrive carrying the goods that keep our communities running, often with limited time ashore and few options once they disembark. We ensure that, when they arrive here, they are welcomed with dignity, kindness, and support.',
+                'Port Colborne is an important gateway within Canada’s maritime network. Every year, seafarers arrive carrying the goods that keep our communities running, often with limited time ashore and few options once they disembark. We ensure that, when they arrive here, they are welcomed with dignity, kindness, and support.',
             },
           ],
         },
@@ -483,21 +483,21 @@ export const MtscColbernHomePage: GlobalConfig = {
               label: 'Section Heading',
               type: 'textarea',
               defaultValue:
-                'Whether you volunteer, donate, provide a haircut, or simply help us welcome a seafarer, you are part of a connected network of care reaching from Toronto to ports around the world.',
+                'Whether you volunteer, donate, provide a haircut, or simply help us welcome a seafarer, you are part of a connected network of care reaching from Port Colborne to ports around the world.',
             },
             // Left Card: Volunteer
             {
               name: 'volunteer_title',
               label: 'Volunteer Card Title',
               type: 'text',
-              defaultValue: 'Help Us Welcome Seafarers to Toronto',
+              defaultValue: 'Help Us Welcome Seafarers to Port Colborne',
             },
             {
               name: 'volunteer_desc',
               label: 'Volunteer Card Subtitle',
               type: 'textarea',
               defaultValue:
-                'There are many ways to support the Toronto station and the seafarers we serve. You can:',
+                'There are many ways to support the Port Colborne station and the seafarers we serve. You can:',
             },
             {
               name: 'volunteer_bullet_points',
@@ -532,7 +532,7 @@ export const MtscColbernHomePage: GlobalConfig = {
               label: 'Donate Card Subtitle',
               type: 'textarea',
               defaultValue:
-                'Every gift helps us provide hospitality, transportation, Wi-Fi, refreshments, haircuts, and a welcoming place for seafarers visiting Toronto. You can choose to:',
+                'Every gift helps us provide hospitality, transportation, Wi-Fi, refreshments, haircuts, and a welcoming place for seafarers visiting Port Colborne. You can choose to:',
             },
             {
               name: 'donate_bullet_points',
@@ -541,7 +541,7 @@ export const MtscColbernHomePage: GlobalConfig = {
               defaultValue: [
                 { text: 'Become a monthly donor' },
                 { text: 'Make a one-time gift' },
-                { text: 'Support Mission to Seafarers Toronto through Mission to Seafarers Canada' },
+                { text: 'Support Mission to Seafarers Port Colborne through Mission to Seafarers Canada' },
               ],
               fields: [
                 {

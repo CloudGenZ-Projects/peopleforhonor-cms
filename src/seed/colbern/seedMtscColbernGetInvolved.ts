@@ -5,7 +5,7 @@ dotenv.config({ path: '.env.production' })
 dotenv.config({ path: '.env.local' })
 
 async function seedMtscColbernGetInvolved() {
-  console.log('Seeding MtscColbernGetInvolvedPage Global into PostgreSQL...')
+  console.log('Seeding MtscColbernGetInvolvedPage Global into PostgreSQL with Port Colborne Brief Data...')
 
   const { getPayload } = await import('payload')
   const { default: config } = await import('../../payload.config')
@@ -17,77 +17,75 @@ async function seedMtscColbernGetInvolved() {
     data: {
       // TAB 1: HERO
       hero_badge_text: 'Get Involved',
-      hero_title: 'Get Involved with Mission to Seafarers Toronto',
+      hero_title: 'Be Part of the Welcome',
       hero_subtitle:
-        'There are many ways to support and help create a welcoming place for seafarers arriving at the Port of Toronto. Whether you choose to volunteer, donate, provide in-kind support, or partner with us, your support helps ensure that seafarers feel cared for.',
+        'A warm welcome in port begins with people who choose to care. Whether you volunteer, contribute resources or build a partnership, your support can make a difference to seafarers far from home.',
       hero_bg_image: null,
 
-      // TAB 2: FINANCIAL DONATIONS
-      donate_eyebrow: 'Donate',
+      // TAB 2: DONATION SECTION
+      donate_eyebrow: 'Ways to Give',
       donate_title: 'Help Care for Seafarers',
       donate_description:
-        'Every gift helps us provide hospitality, practical support, transportation, Wi-Fi, refreshments, haircuts, and a welcoming place for seafarers visiting Toronto.',
-      monthly_card_title: 'Monthly Giving',
+        'Support Mission to Seafarers Southern Ontario and its wider work of providing practical, emotional and spiritual care to visiting crews.',
+      monthly_card_title: 'MAKE A DONATION',
       monthly_card_desc:
-        'Become a monthly donor and help provide ongoing care and support throughout the year. Monthly gifts help us plan ahead.',
+        'Support Mission to Seafarers Southern Ontario and its wider work of providing practical, emotional and spiritual care to visiting crews.',
       monthly_bullets: [
-        { text: '$15/mo provides refreshments & hospitality' },
-        { text: '$25/mo supports transportation & Wi-Fi' },
-        { text: '$50/mo provides practical assistance & care' },
+        { text: 'Direct your gift to support visiting crew welfare across Southern Ontario ports' },
+        { text: 'Enable ship visits and compassionate pastoral support along the Welland Canal' },
+        { text: 'Charitable tax receipts issued through Mission to Seafarers Southern Ontario' },
       ],
-      monthly_btn_label: 'Become a Monthly Donor',
-      onetime_card_title: 'One-Time Gift',
+      monthly_btn_label: 'Donate via Southern Ontario',
+      onetime_card_title: 'DISCUSS REGULAR GIVING',
       onetime_card_desc:
-        'Make a one-time donation to support Mission to Seafarers Toronto. Your gift helps create a welcoming space and care for seafarers right when they arrive.',
-      onetime_btn_label: 'Make a One-Time Gift',
+        'Interested in ongoing support? Contact the Southern Ontario team to explore regular giving or discuss a targeted gift.',
+      onetime_btn_label: 'Contact Southern Ontario',
       donate_footer_note:
-        'All donations are securely processed via CanadaHelps in support of the Toronto station and the national mission to care for seafarers across Canada.',
-      canadahelps_iframe_url: 'https://www.canadahelps.org/en/dn/145961',
+        'All donations are securely processed and receipted by Mission to Seafarers Southern Ontario.',
+      canadahelps_iframe_url: 'https://www.mtsso.org/support-us',
 
-      // TAB 3: WAYS TO HELP
-      ways_eyebrow: 'Other Ways to Help',
-      ways_title: 'Choose How You Would Like to Support',
+      // TAB 3: PARTICIPATION PATHWAYS
+      ways_eyebrow: 'Participation Pathways',
+      ways_title: 'Ways You Can Take Part',
       ways_bg_image: null,
-
-      // TAB 4: IN-KIND & PARTNERSHIPS
-      inkind_title: 'In-Kind Gifts',
-      inkind_desc: 'We are always grateful for donations that help us create a welcoming space. Examples include:',
+      inkind_title: 'VOLUNTEER WITH THE MISSION',
+      inkind_desc:
+        'Support ship visiting, hospitality or community outreach through the approved Southern Ontario volunteering pathway.',
       inkind_bullets: [
-        { text: 'Snacks and refreshments' },
-        { text: 'Gift cards' },
-        { text: 'Technology and Wi-Fi support' },
-        { text: 'Haircut supplies and personal care items' },
-        { text: 'Furniture and lounge items for the station' },
+        { text: 'Apply through the official Southern Ontario volunteer application process' },
+        { text: 'Participate in ship visitor training and safety orientations' },
+        { text: 'Help extend warm community welcome to international seafarers' },
       ],
-      amazon_wishlist_url: 'https://www.amazon.ca/hz/wishlist/ls/3C9KTQNHTZ0NM?ref_=wl_fv_le.',
-      amazon_wishlist_label: 'Order from our wishlist',
+      amazon_wishlist_url: 'https://www.mtsso.org/volunteering',
+      amazon_wishlist_label: 'Apply to Volunteer',
 
-      partnership_title: 'Partnership Options',
-      partnership_desc: 'We welcome support from local businesses, schools, and groups. You can support:',
+      // TAB 4: PARTNERSHIPS & IN-KIND
+      partnership_title: 'COMMUNITY AND BUSINESS PARTNERSHIPS',
+      partnership_desc:
+        'Work with us through your company, church or civic group to support seafarer welfare along the Welland Canal.',
       partnership_bullets: [
-        { text: 'Local events & Volunteer activities' },
-        { text: 'Hospitality and care for seafarers' },
-        { text: 'Station furnishings and supplies' },
-        { text: 'Haircut and wellness services' },
+        { text: 'Maritime sector companies and port operators' },
+        { text: 'Local churches and faith communities' },
+        { text: 'Civic organisations and service clubs' },
       ],
       partnership_note:
-        'For larger corporate partnerships and national giving opportunities, please visit Mission to Seafarers Canada.',
+        'IN-KIND AND SEASONAL SUPPORT: Contribute care items, knitwear or holiday gifts for crews visiting during cold weather and special occasions.',
 
-      // TAB 5: FINAL CTA
-      cta_title: 'Every Act of Kindness Makes a Difference',
+      // TAB 5: CLOSING CTA
+      cta_title: 'Ready to Make a Difference?',
       cta_description:
-        'From a warm drink and a haircut to a monthly donation or a few hours of volunteering, every act of support helps remind seafarers that they are not alone.',
-      cta_donate_label: 'Donate Now',
-      cta_volunteer_label: 'Become a Volunteer',
-      cta_contact_label: 'Contact the Station',
+        'Every act of hospitality helps a seafarer feel remembered and valued while far from home.',
+      cta_donate_label: 'Support Our Mission',
+      cta_volunteer_label: 'Volunteer via MTSSO',
+      cta_contact_label: 'Contact Our Team',
     },
   })
 
-  console.log('✅ MtscColbernGetInvolvedPage Global seeded successfully with 100% Get Involved content!')
+  console.log('✅ MtscColbernGetInvolvedPage seeded successfully with Port Colborne Brief Data!')
   process.exit(0)
 }
 
 seedMtscColbernGetInvolved().catch((err) => {
-  console.error('❌ Error seeding MtscColbernGetInvolvedPage:', err)
+  console.error('❌ Failed to seed MtscColbernGetInvolvedPage:', err)
   process.exit(1)
 })

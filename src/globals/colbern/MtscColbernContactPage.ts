@@ -39,7 +39,7 @@ export const MtscColbernContactPage: GlobalConfig = {
               name: 'hero_title',
               label: 'Hero Title',
               type: 'text',
-              defaultValue: 'Contact Mission to Seafarers Toronto',
+              defaultValue: 'Contact Mission to Seafarers Port Colborne',
             },
             {
               name: 'hero_subtitle',
@@ -64,19 +64,19 @@ export const MtscColbernContactPage: GlobalConfig = {
               name: 'station_title',
               label: 'Card Heading',
               type: 'text',
-              defaultValue: 'Toronto Station',
+              defaultValue: 'Port Colborne Station',
             },
             {
               name: 'station_subtitle',
               label: 'Card Subtitle',
               type: 'text',
-              defaultValue: 'Local support at the Port of Toronto.',
+              defaultValue: 'Local support at the Port of Port Colborne.',
             },
             {
               name: 'station_location_text',
               label: 'Full Address',
               type: 'textarea',
-              defaultValue: 'Cruise Ship Terminal, 8 Unwin Ave, Toronto, ON M5A 1A1, Canada',
+              defaultValue: 'Cruise Ship Terminal, 8 Unwin Ave, Port Colborne, ON M5A 1A1, Canada',
             },
             {
               name: 'station_email',

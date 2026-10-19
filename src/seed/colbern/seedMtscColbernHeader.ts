@@ -5,7 +5,7 @@ dotenv.config({ path: '.env.production' })
 dotenv.config({ path: '.env.local' })
 
 async function seedMtscColbernHeader() {
-  console.log('Seeding MtscColbernHeader Global into PostgreSQL...')
+  console.log('Seeding MtscColbernHeader Global into PostgreSQL with Port Colborne Brief Data...')
 
   const { getPayload } = await import('payload')
   const { default: config } = await import('../../payload.config')
@@ -15,12 +15,9 @@ async function seedMtscColbernHeader() {
   await payload.updateGlobal({
     slug: 'mtsc-colbern-header' as any,
     data: {
-      // TAB 1: BRANDING
       header_logo: null,
-      brand_title: 'Mission to Seafarers',
-      brand_subtitle: 'Toronto',
-
-      // TAB 2: NAV ITEMS
+      brand_title: 'PORT COLBORNE',
+      brand_subtitle: 'Mission to Seafarers',
       nav_items: [
         { label: 'Home', to: '/' },
         { label: 'About', to: '/about' },
@@ -29,26 +26,22 @@ async function seedMtscColbernHeader() {
         { label: 'Contact', to: '/contact' },
         { label: 'Events', to: '/events' },
       ],
-
-      // TAB 3: CTA BUTTONS
-      parcel_btn_label_full: 'Seafarer Parcel Pickup Service',
-      parcel_btn_label_short: 'Parcel Pickup',
-      parcel_btn_link: 'https://parcelservice.mtsc.ca/',
-
-      prayer_btn_label: 'Send a Prayer',
-      prayer_btn_link: 'https://mtsc.ca/for-seafarers/prayer-wall/',
-
+      parcel_btn_label_full: 'Request a Ship Visit',
+      parcel_btn_label_short: 'Ship Visit',
+      parcel_btn_link: '/contact?type=ship-visit',
+      prayer_btn_label: 'Contact a Chaplain',
+      prayer_btn_link: '/contact',
       donate_btn_label: 'Donate',
-      donate_dialog_title: 'Secure Donation Form',
-      donate_iframe_url: 'https://www.canadahelps.org/en/dn/145961',
+      donate_dialog_title: 'Support Mission to Seafarers Port Colborne',
+      donate_iframe_url: 'https://www.mtsso.org/support-us',
     },
   })
 
-  console.log('✅ MtscColbernHeader Global seeded successfully!')
+  console.log('✅ MtscColbernHeader seeded successfully with Port Colborne Brief Data!')
   process.exit(0)
 }
 
 seedMtscColbernHeader().catch((err) => {
-  console.error('❌ Error seeding MtscColbernHeader:', err)
+  console.error('❌ Failed to seed MtscColbernHeader:', err)
   process.exit(1)
 })

@@ -39,14 +39,14 @@ export const MtscColbernGetInvolvedPage: GlobalConfig = {
               name: 'hero_title',
               label: 'Hero Title',
               type: 'text',
-              defaultValue: 'Get Involved with Mission to Seafarers Toronto',
+              defaultValue: 'Get Involved with Mission to Seafarers Port Colborne',
             },
             {
               name: 'hero_subtitle',
               label: 'Hero Subtitle',
               type: 'textarea',
               defaultValue:
-                'There are many ways to support and help create a welcoming place for seafarers arriving at the Port of Toronto. Whether you choose to volunteer, donate, provide in-kind support, or partner with us, your support helps ensure that seafarers feel cared for.',
+                'There are many ways to support and help create a welcoming place for seafarers arriving at the Port of Port Colborne. Whether you choose to volunteer, donate, provide in-kind support, or partner with us, your support helps ensure that seafarers feel cared for.',
             },
             {
               name: 'hero_bg_image',
@@ -78,7 +78,7 @@ export const MtscColbernGetInvolvedPage: GlobalConfig = {
               label: 'Subtext',
               type: 'textarea',
               defaultValue:
-                'Every gift helps us provide hospitality, practical support, transportation, Wi-Fi, refreshments, haircuts, and a welcoming place for seafarers visiting Toronto.',
+                'Every gift helps us provide hospitality, practical support, transportation, Wi-Fi, refreshments, haircuts, and a welcoming place for seafarers visiting Port Colborne.',
             },
             // Monthly Giving
             {
@@ -125,7 +125,7 @@ export const MtscColbernGetInvolvedPage: GlobalConfig = {
               label: 'One-Time Card Description',
               type: 'textarea',
               defaultValue:
-                'Make a one-time donation to support Mission to Seafarers Toronto. Your gift helps create a welcoming space and care for seafarers right when they arrive.',
+                'Make a one-time donation to support Mission to Seafarers Port Colborne. Your gift helps create a welcoming space and care for seafarers right when they arrive.',
             },
             {
               name: 'onetime_btn_label',
@@ -138,7 +138,7 @@ export const MtscColbernGetInvolvedPage: GlobalConfig = {
               label: 'Donation Disclaimer / Note',
               type: 'textarea',
               defaultValue:
-                'All donations are securely processed via CanadaHelps in support of the Toronto station and the national mission to care for seafarers across Canada.',
+                'All donations are securely processed via CanadaHelps in support of the Port Colborne station and the national mission to care for seafarers across Canada.',
             },
             {
               name: 'canadahelps_iframe_url',

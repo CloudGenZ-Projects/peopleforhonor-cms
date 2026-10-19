@@ -42,7 +42,7 @@ export const MtscColbernHeader: GlobalConfig = {
                   name: 'brand_subtitle',
                   label: 'Brand Subtitle',
                   type: 'text',
-                  defaultValue: 'Toronto',
+                  defaultValue: 'Port Colborne',
                 },
               ],
             },

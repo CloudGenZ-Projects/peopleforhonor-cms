@@ -46,7 +46,7 @@ export const MtscColbernSupportPage: GlobalConfig = {
               label: 'Hero Subtitle',
               type: 'textarea',
               defaultValue:
-                'Wherever you’re from, you are welcome here.\nWe’re here to support you with practical help, connection, and care while you’re in Toronto.',
+                'Wherever you’re from, you are welcome here.\nWe’re here to support you with practical help, connection, and care while you’re in Port Colborne.',
             },
             {
               name: 'hero_bg_image',
@@ -74,7 +74,7 @@ export const MtscColbernSupportPage: GlobalConfig = {
                   name: 'barber_whatsapp_url',
                   label: 'Barber WhatsApp URL',
                   type: 'text',
-                  defaultValue: 'https://wa.me/14272588449',
+                  defaultValue: 'https://wa.me/19053280300',
                 },
                 {
                   name: 'parcel_portal_url',
@@ -275,7 +275,7 @@ export const MtscColbernSupportPage: GlobalConfig = {
               name: 'visit_title',
               label: 'Location Title',
               type: 'text',
-              defaultValue: 'Visit Us at the Port of Toronto',
+              defaultValue: 'Visit Us at the Port of Port Colborne',
             },
             {
               name: 'address_line1',
@@ -287,7 +287,7 @@ export const MtscColbernSupportPage: GlobalConfig = {
               name: 'address_line2',
               label: 'Address Line 2',
               type: 'text',
-              defaultValue: '8 Unwin Avenue, Toronto',
+              defaultValue: '8 Unwin Avenue, Port Colborne',
             },
             {
               name: 'opening_hours_text',
@@ -300,7 +300,7 @@ export const MtscColbernSupportPage: GlobalConfig = {
               label: 'Google Maps Embed URL',
               type: 'textarea',
               defaultValue:
-                'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.497161490382!2d-79.347566!3d43.63782369999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb1d39382c3d%3A0x48c47df25b0c53d3!2s8%20Unwin%20Ave%2C%20Toronto%2C%20ON%20M5A%203L1%2C%20Canada!5e0!3m2!1sen!2sin!4v1777293037926!5m2!1sen!2sin',
+                'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.497161490382!2d-79.347566!3d43.63782369999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb1d39382c3d%3A0x48c47df25b0c53d3!2s8%20Unwin%20Ave%2C%20Port Colborne%2C%20ON%20M5A%203L1%2C%20Canada!5e0!3m2!1sen!2sin!4v1777293037926!5m2!1sen!2sin',
             },
             {
               name: 'team_title',
@@ -318,7 +318,7 @@ export const MtscColbernSupportPage: GlobalConfig = {
               name: 'chaplain_name',
               label: 'Chaplain Name',
               type: 'text',
-              defaultValue: 'Rev. Judith Alltree',
+              defaultValue: 'Deacon Annette Hoare',
             },
             {
               name: 'chaplain_role',

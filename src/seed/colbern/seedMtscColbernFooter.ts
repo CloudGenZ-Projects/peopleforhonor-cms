@@ -5,7 +5,7 @@ dotenv.config({ path: '.env.production' })
 dotenv.config({ path: '.env.local' })
 
 async function seedMtscColbernFooter() {
-  console.log('Seeding MtscColbernFooter Global into PostgreSQL...')
+  console.log('Seeding MtscColbernFooter Global into PostgreSQL with Port Colborne Brief Data...')
 
   const { getPayload } = await import('payload')
   const { default: config } = await import('../../payload.config')
@@ -15,42 +15,37 @@ async function seedMtscColbernFooter() {
   await payload.updateGlobal({
     slug: 'mtsc-colbern-footer' as any,
     data: {
-      // TAB 1: BRAND
       footer_logo: null,
       brand_title: 'Mission to Seafarers',
-      brand_subtitle: 'Toronto',
+      brand_subtitle: 'PORT COLBORNE',
       about_text:
-        'A local presence at the Port of Toronto. Part of Mission to Seafarers Canada and the global network in 200+ ports.',
-
-      // TAB 2: EXPLORE LINKS
+        'A local presence along the Welland Canal, connecting seafarers with welcome, practical care and a wider community of support.',
       explore_title: 'Explore',
       nav_links: [
         { label: 'About', href: '/about' },
         { label: 'Seafarer Support', href: '/support' },
         { label: 'Get Involved', href: '/get-involved' },
         { label: 'Contact', href: '/contact' },
+        { label: 'Events', href: '/events' },
       ],
-
-      // TAB 3: STATION & NATIONAL
-      station_col_title: 'Toronto Station',
-      location_text: 'Port of Toronto, ON',
-      email: 'glutenfreepriest@gmail.com',
-      national_col_title: 'National Office',
+      station_col_title: 'Local Contact',
+      location_text: 'Deacon Annette Hoare · +1 905-328-0300',
+      email: 'revannette@caecc.ca',
+      national_col_title: 'Connected Care',
       national_text:
-        'Major gifts, corporate partnerships are managed through Mission to Seafarers Canada.',
-
-      // TAB 4: BOTTOM
-      copyright_text: 'Mission to Seafarers Toronto. All rights reserved.',
+        'Part of Mission to Seafarers Southern Ontario, connected with Mission to Seafarers Canada and the international Mission.',
+      copyright_text:
+        '© Mission to Seafarers Port Colborne · Southern Ontario. All rights reserved.',
       bottom_subtext:
-        'Toronto station of Mission to Seafarers Southern Ontario · Part of Mission to Seafarers Canada',
+        'Serving seafarers along the Welland Canal and Great Lakes waterways.',
     },
   })
 
-  console.log('✅ MtscColbernFooter Global seeded successfully!')
+  console.log('✅ MtscColbernFooter seeded successfully with Port Colborne Brief Data!')
   process.exit(0)
 }
 
 seedMtscColbernFooter().catch((err) => {
-  console.error('❌ Error seeding MtscColbernFooter:', err)
+  console.error('❌ Failed to seed MtscColbernFooter:', err)
   process.exit(1)
 })

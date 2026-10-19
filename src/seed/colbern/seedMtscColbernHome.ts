@@ -5,7 +5,7 @@ dotenv.config({ path: '.env.production' })
 dotenv.config({ path: '.env.local' })
 
 async function seedMtscColbernHome() {
-  console.log('Seeding MtscColbernHomePage Global into PostgreSQL...')
+  console.log('Seeding MtscColbernHomePage Global into PostgreSQL with Port Colborne Brief Data...')
 
   const { getPayload } = await import('payload')
   const { default: config } = await import('../../payload.config')
@@ -16,130 +16,128 @@ async function seedMtscColbernHome() {
     slug: 'mtsc-colbern-home-page' as any,
     data: {
       // TAB 1: HERO
-      hero_eyebrow: 'Mission to Seafarers · Toronto',
-      hero_title_lead: 'A Global Lifeline with a',
-      hero_title_highlight: 'Local Heart',
+      hero_eyebrow: 'Mission to Seafarers · Port Colborne',
+      hero_title_lead: 'Care at the Canal.',
+      hero_title_highlight: 'A Welcome for Every Seafarer.',
       hero_lead_bold:
-        'Welcoming seafarers at the Port of Toronto with hospitality, practical support, and a place to belong while they are far from home.',
+        'At the southern entrance to the Welland Canal, ships arrive carrying cargo, passengers and the people who make their journeys possible.',
       hero_description:
-        'At the Port of Toronto, seafarers arrive after time at sea, sometimes for days, weeks and even months. Mission to Seafarers Toronto is here during that window. With practical support. With a place to step off the vessel. With people to speak to while they are ashore. We are a part of Mission to Seafarers Southern Ontario and Mission to Seafarers Canada, connected to a wider network that meets seafarers in ports around world.',
-      hero_primary_cta_label: 'Contact the Station',
+        'Mission to Seafarers Port Colborne offers a friendly local connection for those working aboard visiting vessels. Whether you need someone to talk to, guidance with a practical concern or help finding appropriate support, you are welcome here.',
+      hero_primary_cta_label: 'Contact the Local Chaplain',
       hero_primary_cta_link: '/contact',
-      hero_donate_btn_label: 'Donate',
+      hero_donate_btn_label: 'Find Seafarer Support',
       hero_image: null,
-      hero_card_tag: 'Toronto Station',
-      hero_card_text: 'Welcoming crews who keep global trade moving.',
+      hero_card_tag: 'Welland Canal',
+      hero_card_text: 'Connecting Lake Erie to Lake Ontario.',
       hero_badge_stat: '200+',
-      hero_badge_sub: 'Global Ports',
+      hero_badge_sub: 'Global Ports Network',
 
       // TAB 2: TRUST STRIP
       trust_stats: [
-        { n: '74,000+', l: 'Operating Ships supported globally' },
-        { n: '1,890,000+', l: 'Seafarers supported worldwide' },
-        { n: '160+', l: 'Years of service to seafarers' },
+        { n: 'PORT COLBORNE', l: 'On Lake Erie at the southern entrance to the Welland Canal' },
+        { n: 'SOUTHERN ONTARIO', l: 'Serving seafarers through the Toronto, Hamilton, Oshawa and Port Colborne network' },
+        { n: 'GLOBAL MISSION', l: 'Connected to care in more than 200 ports worldwide' },
       ],
 
       // TAB 3: HOW WE HELP
       help_eyebrow: 'How We Help',
-      help_title: 'How We Support the World’s Seafarers in Canada',
+      help_title: 'How Can We Help You Today?',
       help_description:
-        'As part of a 160+ year legacy, we offer practical, emotional, and spiritual support at Canadian ports, ensuring no seafarer is alone.',
+        'The Welland Canal connects Lake Erie and Lake Ontario, and Port Colborne is a familiar name to the crews who travel this route. Life aboard can mean long days, limited time ashore and long periods away from loved ones. Our local chaplaincy and visiting network seek to make time in port a little easier through human connection and help when needed.',
       service_cards: [
         {
-          tag: 'At the Station',
-          title: 'Community Connection',
-          body: 'Refreshments and a comfortable place to sit, pause, and reconnect with loved ones in a welcoming station space.',
-          cta: 'Come visit us at the station',
+          tag: 'Chaplaincy',
+          title: 'Speak with a Chaplain',
+          body: 'Need a conversation, spiritual care or guidance with a concern? Contact the local chaplain.',
+          cta: 'Contact a Chaplain',
           to: '/contact',
           isExternal: false,
         },
         {
-          tag: 'Logistics',
-          title: 'Seafarers Parcel Pickup Service',
-          body: 'Order essentials online and have them delivered securely to our station for pickup when you dock.',
-          cta: 'Send your Parcel',
-          to: 'https://parcelservice.mtsc.ca/',
-          isExternal: true,
+          tag: 'Ship Visits',
+          title: 'Request a Ship Visit',
+          body: 'If your vessel is coming into Port Colborne or travelling through the canal, ask whether a visit can be arranged.',
+          cta: 'Request a Ship Visit',
+          to: '/support',
+          isExternal: false,
         },
       ],
-      pillars_heading: 'How We Care for Seafarers',
+      pillars_heading: 'Ways We Support Seafarers',
       care_pillars: [
-        { title: 'Practical Support', iconKey: 'LifeBuoy' },
-        { title: 'Mental and Emotional Health', iconKey: 'Heart' },
-        { title: 'Spiritual Care', iconKey: 'HeartHandshake' },
-        { title: 'Advocacy & Rights', iconKey: 'ShieldCheck' },
-        { title: 'Community Connection', iconKey: 'Users' },
-        { title: 'Haircuts & Wellness', iconKey: 'Scissors' },
-        { title: 'Seafarers Parcel Pickup Service', iconKey: 'Package' },
-        { title: 'Transportation & Local Guidance', iconKey: 'MapPin' },
-        { title: 'Wi-Fi & Communication Tools', iconKey: 'Wifi' },
-        { title: 'Refreshments & Hospitality', iconKey: 'Coffee' },
+        { title: 'Ship Visits', iconKey: 'Ship' },
+        { title: 'Friendly Conversation', iconKey: 'Users' },
+        { title: 'Emotional Support', iconKey: 'Heart' },
+        { title: 'Spiritual Care', iconKey: 'Anchor' },
+        { title: 'Welfare Guidance', iconKey: 'ShieldCheck' },
+        { title: 'Local Information', iconKey: 'MapPin' },
+        { title: 'Practical Assistance Enquiries', iconKey: 'LifeBuoy' },
+        { title: 'Community Connection', iconKey: 'Globe2' },
       ],
 
-      // TAB 4: HAIRCUTS
-      haircut_eyebrow: 'A Small Service That Makes a Big Difference',
-      haircut_title: 'Haircuts for Seafarers',
+      // TAB 4: LOCAL STORY & CHAPLAIN
+      haircut_eyebrow: 'Local Story',
+      haircut_title: 'More Than Ships Passing Through',
       haircut_description:
-        'After extended periods at sea, small things can feel significant. Haircuts are available at the Toronto station by appointment. They can be arranged in advance by seafarers, ship agents, or crew representatives.',
+        'Cargo carriers and cruise vessels pass through the Great Lakes, but the people working on board can easily go unseen. Seafarers are navigators, engineers, cooks, hospitality professionals, deck crew and many others. Every one of them deserves dignity, understanding and access to support, whatever the vessel they work on.',
       haircut_subtext:
-        'Availability is limited and scheduled around ship movements and volunteer capacity.',
-      haircut_btn_label: 'Book a Haircut Appointment',
-      haircut_iframe_url: 'https://fadekingzmobilebarber.square.site/',
+        'Deacon Annette Hoare is the published local contact for the Port Colborne and Welland Canal area. Seafarers and ship representatives can contact her to ask about support or a possible visit.',
+      haircut_btn_label: 'Contact Annette',
+      haircut_iframe_url: 'tel:+19053280300',
 
-      // TAB 5: STRUCTURE & NETWORK
-      network_eyebrow: 'Connected in purpose',
-      network_title: 'Local presence. Connected in purpose.',
-      network_subtitle: 'Mission to Seafarers Toronto is part of a connected network of care.',
+      // TAB 5: NETWORK
+      network_eyebrow: 'One Mission. Local Presence. Connected Care.',
+      network_title: 'Connected in Purpose Across Canada and Worldwide',
+      network_subtitle:
+        'Mission to Seafarers Port Colborne is part of a connected network of maritime welfare care along the Great Lakes.',
       tier1_tag: 'Global Network',
-      tier1_title: 'The Mission to Seafarers',
-      tier1_desc: 'Connected globally across more than 200 ports.',
+      tier1_title: 'The International Mission',
+      tier1_desc:
+        'A worldwide maritime welfare network offering practical, emotional and spiritual help to seafarers in over 200 ports.',
       tier2_tag: 'National Body',
-      tier2_title: 'MtS Canada',
+      tier2_title: 'Mission to Seafarers Canada',
       tier2_desc:
-        'Mission to Seafarers Canada provides the national leadership, fund development, partnerships, and support that strengthen stations across the country.',
+        'A national connection among Canadian Mission stations and partners strengthening maritime care across the country.',
       tier3_tag: 'Regional Hub',
-      tier3_title: 'MtS Southern Ontario',
+      tier3_title: 'Mission to Seafarers Southern Ontario',
       tier3_desc:
-        'Within Ontario, Mission to Seafarers Southern Ontario leads work across regional ports including Toronto, Hamilton, and Oshawa.',
+        'An independent regional welfare organisation serving Toronto, Hamilton, Oshawa and Port Colborne.',
       tier4_tag: 'Local Base',
-      tier4_title: 'Toronto Station',
+      tier4_title: 'Port Colborne Local Team',
       tier4_desc:
-        'At the Port of Toronto, that work becomes direct. Here, we offer seafarers a welcoming place where they can rest, connect with loved ones, access practical help, receive a haircut, and know that they are not alone.',
+        'A local chaplaincy point of contact for visiting seafarers along the Welland Canal, led by Deacon Annette Hoare.',
       network_closing_quote:
-        'Toronto is an important gateway within Canada’s maritime network. Every year, seafarers arrive carrying the goods that keep our communities running, often with limited time ashore and few options once they disembark. We ensure that, when they arrive here, they are welcomed with dignity, kindness, and support.',
+        'At the southern entrance to the Welland Canal, we ensure visiting crews who keep commerce moving are welcomed with dignity, kindness, and support.',
 
-      // TAB 6: VOLUNTEER & DONATE
-      footer_band_eyebrow: 'Support Locally Care Globally.',
+      // TAB 6: GET INVOLVED & DONATE
+      footer_band_eyebrow: 'Support Locally. Care Globally.',
       footer_band_heading:
-        'Whether you volunteer, donate, provide a haircut, or simply help us welcome a seafarer, you are part of a connected network of care reaching from Toronto to ports around the world.',
-      volunteer_title: 'Help Us Welcome Seafarers to Toronto',
+        'A warm welcome in port begins with people who choose to care. Whether you volunteer, contribute resources or build a partnership, your support makes a real difference.',
+      volunteer_title: 'Ways You Can Take Part',
       volunteer_desc:
-        'There are many ways to support the Toronto station and the seafarers we serve. You can:',
+        'Support seafarers visiting Port Colborne and the Welland Canal through regional initiatives:',
       volunteer_bullet_points: [
-        { text: 'Volunteer at the station or during local events' },
-        { text: 'Donate snacks, refreshments, gift cards, furniture, or supplies' },
-        { text: 'Support haircut and wellness services for seafarers' },
-        { text: 'Help furnish and create a welcoming station space' },
-        { text: 'Support a local project or event' },
-        { text: 'Become a community or business partner' },
+        { text: 'Volunteer with ship visiting and outreach via Southern Ontario' },
+        { text: 'Contribute care items, warm knitwear, or holiday gifts for visiting crews' },
+        { text: 'Partner with us through your company, church, or community group' },
+        { text: 'Help provide practical hospitality along the Welland Canal' },
       ],
       donate_title: 'Help Care for Seafarers',
       donate_desc:
-        'Every gift helps us provide hospitality, transportation, Wi-Fi, refreshments, haircuts, and a welcoming place for seafarers visiting Toronto. You can choose to:',
+        'Your gift supports Mission to Seafarers Southern Ontario and its work providing practical, emotional, and spiritual care to visiting crews:',
       donate_bullet_points: [
-        { text: 'Become a monthly donor' },
-        { text: 'Make a one-time gift' },
-        { text: 'Support Mission to Seafarers Toronto through Mission to Seafarers Canada' },
+        { text: 'Make a one-time donation to support seafarer welfare' },
+        { text: 'Become a regular monthly supporter' },
+        { text: 'Direct your gift to support work along Southern Ontario ports' },
       ],
-      donate_iframe_url: 'https://www.canadahelps.org/en/dn/145961',
+      donate_iframe_url: 'https://www.mtsso.org/support-us',
     },
   })
 
-  console.log('✅ MtscColbernHomePage Global seeded successfully with 100% Index content!')
+  console.log('✅ MtscColbernHomePage seeded successfully with Port Colborne Brief Data!')
   process.exit(0)
 }
 
 seedMtscColbernHome().catch((err) => {
-  console.error('❌ Error seeding MtscColbernHomePage:', err)
+  console.error('❌ Failed to seed MtscColbernHomePage:', err)
   process.exit(1)
 })

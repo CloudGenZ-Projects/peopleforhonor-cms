@@ -5,7 +5,7 @@ dotenv.config({ path: '.env.production' })
 dotenv.config({ path: '.env.local' })
 
 async function seedMtscColbernEvents() {
-  console.log('Seeding MtscColbernEventsPage Global into PostgreSQL...')
+  console.log('Seeding MtscColbernEventsPage Global into PostgreSQL with Port Colborne Brief Data...')
 
   const { getPayload } = await import('payload')
   const { default: config } = await import('../../payload.config')
@@ -16,80 +16,57 @@ async function seedMtscColbernEvents() {
     slug: 'mtsc-colbern-events-page' as any,
     data: {
       // TAB 1: HERO
-      hero_title: 'Events & Community Gatherings',
+      hero_title: 'Community, Connection and Care',
       hero_subtitle:
-        'Mission to Seafarers Toronto hosts events, conversations, awareness initiatives, and waterfront gatherings that help connect people to maritime life and the seafarers who help keep global trade moving.',
-      hero_btn_label: 'View Upcoming Events',
+        'Stories, activities and occasions that bring people together in support of the seafarers visiting Port Colborne and the Welland Canal.',
+      hero_btn_label: 'Get Involved',
       hero_bg_image: null,
 
-      // TAB 2: FEATURED EVENT
-      featured_badge: 'Featured Event',
-      featured_title: 'Women in Maritime 2026',
+      // TAB 2: APPROVED EMPTY STATE / INITIAL LAUNCH STATE
+      featured_badge: 'Community Notice',
+      featured_title: 'Upcoming Activities',
       featured_image: null,
-      featured_theme:
-        'Theme: From Policy to Practice: Advancing Gender Equality for Maritime Excellence',
-      featured_subtheme:
-        'International Day for Women in Maritime & Reopening of the Mission to Seafarers Toronto Station',
-      featured_date: 'Wednesday, May 20, 2026',
-      featured_location: 'Port of Toronto Cruise Ship Terminal',
+      featured_theme: 'Welland Canal Chaplaincy',
+      featured_subtheme: 'Port Colborne Community',
+      featured_date: 'Ongoing Care',
+      featured_location: 'Port Colborne, Ontario',
       featured_desc_p1:
-        "This gathering brings together maritime leaders, cadets, labour voices, educators, seafarers, and community partners for a day of conversation, reflection, and collaboration focused on the realities shaping women's experiences across the maritime sector.",
+        'There are no Port Colborne events announced on this website at the moment. Please check back for updates, or contact our team if you would like to explore a community activity or partnership.',
       featured_desc_p2:
-        'The event also marks the reopening of the Mission to Seafarers Toronto Station, helping restore a welcoming place of care and connection for seafarers arriving at the Port of Toronto.',
-      featured_btn_label: 'View Event Highlights',
-
-      // TAB 3: HIGHLIGHTS MODAL
-      modal_title: 'What the Day Includes',
+        'Our story is shaped by ship visits, relationships and thoughtful acts of support. As local photos and approved stories become available, we will share glimpses of the people and partnerships that make this work possible.',
+      featured_btn_label: 'Enquire About an Activity',
+      modal_title: 'Enquire About an Activity',
       highlights_list: [
         {
-          iconKey: 'Lightbulb',
-          title: 'Leadership Conversations',
-          description:
-            'Interactive discussions exploring: leadership, workplace culture, retention, mentorship, operational realities, and the future of maritime excellence in Canada.',
-        },
-        {
-          iconKey: 'Anchor',
-          title: 'Toronto Station Reopening',
-          description:
-            'Celebrating the reopening of a dedicated support and hospitality space for seafarers visiting Toronto.',
-        },
-        {
           iconKey: 'Users',
-          title: 'Maritime Community Gathering',
-          description:
-            'An opportunity for maritime professionals, cadets, labour leaders, volunteers, and community partners to connect and collaborate.',
-        },
-        {
-          iconKey: 'Ship',
-          title: 'Waterfront & Port Atmosphere',
-          description:
-            'A uniquely maritime setting at the Port of Toronto connecting public awareness directly to the realities of global movement and trade.',
+          title: 'Community Partnerships',
+          description: 'Explore hosting an event or partnering with local maritime care.',
         },
       ],
-      modal_close_label: 'Close Details',
+      modal_close_label: 'Close',
 
-      // TAB 4: CAROUSEL
-      carousel_title: 'Stories From Our Events',
+      // TAB 3: GALLERY
+      carousel_title: 'Stories From Our Community',
       carousel_gallery: [],
 
-      // TAB 5: FINAL CTA
-      cta_title: 'Be Part of the Conversation',
+      // TAB 4: CLOSING PARTICIPATION PANEL
+      cta_title: 'Help Build a Welcoming Port',
       cta_description:
-        'Whether through attending an event, volunteering, donating, partnering with us, or supporting the station, every act of involvement helps strengthen care and visibility for seafarers visiting Toronto.',
-      cta_btn1_label: 'Partner With Us',
-      cta_btn1_link: '/contact',
-      cta_btn2_label: 'Volunteer',
-      cta_btn2_link: '/get-involved',
-      cta_btn3_label: 'Support the Toronto Station',
-      cta_btn3_link: '/support',
+        'Whether through an approved local initiative, volunteering or a community partnership, there are practical ways to take part.',
+      cta_btn1_label: 'Become a Volunteer',
+      cta_btn1_link: 'https://www.mtsso.org/volunteering',
+      cta_btn2_label: 'Discuss a Partnership',
+      cta_btn2_link: '/contact?type=partnership',
+      cta_btn3_label: 'Donate',
+      cta_btn3_link: 'https://www.mtsso.org/support-us',
     },
   })
 
-  console.log('✅ MtscColbernEventsPage Global seeded successfully!')
+  console.log('✅ MtscColbernEventsPage seeded successfully with Port Colborne Brief Data!')
   process.exit(0)
 }
 
 seedMtscColbernEvents().catch((err) => {
-  console.error('❌ Error seeding MtscColbernEventsPage:', err)
+  console.error('❌ Failed to seed MtscColbernEventsPage:', err)
   process.exit(1)
 })
