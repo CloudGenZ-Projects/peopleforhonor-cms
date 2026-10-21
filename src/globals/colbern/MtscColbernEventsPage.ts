@@ -59,8 +59,78 @@ export const MtscColbernEventsPage: GlobalConfig = {
 
         // TAB 2: FEATURED EVENT SECTION
         {
-          label: 'Featured Event',
+          label: 'Events List',
           fields: [
+            {
+              name: 'events_list',
+              label: 'Events List (Click "Add Event" to create multiple events)',
+              type: 'array',
+              labels: {
+                singular: 'Event',
+                plural: 'Events',
+              },
+              fields: [
+                {
+                  name: 'badge',
+                  label: 'Badge Label (e.g. Upcoming Event, Featured)',
+                  type: 'text',
+                  defaultValue: 'Upcoming Event',
+                },
+                {
+                  name: 'title',
+                  label: 'Event Title',
+                  type: 'text',
+                  required: true,
+                },
+                {
+                  name: 'image',
+                  label: 'Event Image',
+                  type: 'upload',
+                  relationTo: 'media',
+                },
+                {
+                  name: 'theme',
+                  label: 'Theme Heading',
+                  type: 'text',
+                },
+                {
+                  name: 'subtheme',
+                  label: 'Subtheme Text (Coral)',
+                  type: 'text',
+                },
+                {
+                  type: 'row',
+                  fields: [
+                    {
+                      name: 'date',
+                      label: 'Event Date / Time',
+                      type: 'text',
+                    },
+                    {
+                      name: 'location',
+                      label: 'Event Location',
+                      type: 'text',
+                    },
+                  ],
+                },
+                {
+                  name: 'desc_p1',
+                  label: 'Description Paragraph 1',
+                  type: 'textarea',
+                },
+                {
+                  name: 'desc_p2',
+                  label: 'Description Paragraph 2',
+                  type: 'textarea',
+                },
+                {
+                  name: 'btn_label',
+                  label: 'Modal Trigger Button Label',
+                  type: 'text',
+                  defaultValue: 'View Event Highlights',
+                },
+              ],
+            },
             {
               name: 'featured_badge',
               label: 'Badge Label',
