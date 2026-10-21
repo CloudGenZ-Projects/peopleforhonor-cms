@@ -96,18 +96,6 @@ export const MtscColbernHomePage: GlobalConfig = {
               relationTo: 'media',
             },
             {
-              name: 'hero_skyline_image',
-              label: 'Hero Accent / Skyline Graphic (Optional)',
-              type: 'upload',
-              relationTo: 'media',
-            },
-            {
-              name: 'hero_bg_image',
-              label: 'Hero Section Background Image (Optional)',
-              type: 'upload',
-              relationTo: 'media',
-            },
-            {
               type: 'row',
               fields: [
                 {
