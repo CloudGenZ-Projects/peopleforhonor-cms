@@ -1,4 +1,4 @@
-import dotenv from 'dotenv'
+﻿import dotenv from 'dotenv'
 
 dotenv.config({ path: '.env' })
 dotenv.config({ path: '.env.production' })
@@ -12,6 +12,10 @@ async function seedMtscColbernGetInvolved() {
 
   const payload = await getPayload({ config })
 
+  const current = await payload.findGlobal({
+    slug: 'mtsc-colbern-get-involved-page' as any,
+  })
+
   await payload.updateGlobal({
     slug: 'mtsc-colbern-get-involved-page' as any,
     data: {
@@ -20,64 +24,68 @@ async function seedMtscColbernGetInvolved() {
       hero_title: 'Be Part of the Welcome',
       hero_subtitle:
         'A warm welcome in port begins with people who choose to care. Whether you volunteer, contribute resources or build a partnership, your support can make a difference to seafarers far from home.',
-      hero_bg_image: null,
+      hero_bg_image: (current as any)?.hero_bg_image?.id || (current as any)?.hero_bg_image || null,
 
-      // TAB 2: DONATION SECTION
+      // TAB 2: DONATION SECTION / TWO EQUAL CARDS
       donate_eyebrow: 'Ways to Give',
       donate_title: 'Help Care for Seafarers',
       donate_description:
         'Support Mission to Seafarers Southern Ontario and its wider work of providing practical, emotional and spiritual care to visiting crews.',
-      monthly_card_title: 'MAKE A DONATION',
-      monthly_card_desc:
+      
+      // CARD 1: MAKE A DONATION
+      onetime_card_title: 'MAKE A DONATION',
+      onetime_card_desc:
         'Support Mission to Seafarers Southern Ontario and its wider work of providing practical, emotional and spiritual care to visiting crews.',
+      onetime_btn_label: 'Make a Donation',
+
+      // CARD 2: DISCUSS REGULAR GIVING
+      monthly_card_title: 'DISCUSS REGULAR GIVING',
+      monthly_card_desc:
+        'Interested in ongoing support? Contact the Southern Ontario team to learn about available giving arrangements.',
       monthly_bullets: [
         { text: 'Direct your gift to support visiting crew welfare across Southern Ontario ports' },
         { text: 'Enable ship visits and compassionate pastoral support along the Welland Canal' },
         { text: 'Charitable tax receipts issued through Mission to Seafarers Southern Ontario' },
       ],
-      monthly_btn_label: 'Donate via Southern Ontario',
-      onetime_card_title: 'DISCUSS REGULAR GIVING',
-      onetime_card_desc:
-        'Interested in ongoing support? Contact the Southern Ontario team to explore regular giving or discuss a targeted gift.',
-      onetime_btn_label: 'Contact Southern Ontario',
+      monthly_btn_label: 'Enquire About Regular Giving',
       donate_footer_note:
         'All donations are securely processed and receipted by Mission to Seafarers Southern Ontario.',
       canadahelps_iframe_url: 'https://www.mtsso.org/support-us',
 
-      // TAB 3: PARTICIPATION PATHWAYS
-      ways_eyebrow: 'Participation Pathways',
-      ways_title: 'Ways You Can Take Part',
-      ways_bg_image: null,
-      inkind_title: 'VOLUNTEER WITH THE MISSION',
+      // TAB 3: PARTICIPATION PATHWAYS (ORANGE CARDS BANNER)
+      ways_eyebrow: 'Participation',
+      ways_title: 'Choose How You Would Like to Help',
+      ways_bg_image: (current as any)?.ways_bg_image?.id || (current as any)?.ways_bg_image || null,
+
+      // TAB 4: TWO-COLUMN DETAILS & VOLUNTEERS
+      inkind_title: 'IN-KIND GIFTS',
       inkind_desc:
-        'Support ship visiting, hospitality or community outreach through the approved Southern Ontario volunteering pathway.',
+        'Useful items may include personal care products, warm clothing or items for welfare initiatives, depending on current local needs. Please do not arrange an unsolicited drop-off. Contact the team first for an up-to-date list and delivery instructions.',
       inkind_bullets: [
-        { text: 'Apply through the official Southern Ontario volunteer application process' },
-        { text: 'Participate in ship visitor training and safety orientations' },
-        { text: 'Help extend warm community welcome to international seafarers' },
+        { text: 'Personal care products' },
+        { text: 'Warm clothing' },
+        { text: 'Items for welfare initiatives' },
       ],
       amazon_wishlist_url: 'https://www.mtsso.org/volunteering',
-      amazon_wishlist_label: 'Apply to Volunteer',
+      amazon_wishlist_label: 'Apply Through Southern Ontario',
 
-      // TAB 4: PARTNERSHIPS & IN-KIND
-      partnership_title: 'COMMUNITY AND BUSINESS PARTNERSHIPS',
+      partnership_title: 'COMMUNITY PARTNERSHIPS',
       partnership_desc:
-        'Work with us through your company, church or civic group to support seafarer welfare along the Welland Canal.',
+        'Local businesses, maritime companies, churches, community groups and individuals may be able to support approved activities, goods, services or volunteer involvement. We welcome conversations about practical, sustainable partnerships.',
       partnership_bullets: [
-        { text: 'Maritime sector companies and port operators' },
-        { text: 'Local churches and faith communities' },
-        { text: 'Civic organisations and service clubs' },
+        { text: 'Local businesses and maritime companies' },
+        { text: 'Churches and faith communities' },
+        { text: 'Community groups and individuals' },
       ],
-      partnership_note:
-        'IN-KIND AND SEASONAL SUPPORT: Contribute care items, knitwear or holiday gifts for crews visiting during cold weather and special occasions.',
+      partnership_note: '',
 
-      // TAB 5: CLOSING CTA
-      cta_title: 'Ready to Make a Difference?',
+      // TAB 5: BOTTOM ORANGE PANEL
+      cta_title: 'Every Act of Care Matters',
       cta_description:
-        'Every act of hospitality helps a seafarer feel remembered and valued while far from home.',
-      cta_donate_label: 'Support Our Mission',
-      cta_volunteer_label: 'Volunteer via MTSSO',
-      cta_contact_label: 'Contact Our Team',
+        'A listening ear, a practical gift or time spent volunteering can help remind a seafarer that they are not alone.',
+      cta_volunteer_label: 'Volunteer',
+      cta_contact_label: 'Contact the Team',
+      cta_donate_label: 'Donate',
     },
   })
 

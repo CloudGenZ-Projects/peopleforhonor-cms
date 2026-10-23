@@ -1,4 +1,4 @@
-import type { GlobalConfig } from 'payload'
+﻿import type { GlobalConfig } from 'payload'
 import { checkTenantAccess, isHiddenForUser } from '../../utils/tenantAccess'
 
 export const MtscColbernGetInvolvedPage: GlobalConfig = {
@@ -39,14 +39,14 @@ export const MtscColbernGetInvolvedPage: GlobalConfig = {
               name: 'hero_title',
               label: 'Hero Title',
               type: 'text',
-              defaultValue: 'Get Involved with Mission to Seafarers Port Colborne',
+              defaultValue: 'Be Part of the Welcome',
             },
             {
               name: 'hero_subtitle',
               label: 'Hero Subtitle',
               type: 'textarea',
               defaultValue:
-                'There are many ways to support and help create a welcoming place for seafarers arriving at the Port of Port Colborne. Whether you choose to volunteer, donate, provide in-kind support, or partner with us, your support helps ensure that seafarers feel cared for.',
+                'A warm welcome in port begins with people who choose to care. Whether you volunteer, contribute resources or build a partnership, your support can make a difference to seafarers far from home.',
             },
             {
               name: 'hero_bg_image',
@@ -65,7 +65,7 @@ export const MtscColbernGetInvolvedPage: GlobalConfig = {
               name: 'donate_eyebrow',
               label: 'Eyebrow',
               type: 'text',
-              defaultValue: 'Donate',
+              defaultValue: 'Ways to Give',
             },
             {
               name: 'donate_title',
@@ -78,25 +78,45 @@ export const MtscColbernGetInvolvedPage: GlobalConfig = {
               label: 'Subtext',
               type: 'textarea',
               defaultValue:
-                'Every gift helps us provide hospitality, practical support, transportation, Wi-Fi, refreshments, haircuts, and a welcoming place for seafarers visiting Port Colborne.',
+                'Support Mission to Seafarers Southern Ontario and its wider work of providing practical, emotional and spiritual care to visiting crews.',
             },
-            // Monthly Giving
+            // Card 1: One-Time / Make a Donation
+            {
+              name: 'onetime_card_title',
+              label: 'Card 1 Title (Make a Donation)',
+              type: 'text',
+              defaultValue: 'MAKE A DONATION',
+            },
+            {
+              name: 'onetime_card_desc',
+              label: 'Card 1 Description',
+              type: 'textarea',
+              defaultValue:
+                'Support Mission to Seafarers Southern Ontario and its wider work of providing practical, emotional and spiritual care to visiting crews.',
+            },
+            {
+              name: 'onetime_btn_label',
+              label: 'Card 1 Button Label',
+              type: 'text',
+              defaultValue: 'Make a Donation',
+            },
+            // Card 2: Regular Giving
             {
               name: 'monthly_card_title',
-              label: 'Monthly Card Title',
+              label: 'Card 2 Title (Regular Giving)',
               type: 'text',
-              defaultValue: 'Monthly Giving',
+              defaultValue: 'DISCUSS REGULAR GIVING',
             },
             {
               name: 'monthly_card_desc',
-              label: 'Monthly Card Description',
+              label: 'Card 2 Description',
               type: 'textarea',
               defaultValue:
-                'Become a monthly donor and help provide ongoing care and support throughout the year. Monthly gifts help us plan ahead.',
+                'Interested in ongoing support? Contact the Southern Ontario team to learn about available giving arrangements.',
             },
             {
               name: 'monthly_bullets',
-              label: 'Monthly Giving Bullet Points',
+              label: 'Regular Giving Bullet Points',
               type: 'array',
               fields: [
                 {
@@ -109,42 +129,22 @@ export const MtscColbernGetInvolvedPage: GlobalConfig = {
             },
             {
               name: 'monthly_btn_label',
-              label: 'Monthly Button Label',
+              label: 'Card 2 Button Label',
               type: 'text',
-              defaultValue: 'Become a Monthly Donor',
-            },
-            // One-Time Gift
-            {
-              name: 'onetime_card_title',
-              label: 'One-Time Card Title',
-              type: 'text',
-              defaultValue: 'One-Time Gift',
-            },
-            {
-              name: 'onetime_card_desc',
-              label: 'One-Time Card Description',
-              type: 'textarea',
-              defaultValue:
-                'Make a one-time donation to support Mission to Seafarers Port Colborne. Your gift helps create a welcoming space and care for seafarers right when they arrive.',
-            },
-            {
-              name: 'onetime_btn_label',
-              label: 'One-Time Button Label',
-              type: 'text',
-              defaultValue: 'Make a One-Time Gift',
+              defaultValue: 'Enquire About Regular Giving',
             },
             {
               name: 'donate_footer_note',
               label: 'Donation Disclaimer / Note',
               type: 'textarea',
               defaultValue:
-                'All donations are securely processed via CanadaHelps in support of the Port Colborne station and the national mission to care for seafarers across Canada.',
+                'All donations are securely processed and receipted by Mission to Seafarers Southern Ontario.',
             },
             {
               name: 'canadahelps_iframe_url',
               label: 'CanadaHelps Form URL',
               type: 'text',
-              defaultValue: 'https://www.canadahelps.org/en/dn/145961',
+              defaultValue: 'https://www.mtsso.org/support-us',
             },
           ],
         },
@@ -157,13 +157,13 @@ export const MtscColbernGetInvolvedPage: GlobalConfig = {
               name: 'ways_eyebrow',
               label: 'Eyebrow',
               type: 'text',
-              defaultValue: 'Other Ways to Help',
+              defaultValue: 'Participation',
             },
             {
               name: 'ways_title',
               label: 'Heading',
               type: 'text',
-              defaultValue: 'Choose How You Would Like to Support',
+              defaultValue: 'Choose How You Would Like to Help',
             },
             {
               name: 'ways_bg_image',
@@ -183,13 +183,14 @@ export const MtscColbernGetInvolvedPage: GlobalConfig = {
               name: 'inkind_title',
               label: 'In-Kind Title',
               type: 'text',
-              defaultValue: 'In-Kind Gifts',
+              defaultValue: 'IN-KIND GIFTS',
             },
             {
               name: 'inkind_desc',
               label: 'In-Kind Description',
               type: 'textarea',
-              defaultValue: 'We are always grateful for donations that help us create a welcoming space. Examples include:',
+              defaultValue:
+                'Useful items may include personal care products, warm clothing or items for welfare initiatives, depending on current local needs. Please do not arrange an unsolicited drop-off. Contact the team first for an up-to-date list and delivery instructions.',
             },
             {
               name: 'inkind_bullets',
@@ -209,15 +210,15 @@ export const MtscColbernGetInvolvedPage: GlobalConfig = {
               fields: [
                 {
                   name: 'amazon_wishlist_url',
-                  label: 'Amazon Wishlist URL',
+                  label: 'Volunteer URL',
                   type: 'text',
-                  defaultValue: 'https://www.amazon.ca/hz/wishlist/ls/3C9KTQNHTZ0NM?ref_=wl_fv_le.',
+                  defaultValue: 'https://www.mtsso.org/volunteering',
                 },
                 {
                   name: 'amazon_wishlist_label',
-                  label: 'Wishlist Button Label',
+                  label: 'Volunteer Button Label',
                   type: 'text',
-                  defaultValue: 'Order from our wishlist',
+                  defaultValue: 'Apply Through Southern Ontario',
                 },
               ],
             },
@@ -226,13 +227,14 @@ export const MtscColbernGetInvolvedPage: GlobalConfig = {
               name: 'partnership_title',
               label: 'Partnership Title',
               type: 'text',
-              defaultValue: 'Partnership Options',
+              defaultValue: 'COMMUNITY PARTNERSHIPS',
             },
             {
               name: 'partnership_desc',
               label: 'Partnership Description',
               type: 'textarea',
-              defaultValue: 'We welcome support from local businesses, schools, and groups. You can support:',
+              defaultValue:
+                'Local businesses, maritime companies, churches, community groups and individuals may be able to support approved activities, goods, services or volunteer involvement. We welcome conversations about practical, sustainable partnerships.',
             },
             {
               name: 'partnership_bullets',
@@ -251,8 +253,7 @@ export const MtscColbernGetInvolvedPage: GlobalConfig = {
               name: 'partnership_note',
               label: 'Partnership Note',
               type: 'textarea',
-              defaultValue:
-                'For larger corporate partnerships and national giving opportunities, please visit Mission to Seafarers Canada.',
+              defaultValue: '',
             },
           ],
         },
@@ -265,14 +266,14 @@ export const MtscColbernGetInvolvedPage: GlobalConfig = {
               name: 'cta_title',
               label: 'CTA Title',
               type: 'text',
-              defaultValue: 'Every Act of Kindness Makes a Difference',
+              defaultValue: 'Every Act of Care Matters',
             },
             {
               name: 'cta_description',
               label: 'CTA Description',
               type: 'textarea',
               defaultValue:
-                'From a warm drink and a haircut to a monthly donation or a few hours of volunteering, every act of support helps remind seafarers that they are not alone.',
+                'A listening ear, a practical gift or time spent volunteering can help remind a seafarer that they are not alone.',
             },
             {
               type: 'row',
@@ -281,13 +282,13 @@ export const MtscColbernGetInvolvedPage: GlobalConfig = {
                   name: 'cta_donate_label',
                   label: 'Donate Button Label',
                   type: 'text',
-                  defaultValue: 'Donate Now',
+                  defaultValue: 'Donate',
                 },
                 {
                   name: 'cta_volunteer_label',
                   label: 'Volunteer Button Label',
                   type: 'text',
-                  defaultValue: 'Become a Volunteer',
+                  defaultValue: 'Volunteer',
                 },
               ],
             },
@@ -295,7 +296,7 @@ export const MtscColbernGetInvolvedPage: GlobalConfig = {
               name: 'cta_contact_label',
               label: 'Contact Button Label',
               type: 'text',
-              defaultValue: 'Contact the Station',
+              defaultValue: 'Contact the Team',
             },
           ],
         },
